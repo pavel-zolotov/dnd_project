@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/material_dark_100</item>
         <item name="colorPrimaryDark">@color/material_dark_200</item>
         <item name="colorAccent">@color/material_amber_600</item>
+
+        <item name="activityBackground">@color/activity_background_dark</item>
+        <item name="cardBackground">#424242</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
