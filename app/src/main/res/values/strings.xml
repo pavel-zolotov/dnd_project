@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">DnD project</string>
+    <string name="class_label">Class:</string>
+    <string name="no_characters">No characters</string>
+    <string name="class_human">Human</string>
+    <string name="class_elf">Elf</string>
+    <string name="class_dwarf">Dwarf</string>
+    <string name="title_activity_character_setup">Character Setup</string>
     <string name="action_settings">Settings</string>
+    <string name="tab_appearance">Appearance</string>
+    <string name="tab_specs">Specs</string>
+    <string name="eye_color">Eye color</string>
+    <string name="hair_style">Hair style</string>
+    <string name="skin_color">Skin color</string>
+    <string name="name">Name</string>
 </resources>

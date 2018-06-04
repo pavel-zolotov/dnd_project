@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="class_label">Класс:</string>
+    <string name="no_characters">Нет персонажей</string>
+    <string name="class_human">Человек</string>
+    <string name="class_elf">Эльф</string>
+    <string name="class_dwarf">Гном</string>
+    <string name="title_activity_character_setup">Настройка персонажа</string>
+    <string name="tab_appearance">Внешность</string>
+    <string name="tab_specs">Параметры</string>
+    <string name="eye_color">Цвет глаз</string>
+    <string name="hair_style">Прическа</string>
+    <string name="skin_color">Цвет кожи</string>
+    <string name="name">Имя</string>
+</resources>
