@@ -55,13 +55,13 @@ class CharacterSetupActivity : AppCompatActivity() {
 
             if (fragment1.editText.text == null || fragment1.editText.text.toString() == ""){
                 Toast.makeText(this, "pls fill the name", Toast.LENGTH_LONG).show()
+            }else {
+                character = Character(-1, fragment1.editText.text.toString(), Character.WIZARD, race, 10, 2, 10, 5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+                Manager().insertCharacter(this, character!!)
+                val intent = Intent()
+                setResult(RESULT_OK, intent)
+                finish()
             }
-
-            character = Character(-1, fragment1.editText.text.toString(), Character.WIZARD, race,10, 2, 10,5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0,0, 0, 0, 0, 0, 0, 0)
-            Manager().insertCharacter(this, character!!)
-            val intent = Intent()
-            setResult(RESULT_OK, intent)
-            finish()
         }
 
     }
