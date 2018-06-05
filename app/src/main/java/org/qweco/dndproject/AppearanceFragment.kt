@@ -23,6 +23,24 @@ class AppearanceFragment : Fragment() {
             Character.ELF -> {
                 rootView.txtRaceValue.text = context.resources.getString(R.string.race_elf)
             }
+            Character.TIFLING -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_tifling)
+            }
+            Character.HALF_ORC -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_half_orc)
+            }
+            Character.HALF_ELF -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_half_elf)
+            }
+            Character.DRAGONBORN -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_dragonborn)
+            }
+            Character.HALFLING -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_halfling)
+            }
+            Character.GNOM -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_gnom)
+            }
         }
         return rootView
     }

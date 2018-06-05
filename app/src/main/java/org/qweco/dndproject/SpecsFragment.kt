@@ -23,6 +23,9 @@ class SpecsFragment : Fragment() {
             Character.ELF -> {
                 rootView.txtRaceValue.text = context.resources.getString(R.string.race_elf)
             }
+            Character.ELF -> {
+                rootView.txtRaceValue.text = context.resources.getString(R.string.race_elf)
+            }
         }
         return rootView
     }

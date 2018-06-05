@@ -32,6 +32,26 @@ class CharacterAdapter(var list: ArrayList<Character>, val context: Context) : R
             Character.ELF -> {
                 holder.race.text = context.resources.getString(R.string.race_elf)
             }//TODO: change img
+            Character.TIFLING -> {
+                holder.race.text = context.resources.getString(R.string.race_tifling)
+            }
+            Character.HALF_ORC -> {
+                holder.race.text = context.resources.getString(R.string.race_half_orc)
+            }
+            Character.HALF_ELF -> {
+                holder.race.text = context.resources.getString(R.string.race_half_elf)
+            }
+            Character.DRAGONBORN -> {
+                holder.race.text = context.resources.getString(R.string.race_dragonborn)
+            }
+            Character.HALFLING -> {
+                holder.race.text = context.resources.getString(R.string.race_halfling)
+            }
+            Character.GNOM -> {
+                holder.race.text = context.resources.getString(R.string.race_gnom)
+            }
+
+
         }
     }
 
@@ -51,10 +71,12 @@ class CharacterAdapter(var list: ArrayList<Character>, val context: Context) : R
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var name: TextView
         var race: TextView
+        //var char_class: TextView
 
         init {
             name = v.findViewById(R.id.txtName)
             race = v.findViewById(R.id.txtRaceValue)
+            //char_class = v.findViewById(R.id.txtClassValue)
         }
     }
 

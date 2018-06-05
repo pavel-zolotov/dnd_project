@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">DnD project</string>
     <string name="race_label">Race:</string>
+    <string name="class_label">Class</string>
     <string name="no_characters">No characters</string>
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
     <string name="race_dwarf">Dwarf</string>
+    <string name="race_tifling">Tifling</string>
+    <string name="race_half_orc">Halforc</string>
+    <string name="race_half_elf">Halfelf</string>
+    <string name="race_dragonborn">Dragonborn</string>
+    <string name="race_halfling">Halfling</string>
+    <string name="race_gnom">Gnome</string>
     <string name="title_activity_character_setup">Character Setup</string>
     <string name="action_settings">Settings</string>
     <string name="tab_appearance">Appearance</string>
