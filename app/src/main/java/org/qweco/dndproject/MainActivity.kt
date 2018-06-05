@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             val classes = arrayOf(resources.getString(R.string.class_human), resources.getString(R.string.class_dwarf), resources.getString(R.string.class_elf))
             builder.setItems(classes) { _, item ->
                 val intent = Intent(this, CharacterSetupActivity::class.java)
-                intent.putExtra("class", item)
+                intent.putExtra("race", item)
                 startActivity(intent)
             }
             builder.show()})

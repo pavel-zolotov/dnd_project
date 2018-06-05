@@ -24,7 +24,7 @@ class CharacterSetupActivity : AppCompatActivity() {
      * [android.support.v4.app.FragmentStatePagerAdapter].
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-    public var characterClass: Int = Character.HUMAN
+    public var race: Int = Character.HUMAN
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +41,7 @@ class CharacterSetupActivity : AppCompatActivity() {
 
         tabs.setupWithViewPager(container);
 
-        characterClass = intent.extras.getInt("class")
+        race = intent.extras.getInt("race")
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -80,8 +80,8 @@ class CharacterSetupActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
             when (position){
-                0-> return AppearanceFragment.newInstance(characterClass)
-                else-> return SpecsFragment.newInstance(characterClass)
+                0-> return AppearanceFragment.newInstance(race)
+                else-> return SpecsFragment.newInstance(race)
             }
         }
 

@@ -7,12 +7,12 @@
     tools:context="org.qweco.dndproject.AppearanceFragment">
 
     <TextView
-        android:id="@+id/txtClassValue"
+        android:id="@+id/txtRaceValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:id="@+id/editText"

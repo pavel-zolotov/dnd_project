@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="class_label">Класс:</string>
+    <string name="race_label">Раса:</string>
     <string name="no_characters">Нет персонажей</string>
-    <string name="class_human">Человек</string>
-    <string name="class_elf">Эльф</string>
-    <string name="class_dwarf">Гном</string>
+    <string name="race_human">Человек</string>
+    <string name="race_elf">Эльф</string>
+    <string name="race_dwarf">Гном</string>
     <string name="title_activity_character_setup">Настройка персонажа</string>
     <string name="tab_appearance">Внешность</string>
     <string name="tab_specs">Параметры</string>

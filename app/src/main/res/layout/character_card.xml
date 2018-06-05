@@ -38,7 +38,7 @@
             android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/txtClassLabel"
+            android:id="@+id/txtRaceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/txtName"
@@ -46,14 +46,14 @@
             android:layout_below="@id/txtName"
             android:textAppearance="?android:attr/textAppearanceSmallInverse"
             android:textSize="14sp"
-            android:text="@string/class_label"/>
+            android:text="@string/race_label"/>
 
         <TextView
-            android:id="@+id/txtClassValue"
+            android:id="@+id/txtRaceValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@+id/txtClassLabel"
+            android:layout_toRightOf="@+id/txtRaceLabel"
             android:layout_marginTop="8dp"
             android:layout_below="@id/txtName"
             android:textAppearance="?android:attr/textAppearanceSmallInverse"
