@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         llm.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = llm
 
-        characterList.add(Character(0, "my first character", Character.HUMAN, 0, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
-        characterList.add(Character(1, "my second character", Character.ELF, 0, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))
+        characterList.add(Character(0, "my first character", Character.WIZARD, Character.HUMAN, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
+        characterList.add(Character(1, "my second character", Character.WARRIOR, Character.ELF, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))
         val adapter = CharacterAdapter(characterList, this)
         adapter.setHasStableIds(true)
         recyclerView.setAdapter(adapter)
