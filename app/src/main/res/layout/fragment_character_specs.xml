@@ -80,7 +80,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Initiative"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
@@ -109,7 +108,6 @@
                     android:layout_marginTop="8dp"
                     android:text="HP"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
@@ -139,7 +137,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Speed"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
@@ -174,7 +171,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Hit Dice"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
@@ -203,7 +199,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Armour class"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
@@ -233,7 +228,6 @@
                     android:layout_marginTop="8dp"
                     android:text="Proficiency"
                     android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textColor="@android:color/black"
                     android:textSize="20sp" />
 
                 <EditText
