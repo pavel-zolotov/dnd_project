@@ -24,7 +24,7 @@ class CharacterSetupActivity : AppCompatActivity() {
      * [android.support.v4.app.FragmentStatePagerAdapter].
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-    public var race: Int = Character.HUMAN
+    public var race: Int = Character.HUMAN //Инициализация
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +39,7 @@ class CharacterSetupActivity : AppCompatActivity() {
         // Set up the ViewPager with the sections adapter.
         container.adapter = mSectionsPagerAdapter
 
-        tabs.setupWithViewPager(container);
+        tabs.setupWithViewPager(container)
 
         race = intent.extras.getInt("race")
 

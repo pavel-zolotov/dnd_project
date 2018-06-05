@@ -15,8 +15,8 @@ data class Character (
         var proficiency: Int,
 
         //TODO: remove question marks
-        var skills: Array<Int>?, //use constants from class body, pls
-        var savingThrows: Array<Int>?, //here the same
+        var skills: Map<Int, Int?>?, //use constants from class body, pls
+        var savingThrows: Map<Int, Int?>?, //here the same
 
         var strength: Int,
         var dexterity: Int,
@@ -59,24 +59,24 @@ data class Character (
 
 
         //Skills
-        var ACROBATICS = 0        //DEX
-        var ANIMAL_HANDLING = 1   //WIS
-        var ARCANA = 2            //INT
-        var ATHLETICS = 3         //STR
-        var DECEPTION = 4         //CHA
-        var HISTORY = 5           //INT
-        var INSIGHT = 6           //WIS
-        var INTIMIDATION = 7      //CHA
-        var INVESTIGATION = 8     //INT
-        var MEDICINE = 9          //WIS
-        var NATURE = 10           //INT
-        var PERCEPTION = 11       //WIS
-        var PERFORMANCE = 12      //CHA
-        var PERSUASION = 13       //CHA
-        var RELIGION = 14         //INT
-        var SLEIGHT_OF_HAND = 15  //DEX
-        var STEALTH = 16          //DEX
-        var SURVIVAL = 17         //WIS
+        const val ACROBATICS = 0        //DEX
+        const val ANIMAL_HANDLING = 1   //WIS
+        const val ARCANA = 2            //INT
+        const val ATHLETICS = 3         //STR
+        const val DECEPTION = 4         //CHA
+        const val HISTORY = 5           //INT
+        const val INSIGHT = 6           //WIS
+        const val INTIMIDATION = 7      //CHA
+        const val INVESTIGATION = 8     //INT
+        const val MEDICINE = 9          //WIS
+        const val NATURE = 10           //INT
+        const val PERCEPTION = 11       //WIS
+        const val PERFORMANCE = 12      //CHA
+        const val PERSUASION = 13       //CHA
+        const val RELIGION = 14         //INT
+        const val SLEIGHT_OF_HAND = 15  //DEX
+        const val STEALTH = 16          //DEX
+        const val SURVIVAL = 17         //WIS
 
         //Saving Throws
         var STR = 0
