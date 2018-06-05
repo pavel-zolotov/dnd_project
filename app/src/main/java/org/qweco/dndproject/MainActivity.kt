@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         llm.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = llm
 
-        characterList.add(Character(0, "my first character", Character.HUMAN, 0, 10, 2, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
-        characterList.add(Character(1, "my second character", Character.ELF, 0, 10, 2, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))
+        characterList.add(Character(0, "my first character", Character.HUMAN, 0, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
+        characterList.add(Character(1, "my second character", Character.ELF, 0, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))
         val adapter = CharacterAdapter(characterList, this)
         adapter.setHasStableIds(true)
         recyclerView.setAdapter(adapter)
@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener({
             val builder = AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog)
-            builder.setTitle(resources.getString(R.string.class_label))
-            val classes = arrayOf(resources.getString(R.string.class_human), resources.getString(R.string.class_dwarf), resources.getString(R.string.class_elf))
-            builder.setItems(classes) { _, item ->
+            builder.setTitle(resources.getString(R.string.race_label))
+            val races = arrayOf(resources.getString(R.string.race_human), resources.getString(R.string.race_dwarf), resources.getString(R.string.race_elf))
+            builder.setItems(races) { _, item ->
                 val intent = Intent(this, CharacterSetupActivity::class.java)
                 intent.putExtra("race", item)
                 startActivity(intent)

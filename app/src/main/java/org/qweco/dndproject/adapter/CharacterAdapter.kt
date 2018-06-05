@@ -24,13 +24,13 @@ class CharacterAdapter(var list: ArrayList<Character>, val context: Context) : R
 
         when (character.race){
             Character.HUMAN -> {
-                holder.race.text = context.resources.getString(R.string.class_human)
+                holder.race.text = context.resources.getString(R.string.race_human)
             }//TODO: change img
             Character.DWARF -> {
-                holder.race.text = context.resources.getString(R.string.class_dwarf)
+                holder.race.text = context.resources.getString(R.string.race_dwarf)
             }//TODO: change img
             Character.ELF -> {
-                holder.race.text = context.resources.getString(R.string.class_elf)
+                holder.race.text = context.resources.getString(R.string.race_elf)
             }//TODO: change img
         }
     }
