@@ -110,7 +110,6 @@ class Manager {
 
     fun generateContentValues (ch: Character): ContentValues {
         val values = ContentValues()
-        values.put(BaseColumns._ID, ch.id)
         values.put(Contract.CharactersTable.COLUMN_NAME_NAME, ch.name)
         values.put(Contract.CharactersTable.COLUMN_NAME_CLASS, ch.character_class)
         values.put(Contract.CharactersTable.COLUMN_NAME_RACE, ch.race)

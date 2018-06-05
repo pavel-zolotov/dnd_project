@@ -14,7 +14,6 @@ data class Character (
         var armourClass: Int,
         var proficiency: Int,
 
-        //TODO: remove question marks
         var skills: Map<Int, Int?>, //use constants from class body, pls
         var savingThrows: Map<Int, Int?>, //here the same
 

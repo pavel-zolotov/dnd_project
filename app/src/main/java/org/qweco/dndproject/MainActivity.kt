@@ -1,5 +1,6 @@
 package org.qweco.dndproject
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -12,10 +13,12 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.qweco.dndproject.adapter.CharacterAdapter
+import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
 
 class MainActivity : AppCompatActivity() {
     private var characterList: ArrayList<Character> = ArrayList()
+    lateinit var adapter: CharacterAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +30,10 @@ class MainActivity : AppCompatActivity() {
         llm.orientation = LinearLayoutManager.VERTICAL
         recyclerView.layoutManager = llm
 
-        characterList.add(Character(0, "my first character", Character.WIZARD, Character.HUMAN, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
-        characterList.add(Character(1, "my second character", Character.WARRIOR, Character.ELF, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))
-        val adapter = CharacterAdapter(characterList, this)
+        characterList = Manager().loadCharacters(this)
+        /*characterList.add(Character(0, "my first character", Character.WIZARD, Character.HUMAN, 10, 2, 10,5, 3, 2, 3, null, , 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
+        characterList.add(Character(1, "my second character", Character.WARRIOR, Character.ELF, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))*/
+        adapter = CharacterAdapter(characterList, this)
         adapter.setHasStableIds(true)
         recyclerView.setAdapter(adapter)
         recyclerView.setEmptyView(emptyView)
@@ -41,9 +45,18 @@ class MainActivity : AppCompatActivity() {
             builder.setItems(races) { _, item ->
                 val intent = Intent(this, CharacterSetupActivity::class.java)
                 intent.putExtra("race", item)
-                startActivity(intent)
+                startActivityForResult(intent, 1)
             }
             builder.show()})
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK){
+            characterList = Manager().loadCharacters(this)
+            adapter.setCharactersList(characterList)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

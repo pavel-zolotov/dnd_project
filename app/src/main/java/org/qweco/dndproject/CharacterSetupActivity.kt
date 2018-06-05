@@ -1,5 +1,6 @@
 package org.qweco.dndproject
 
+import android.content.Intent
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 
@@ -9,8 +10,11 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_character_setup.*
+import kotlinx.android.synthetic.main.fragment_character_appearance.*
+import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
 
 class CharacterSetupActivity : AppCompatActivity() {
@@ -24,7 +28,8 @@ class CharacterSetupActivity : AppCompatActivity() {
      * [android.support.v4.app.FragmentStatePagerAdapter].
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-    public var race: Int = Character.HUMAN //Инициализация
+    var race: Int = Character.HUMAN //Инициализация
+    var character: Character? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +49,19 @@ class CharacterSetupActivity : AppCompatActivity() {
         race = intent.extras.getInt("race")
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            // get fragment 1 & fragment 2
+            val fragment1 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":0") as AppearanceFragment
+            val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
+
+            if (fragment1.editText.text == null || fragment1.editText.text.toString() == ""){
+                Toast.makeText(this, "pls fill the name", Toast.LENGTH_LONG).show()
+            }
+
+            character = Character(-1, fragment1.editText.text.toString(), Character.WIZARD, race,10, 2, 10,5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0,0, 0, 0, 0, 0, 0, 0)
+            Manager().insertCharacter(this, character!!)
+            val intent = Intent()
+            setResult(RESULT_OK, intent)
+            finish()
         }
 
     }
@@ -53,7 +69,7 @@ class CharacterSetupActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //menuInflater.inflate(R.menu.menu_character_setup, menu)
+        // menuInflater.inflate(R.menu.menu_character_setup, menu)
         return true
     }
 
