@@ -53,7 +53,7 @@ data class Character (
         const val BARD = 6
         const val RANGER = 7
         const val THIEF = 8
-        const val NONK = 9
+        const val MONK = 9
         const val PALADIN = 10
         const val CLERIC = 11
 
