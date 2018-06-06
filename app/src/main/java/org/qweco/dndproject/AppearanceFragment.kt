@@ -1,48 +1,53 @@
 package org.qweco.dndproject
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_character_appearance.view.*
+import kotlinx.android.synthetic.main.fragment_character_appearance.*
 import org.qweco.dndproject.model.Character
 
 class AppearanceFragment : Fragment() {
+    var eye_color = Character.EYE_COLOR_BLUE
+    var skin_color = Character.SKIN_COLOR_LIGHT
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_character_appearance, container, false)
-        /*when (arguments.getInt(ARG_CHARACTER_RACE)){
-            Character.HUMAN -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_human)
-            }
-            Character.DWARF -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_dwarf)
-            }
-            Character.ELF -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_elf)
-            }
-            Character.TIFLING -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_tifling)
-            }
-            Character.HALF_ORC -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_half_orc)
-            }
-            Character.HALF_ELF -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_half_elf)
-            }
-            Character.DRAGONBORN -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_dragonborn)
-            }
-            Character.HALFLING -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_halfling)
-            }
-            Character.GNOM -> {
-                rootView.txtRaceValue.text = context.resources.getString(R.string.race_gnom)
-            }
-        }*/
         return rootView
+    }
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        eyeColorBlue.setOnClickListener({changeEyeTickVisibility(0)
+            eye_color = Character.EYE_COLOR_BLUE})
+        eyeColorRed.setOnClickListener({changeEyeTickVisibility(1)
+            eye_color = Character.EYE_COLOR_RED})
+        eyeColorAmber.setOnClickListener({changeEyeTickVisibility(2)
+            eye_color = Character.EYE_COLOR_AMBER})
+        eyeColorGreen.setOnClickListener({changeEyeTickVisibility(3)
+            eye_color = Character.EYE_COLOR_GREEN})
+        eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
+            eye_color = Character.EYE_COLOR_WHITE})
+
+        skinColorLight.setOnClickListener({changeSkinTickVisibility(0)
+            skin_color = Character.SKIN_COLOR_LIGHT})
+        skinColorDark.setOnClickListener({changeSkinTickVisibility(1)
+            skin_color = Character.SKIN_COLOR_DARK})
+    }
+
+    private fun changeEyeTickVisibility (pos: Int){
+        eyeTickBlue.visibility = if (pos == 0) View.VISIBLE else View.GONE
+        eyeTickRed.visibility = if (pos == 1) View.VISIBLE else View.GONE
+        eyeTickAmber.visibility = if (pos == 2) View.VISIBLE else View.GONE
+        eyeTickGreen.visibility = if (pos == 3) View.VISIBLE else View.GONE
+        eyeTickWhite.visibility = if (pos == 4) View.VISIBLE else View.GONE
+    }
+
+    private fun changeSkinTickVisibility (pos: Int) {
+        skinTickLight.visibility = if (pos == 0) View.VISIBLE else View.GONE
+        skinTickDark.visibility = if (pos == 1) View.VISIBLE else View.GONE
     }
 
     companion object {

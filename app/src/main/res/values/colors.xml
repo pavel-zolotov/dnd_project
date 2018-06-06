@@ -5,4 +5,10 @@
     <color name="material_dark_100">#333333</color>
     <!--<color name="activity_background_dark">#303030</color>
     <color name="card_background_dark">#424242</color>-->
+    <color name="material_blue_500">#2196F3</color>
+    <color name="material_green_500">#4CAF50</color>
+    <color name="material_red_500">#F44336</color>
+    <color name="material_amber_500">#FFC107</color>
+    <color name="skin_color_light">#B7B9CE</color>
+    <color name="skin_color_dark">#6D4C41</color>
 </resources>

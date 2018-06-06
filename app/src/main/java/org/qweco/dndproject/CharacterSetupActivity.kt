@@ -60,10 +60,12 @@ class CharacterSetupActivity : AppCompatActivity() {
             val fragment1 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":0") as AppearanceFragment
             val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
 
-            if (fragment1.editText.text == null || fragment1.editText.text.toString() == ""){
+            if (editText.text == null || editText.text.toString() == ""){
                 Snackbar.make(contentView, resources.getString(R.string.fill_the_name), Snackbar.LENGTH_LONG).show()
             }else {
-                character.name = fragment1.editText.text.toString()
+                character.name = editText.text.toString()
+                character.eyeColor = fragment1.eye_color
+                character.skinColor = fragment1.skin_color
                 Manager().insertCharacter(this, character)
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
@@ -93,7 +95,7 @@ class CharacterSetupActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View,
                                         position: Int, id: Long) {
-                Toast.makeText(baseContext, "Position = " + position, Toast.LENGTH_SHORT).show()
+                character.character_class = position
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}
@@ -114,7 +116,15 @@ class CharacterSetupActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
 
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            // This ID represents the Home or Up button. In the case of this
+            // activity, the Up button is shown. Use NavUtils to allow users
+            // to navigate up one level in the application structure. For
+            // more details, see the Navigation pattern on Android Design:
+            //
+            // http://developer.android.com/design/patterns/navigation.html#up-vs-back
+            //
+            finish()
             return true
         }
 

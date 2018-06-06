@@ -83,12 +83,22 @@ data class Character (
         const val SURVIVAL = 17         //WIS
 
         //Saving Throws
-        var STR = 0
-        var DEX = 1
-        var CONST = 2
-        var INT = 3
-        var WIS = 4
-        var CHA = 5
+        const val STR = 0
+        const val DEX = 1
+        const val CONST = 2
+        const val INT = 3
+        const val WIS = 4
+        const val CHA = 5
+
+        //Apperance
+        const val EYE_COLOR_BLUE = 0
+        const val EYE_COLOR_RED = 1
+        const val EYE_COLOR_AMBER = 2
+        const val EYE_COLOR_GREEN = 3
+        const val EYE_COLOR_WHITE = 4
+
+        const val SKIN_COLOR_LIGHT = 0
+        const val SKIN_COLOR_DARK = 1
     }
 
     fun getStringForRace(context: Context): String
