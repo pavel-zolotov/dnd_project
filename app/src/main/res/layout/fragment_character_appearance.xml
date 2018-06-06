@@ -6,33 +6,6 @@
     android:layout_height="match_parent"
     tools:context="org.qweco.dndproject.AppearanceFragment">
 
-    <TextView
-        android:id="@+id/txtRaceValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/name" />
-
-    <ImageView
-        android:id="@+id/characterImg"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        app:srcCompat="@drawable/ic_person_grey_200_36dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

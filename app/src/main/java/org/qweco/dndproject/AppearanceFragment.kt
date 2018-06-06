@@ -13,7 +13,7 @@ class AppearanceFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_character_appearance, container, false)
-        when (arguments.getInt(ARG_CHARACTER_RACE)){
+        /*when (arguments.getInt(ARG_CHARACTER_RACE)){
             Character.HUMAN -> {
                 rootView.txtRaceValue.text = context.resources.getString(R.string.race_human)
             }
@@ -41,7 +41,7 @@ class AppearanceFragment : Fragment() {
             Character.GNOM -> {
                 rootView.txtRaceValue.text = context.resources.getString(R.string.race_gnom)
             }
-        }
+        }*/
         return rootView
     }
 

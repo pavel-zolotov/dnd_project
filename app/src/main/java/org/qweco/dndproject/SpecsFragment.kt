@@ -13,7 +13,7 @@ class SpecsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_character_specs, container, false)
-        when (arguments.getInt(ARG_CHARACTER_RACE)){
+        /*when (arguments.getInt(ARG_CHARACTER_RACE)){
             Character.HUMAN -> {
                 rootView.txtRaceValue.text = context.resources.getString(R.string.race_human)
             }
@@ -80,7 +80,7 @@ class SpecsFragment : Fragment() {
             Character.BARD -> {
                 rootView.txtClassValue.text = context.resources.getString(R.string.class_bard)
             }
-        }
+        }*/
 
 
         return rootView

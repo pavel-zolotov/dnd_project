@@ -7,7 +7,7 @@
     tools:context="org.qweco.dndproject.AppearanceFragment"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -34,7 +34,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="22sp" />
 
-        <!--
+        &lt;!&ndash;
 
         <TextView
             android:id="@+id/txtRaceLabel"
@@ -59,7 +59,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="14sp" />
 
-        -->
+        &ndash;&gt;
 
         <TextView
             android:id="@+id/txtRaceValue"
@@ -83,7 +83,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="14sp" />
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
