@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import org.qweco.dndproject.R
 import org.qweco.dndproject.model.Character
 import java.util.*
@@ -21,6 +22,7 @@ class CharacterAdapter(var list: ArrayList<Character>, val context: Context) : R
         val character = list[pos]
 
         holder.name.text = character.name
+        holder.itemView.setOnClickListener({Toast.makeText(context, character.toString(), Toast.LENGTH_LONG).show()})
 
         when (character.race){
             Character.HUMAN -> {
