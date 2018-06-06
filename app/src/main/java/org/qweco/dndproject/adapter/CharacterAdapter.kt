@@ -22,39 +22,8 @@ class CharacterAdapter(private var list: ArrayList<Character>, val context: Cont
         val character = list[pos]
 
         holder.name.text = character.name
-        holder.itemView.setOnClickListener({Toast.makeText(context, character.toString(), Toast.LENGTH_LONG).show()})
-
-        when (character.race){
-            Character.HUMAN -> {
-                holder.race.text = context.resources.getString(R.string.race_human)
-            }//TODO: change img
-            Character.DWARF -> {
-                holder.race.text = context.resources.getString(R.string.race_dwarf)
-            }//TODO: change img
-            Character.ELF -> {
-                holder.race.text = context.resources.getString(R.string.race_elf)
-            }//TODO: change img
-            Character.TIFLING -> {
-                holder.race.text = context.resources.getString(R.string.race_tifling)
-            }
-            Character.HALF_ORC -> {
-                holder.race.text = context.resources.getString(R.string.race_half_orc)
-            }
-            Character.HALF_ELF -> {
-                holder.race.text = context.resources.getString(R.string.race_half_elf)
-            }
-            Character.DRAGONBORN -> {
-                holder.race.text = context.resources.getString(R.string.race_dragonborn)
-            }
-            Character.HALFLING -> {
-                holder.race.text = context.resources.getString(R.string.race_halfling)
-            }
-            Character.GNOM -> {
-                holder.race.text = context.resources.getString(R.string.race_gnom)
-            }
-
-
-        }
+        holder.raceAndClass.text = "${character.getStringForRace(context)} ${character.getStringForClass(context)}"
+        holder.itemView.setOnClickListener({ Toast.makeText(context, character.toString(), Toast.LENGTH_LONG).show() })
     }
 
     override fun getItemCount(): Int {
@@ -72,13 +41,11 @@ class CharacterAdapter(private var list: ArrayList<Character>, val context: Cont
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         var name: TextView
-        var race: TextView
-        //var char_class: TextView
+        var raceAndClass: TextView
 
         init {
             name = v.findViewById(R.id.txtName)
-            race = v.findViewById(R.id.txtRaceValue)
-            //char_class = v.findViewById(R.id.txtClassValue)
+            raceAndClass = v.findViewById(R.id.txtRaceAndClass)
         }
     }
 
