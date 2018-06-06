@@ -96,13 +96,13 @@ data class Character (
         when (race){
             Character.HUMAN -> {
                 return context.resources.getString(R.string.race_human)
-            }//TODO: change img
+            }
             Character.DWARF -> {
                 return context.resources.getString(R.string.race_dwarf)
-            }//TODO: change img
+            }
             Character.ELF -> {
                 return context.resources.getString(R.string.race_elf)
-            }//TODO: change img
+            }
             Character.TIFLING -> {
                 return context.resources.getString(R.string.race_tifling)
             }

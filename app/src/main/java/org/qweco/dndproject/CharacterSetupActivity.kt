@@ -13,9 +13,15 @@ import android.view.MenuItem
 import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_character_setup.*
-import kotlinx.android.synthetic.main.fragment_character_appearance.*
 import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
+import android.widget.Spinner
+import android.R.attr.data
+import android.view.View
+import android.widget.ArrayAdapter
+
 
 class CharacterSetupActivity : AppCompatActivity() {
 
@@ -47,7 +53,6 @@ class CharacterSetupActivity : AppCompatActivity() {
 
         character = Character(-1, "", Character.WIZARD, Character.HUMAN, 10, 2, 10, 5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-        character.character_class = intent.extras.getInt("character_class")
         character.race = intent.extras.getInt("race")
 
         fab.setOnClickListener { view ->
@@ -64,6 +69,34 @@ class CharacterSetupActivity : AppCompatActivity() {
                 setResult(RESULT_OK, intent)
                 finish()
             }
+        }
+
+        txtRaceValue.text = character.getStringForRace(this)
+
+        val data = arrayOf(resources.getString(R.string.class_wizard),
+                resources.getString(R.string.class_sorcerer),
+                resources.getString(R.string.class_warlock),
+                resources.getString(R.string.class_warrior),
+                resources.getString(R.string.class_barbarian),
+                resources.getString(R.string.class_druid),
+                resources.getString(R.string.class_bard),
+                resources.getString(R.string.class_ranger),
+                resources.getString(R.string.class_thief),
+                resources.getString(R.string.class_monk),
+                resources.getString(R.string.class_paladin),
+                resources.getString(R.string.class_cleric))
+        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        spinner.adapter = adapter
+        spinner.prompt = resources.getString(R.string.race_label)
+        spinner.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View,
+                                        position: Int, id: Long) {
+                Toast.makeText(baseContext, "Position = " + position, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onNothingSelected(arg0: AdapterView<*>) {}
         }
 
     }

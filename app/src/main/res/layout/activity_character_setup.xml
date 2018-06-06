@@ -25,6 +25,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="?actionBarSize"
                 app:layout_collapseMode="parallax">
 
                 <TextView
@@ -35,12 +36,20 @@
                     android:layout_alignLeft="@id/editText"
                     android:layout_marginTop="15dp" />
 
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtRaceValue"
+                    android:layout_alignLeft="@id/editText"
+                    android:layout_marginTop="15dp" />
+
                 <EditText
                     android:id="@+id/editText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/characterImg"
-                    android:layout_marginTop="60dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginRight="10dp"
                     android:ems="10"
                     android:inputType="textPersonName"
@@ -52,17 +61,8 @@
                     android:layout_height="130dp"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_margin="53dp"
+                    android:layout_margin="40dp"
                     app:srcCompat="@drawable/ic_person_grey_200_36dp" />
-
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tabs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    app:tabMode="fixed"
-                    app:tabGravity="fill"
-                    app:layout_collapseMode="pin" />
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
@@ -75,7 +75,16 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay"
                 app:title="@string/title_activity_character_setup"
                 app:layout_collapseMode="pin"/>
+
         </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"
+            android:layout_gravity="bottom"/>
 
     </android.support.design.widget.AppBarLayout>
 
