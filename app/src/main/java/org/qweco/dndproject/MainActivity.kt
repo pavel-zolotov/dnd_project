@@ -15,6 +15,10 @@ import kotlinx.android.synthetic.main.content_main.*
 import org.qweco.dndproject.adapter.CharacterAdapter
 import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
+import android.support.v7.widget.helper.ItemTouchHelper
+import org.qweco.dndproject.adapter.itemTouchHelper.MyItemTouchHelperCallback
+
+
 
 class MainActivity : AppCompatActivity() {
     private var characterList: ArrayList<Character> = ArrayList()
@@ -31,10 +35,19 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = llm
 
         characterList = Manager().loadCharacters(this)
-        /*characterList.add(Character(0, "my first character", Character.WIZARD, Character.HUMAN, 10, 2, 10,5, 3, 2, 3, null, , 0, 0, 0,0, 0, 0, 0, 0, 0, 0))
-        characterList.add(Character(1, "my second character", Character.WARRIOR, Character.ELF, 10, 2, 10,5, 3, 2, 3, null, null, 0, 0, 0,0, 0, 0, 0, 0 ,0, 0))*/
-        adapter = CharacterAdapter(characterList, this)
+        adapter = CharacterAdapter(characterList, this, contentView)
         adapter.setHasStableIds(true)
+
+        val callback = MyItemTouchHelperCallback(adapter)
+
+        val touchHelper = ItemTouchHelper(callback)
+        touchHelper.attachToRecyclerView(recyclerView)
+
+        recyclerView.itemAnimator.addDuration = 500
+        recyclerView.itemAnimator.removeDuration = 500
+        recyclerView.itemAnimator.moveDuration = 500
+        recyclerView.itemAnimator.changeDuration = 500
+
         recyclerView.setAdapter(adapter)
         recyclerView.setEmptyView(emptyView)
 

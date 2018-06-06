@@ -18,4 +18,6 @@
     <string name="hair_style">Прическа</string>
     <string name="skin_color">Цвет кожи</string>
     <string name="name">Имя</string>
+    <string name="item_deleted">Персонаж удален</string>
+    <string name="fill_the_name">Заполните имя</string>
 </resources>

@@ -56,7 +56,7 @@ class CharacterSetupActivity : AppCompatActivity() {
             val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
 
             if (fragment1.editText.text == null || fragment1.editText.text.toString() == ""){
-                Toast.makeText(this, "pls fill the name", Toast.LENGTH_LONG).show()
+                Snackbar.make(contentView, resources.getString(R.string.fill_the_name), Snackbar.LENGTH_LONG).show()
             }else {
                 character.name = fragment1.editText.text.toString()
                 Manager().insertCharacter(this, character)
