@@ -22,7 +22,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/name" />
+        android:hint="@string/name" />
 
     <ImageView
         android:id="@+id/characterImg"
