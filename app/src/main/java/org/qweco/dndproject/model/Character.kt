@@ -1,5 +1,10 @@
 package org.qweco.dndproject.model
 
+import android.content.Context
+import kotlinx.android.synthetic.main.fragment_character_specs.view.*
+import org.qweco.dndproject.R
+import org.qweco.dndproject.SpecsFragment
+
 data class Character (
         var id: Long,
         var name: String,
@@ -85,4 +90,85 @@ data class Character (
         var WIS = 4
         var CHA = 5
     }
+
+    fun getStringForRace(context: Context): String
+    {
+        when (race){
+            Character.HUMAN -> {
+                return context.resources.getString(R.string.race_human)
+            }//TODO: change img
+            Character.DWARF -> {
+                return context.resources.getString(R.string.race_dwarf)
+            }//TODO: change img
+            Character.ELF -> {
+                return context.resources.getString(R.string.race_elf)
+            }//TODO: change img
+            Character.TIFLING -> {
+                return context.resources.getString(R.string.race_tifling)
+            }
+            Character.HALF_ORC -> {
+                return context.resources.getString(R.string.race_half_orc)
+            }
+            Character.HALF_ELF -> {
+                return context.resources.getString(R.string.race_half_elf)
+            }
+            Character.DRAGONBORN -> {
+                return context.resources.getString(R.string.race_dragonborn)
+            }
+            Character.HALFLING -> {
+                return context.resources.getString(R.string.race_halfling)
+            }
+            Character.GNOM -> {
+                return context.resources.getString(R.string.race_gnom)
+            }
+        }
+
+        return ""
+    }
+
+    fun getStringForClass(context: Context): String
+    {
+        when (character_class){
+            Character.WIZARD -> {
+                return context.resources.getString(R.string.class_wizard)
+            }
+            Character.WARLOCK -> {
+                return context.resources.getString(R.string.class_warlock)
+            }
+            Character.SORCERER -> {
+                return context.resources.getString(R.string.class_sorcerer)
+            }
+            Character.WARRIOR -> {
+                return context.resources.getString(R.string.class_warrior)
+            }
+            Character.MONK -> {
+                return context.resources.getString(R.string.class_monk)
+            }
+            Character.RANGER -> {
+                return context.resources.getString(R.string.class_ranger)
+            }
+            Character.THIEF -> {
+                return context.resources.getString(R.string.class_thief)
+            }
+            Character.CLERIC -> {
+                return context.resources.getString(R.string.class_cleric)
+            }
+            Character.PALADIN -> {
+                return context.resources.getString(R.string.class_paladin)
+            }
+            Character.BARBARIAN -> {
+                return context.resources.getString(R.string.class_barbarian)
+            }
+            Character.DRUID -> {
+                return context.resources.getString(R.string.class_druid)
+            }
+            Character.BARD -> {
+                return context.resources.getString(R.string.class_bard)
+            }
+        }
+
+        return ""
+
+    }
+
 }
