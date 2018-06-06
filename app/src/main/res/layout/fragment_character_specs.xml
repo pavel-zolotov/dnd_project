@@ -27,34 +27,62 @@
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="22sp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/characterImg"
-            android:layout_marginLeft="20dp"
-            android:text="@string/name"/>
+            android:text="@string/name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="22sp" />
+
+        <!--
 
         <TextView
             android:id="@+id/txtRaceLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@id/txtName"
-            android:layout_marginTop="8dp"
             android:layout_below="@id/txtName"
+            android:layout_marginTop="8dp"
+            android:text="@string/race_label"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="14sp"
-            android:text="@string/race_label"/>
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtClassLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtRaceValue"
+            android:layout_alignBottom="@+id/txtRaceValue"
+            android:layout_toEndOf="@+id/txtName"
+            android:layout_toRightOf="@+id/txtName"
+            android:text="@string/class_label"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14sp" />
+
+        -->
 
         <TextView
             android:id="@+id/txtRaceValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_toRightOf="@+id/txtRaceLabel"
-            android:layout_marginTop="8dp"
+            android:layout_alignLeft="@id/txtName"
             android:layout_below="@id/txtName"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/txtRaceLabel"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtClassValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/txtRaceValue"
+            android:layout_alignBottom="@+id/txtRaceValue"
+            android:layout_toEndOf="@+id/txtName"
+            android:layout_toRightOf="@+id/txtName"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14sp" />
+
     </RelativeLayout>
 
     <LinearLayout

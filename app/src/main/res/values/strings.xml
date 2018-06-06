@@ -3,6 +3,20 @@
     <string name="race_label">Race:</string>
     <string name="class_label">Class</string>
     <string name="no_characters">No characters</string>
+
+    <string name="class_wizard">Wizard</string>
+    <string name="class_sorcerer">Sorcerer</string>
+    <string name="class_warlock">Warlock</string>
+    <string name="class_warrior">Warrior</string>
+    <string name="class_barbarian">Barbarian</string>
+    <string name="class_druid">Druid</string>
+    <string name="class_bard">Bard</string>
+    <string name="class_ranger">Ranger</string>
+    <string name="class_thief">Thief</string>
+    <string name="class_monk">Monk</string>
+    <string name="class_paladin">Paladin</string>
+    <string name="class_cleric">Cleric</string>
+
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
     <string name="race_dwarf">Dwarf</string>

@@ -28,8 +28,7 @@ class CharacterSetupActivity : AppCompatActivity() {
      * [android.support.v4.app.FragmentStatePagerAdapter].
      */
     private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
-    var race: Int = Character.HUMAN //Инициализация
-    var character: Character? = null;
+    lateinit var character: Character
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +45,10 @@ class CharacterSetupActivity : AppCompatActivity() {
 
         tabs.setupWithViewPager(container)
 
-        race = intent.extras.getInt("race")
+        character = Character(-1, "", Character.WIZARD, Character.HUMAN, 10, 2, 10, 5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+        character.character_class = intent.extras.getInt("character_class")
+        character.race = intent.extras.getInt("race")
 
         fab.setOnClickListener { view ->
             // get fragment 1 & fragment 2
@@ -56,8 +58,8 @@ class CharacterSetupActivity : AppCompatActivity() {
             if (fragment1.editText.text == null || fragment1.editText.text.toString() == ""){
                 Toast.makeText(this, "pls fill the name", Toast.LENGTH_LONG).show()
             }else {
-                character = Character(-1, fragment1.editText.text.toString(), Character.WIZARD, race, 10, 2, 10, 5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-                Manager().insertCharacter(this, character!!)
+                character.name = fragment1.editText.text.toString()
+                Manager().insertCharacter(this, character)
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
                 finish()
@@ -96,8 +98,8 @@ class CharacterSetupActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             // getItem is called to instantiate the fragment for the given page.
             when (position){
-                0-> return AppearanceFragment.newInstance(race)
-                else-> return SpecsFragment.newInstance(race)
+                0-> return AppearanceFragment.newInstance(character.race, character.character_class)
+                else-> return SpecsFragment.newInstance(character.race, character.character_class)
             }
         }
 

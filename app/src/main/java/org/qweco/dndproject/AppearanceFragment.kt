@@ -52,14 +52,16 @@ class AppearanceFragment : Fragment() {
          */
         private val ARG_CHARACTER_RACE = "race"
 
+        private val ARG_CHARACTER_CLASS = "character_class"
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        fun newInstance(race: Int): AppearanceFragment {
+        fun newInstance(race: Int, character_class: Int): AppearanceFragment {
             val fragment = AppearanceFragment()
             val args = Bundle()
             args.putInt(ARG_CHARACTER_RACE, race)
+            args.putInt(ARG_CHARACTER_CLASS, character_class)
             fragment.arguments = args
             return fragment
         }
