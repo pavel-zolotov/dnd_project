@@ -1,9 +1,8 @@
 package org.qweco.dndproject.model
 
 import android.content.Context
-import kotlinx.android.synthetic.main.fragment_character_specs.view.*
 import org.qweco.dndproject.R
-import org.qweco.dndproject.SpecsFragment
+import java.io.Serializable
 
 data class Character (
         var id: Long,
@@ -33,7 +32,7 @@ data class Character (
 
         var eyeColor: Int,
         var hairStyle: Int,
-        var skinColor: Int){
+        var skinColor: Int): Serializable{
 
     companion object {
         //Races

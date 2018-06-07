@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = llm
 
         characterList = Manager().loadCharacters(this)
-        adapter = CharacterAdapter(characterList, this, contentView)
+        adapter = CharacterAdapter(characterList, this)
         adapter.setHasStableIds(true)
 
         val callback = MyItemTouchHelperCallback(adapter)

@@ -3,6 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat">
         <!-- Customize your theme here. -->
+        <!-- Warning! When you change something here, make the same changes at /res/styles-v21 -->
         <item name="colorPrimary">@color/material_dark_100</item>
         <item name="colorPrimaryDark">@color/material_dark_200</item>
         <item name="colorAccent">@color/material_amber_600</item>

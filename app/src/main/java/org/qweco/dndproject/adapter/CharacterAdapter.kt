@@ -1,29 +1,39 @@
 package org.qweco.dndproject.adapter
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import org.qweco.dndproject.R
 import org.qweco.dndproject.adapter.itemTouchHelper.ItemTouchHelperAdapter
 import org.qweco.dndproject.model.Character
 import java.util.*
 import android.support.design.widget.Snackbar
+import org.qweco.dndproject.CharacterViewActivity
 import org.qweco.dndproject.data.Manager
+import android.support.v4.view.ViewCompat
+import android.support.v4.app.ActivityOptionsCompat
+import android.widget.ImageView
+import kotlinx.android.synthetic.main.activity_main.*
 
 
-class CharacterAdapter(private var list: ArrayList<Character>, val context: Context, private val parentView: View) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>(), ItemTouchHelperAdapter {
+class CharacterAdapter(private var list: ArrayList<Character>, val activity: Activity) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>(), ItemTouchHelperAdapter {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pos = holder.adapterPosition
         val character = list[pos]
 
         holder.name.text = character.name
-        holder.raceAndClass.text = "${character.getStringForRace(context)} ${character.getStringForClass(context)}"
-        holder.itemView.setOnClickListener({ Toast.makeText(context, character.toString(), Toast.LENGTH_LONG).show() })
+        holder.raceAndClass.text = "${character.getStringForRace(activity)} ${character.getStringForClass(activity)}"
+        holder.itemView.setOnClickListener({
+            val intent = Intent(activity, CharacterViewActivity::class.java)
+            intent.putExtra("data", character)
+            activity.startActivity(intent)
+        })
     }
 
     override fun getItemCount(): Int {
@@ -40,13 +50,9 @@ class CharacterAdapter(private var list: ArrayList<Character>, val context: Cont
     }
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        var name: TextView
-        var raceAndClass: TextView
-
-        init {
-            name = v.findViewById(R.id.txtName)
-            raceAndClass = v.findViewById(R.id.txtRaceAndClass)
-        }
+        var name: TextView = v.findViewById(R.id.txtName)
+        var raceAndClass: TextView = v.findViewById(R.id.txtRaceAndClass)
+        var image: ImageView = v.findViewById(R.id.characterImg)
     }
 
     fun removeItem(position: Int) {
@@ -61,12 +67,12 @@ class CharacterAdapter(private var list: ArrayList<Character>, val context: Cont
 
     override fun onItemDismiss(position: Int) {
         val ch = list.get(position)
-        Manager().deleteCharacter(context, ch.id)
+        Manager().deleteCharacter(activity, ch.id)
         removeItem(position)
 
-        Snackbar.make(parentView, context.resources.getString(R.string.item_deleted), Snackbar.LENGTH_LONG)
-                .setAction(context.resources.getString(android.R.string.cancel), {
-                        ch.id = Manager().insertCharacter(context, ch)
+        Snackbar.make(activity.contentView, activity.resources.getString(R.string.item_deleted), Snackbar.LENGTH_LONG)
+                .setAction(activity.resources.getString(android.R.string.cancel), {
+                        ch.id = Manager().insertCharacter(activity, ch)
                         restoreItem(ch, position)
                 })
                 .show()
