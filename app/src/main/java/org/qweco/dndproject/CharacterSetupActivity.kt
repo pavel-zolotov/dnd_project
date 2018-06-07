@@ -93,7 +93,7 @@ class CharacterSetupActivity : AppCompatActivity() {
         spinner.adapter = adapter
         spinner.prompt = resources.getString(R.string.race_label)
         spinner.onItemSelectedListener = object : OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View,
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?,
                                         position: Int, id: Long) {
                 character.character_class = position
             }

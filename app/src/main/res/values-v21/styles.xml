@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_dark_100</item>
+        <item name="colorPrimaryDark">@color/material_dark_200</item>
+        <item name="colorAccent">@color/material_amber_600</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+</resources>

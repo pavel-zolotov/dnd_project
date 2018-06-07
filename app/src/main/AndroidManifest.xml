@@ -28,7 +28,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.qweco.dndproject.MainActivity" />
         </activity>
-        <activity android:name=".CharacterViewActivity"></activity>
+        <activity android:name=".CharacterViewActivity"
+            android:label="@string/title_activity_character_setup"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.qweco.dndproject.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
