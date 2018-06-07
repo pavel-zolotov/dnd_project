@@ -42,6 +42,6 @@
     <string name="skin_color">Цвет кожи</string>
     <string name="name">Имя</string>
     <string name="item_deleted">Персонаж удален</string>
-    <string name="fill_the_name">Заполните имя</string>
+    <string name="fill_the">Заполните</string>
     <string name="character_profile_activity_title">Профиль персонажа</string>
 </resources>

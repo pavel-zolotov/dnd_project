@@ -44,6 +44,6 @@
     <string name="skin_color">Skin color</string>
     <string name="name">Name</string>
     <string name="item_deleted">Character deleted</string>
-    <string name="fill_the_name">Fill the name</string>
+    <string name="fill_the">Fill the</string>
     <string name="character_profile_activity_title">Character profile</string>
 </resources>
