@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_final"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -29,7 +29,7 @@
                 android:value="org.qweco.dndproject.MainActivity" />
         </activity>
         <activity android:name=".CharacterViewActivity"
-            android:label="@string/title_activity_character_setup"
+            android:label="@string/character_profile_activity_title"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
