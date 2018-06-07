@@ -2,15 +2,38 @@
 <resources>
     <string name="race_label">Раса:</string>
     <string name="no_characters">Нет персонажей</string>
+
+    <string name="class_wizard">Волшебник</string>
+    <string name="class_sorcerer">Чародей</string>
+    <string name="class_warlock">Колдун</string>
+    <string name="class_warrior">Воин</string>
+    <string name="class_barbarian">Варвар</string>
+    <string name="class_druid">Друид</string>
+    <string name="class_bard">Бард</string>
+    <string name="class_ranger">Следопыт</string>
+    <string name="class_thief">Плут</string>
+    <string name="class_monk">Монах</string>
+    <string name="class_paladin">Паладин</string>
+    <string name="class_cleric">Жрец</string>
+
     <string name="race_human">Человек</string>
     <string name="race_elf">Эльф</string>
+    <string name="race_elf1">Высший Эльф</string>
+    <string name="race_elf2">Лесной Эльф</string>
+    <string name="race_elf3">Темный Эльф</string>
     <string name="race_dwarf">Дворф</string>
+    <string name="race_dwarf1">Холмовой Дворф</string>
+    <string name="race_dwarf2">Горный Дворф</string>
     <string name="race_tifling">Тифлинг</string>
     <string name="race_half_orc">Полуорк</string>
     <string name="race_half_elf">Полуэльф</string>
     <string name="race_dragonborn">Драконорожденный</string>
-    <string name="race_halfling">Халфлинг</string>
+    <string name="race_halfling">Полурослик</string>
+    <string name="race_halfling1">Легконогий Полурослик</string>
+    <string name="race_halfling2">Коренастый Полурослик</string>
     <string name="race_gnom">Гном</string>
+    <string name="race_gnom1">Лесной Гном</string>
+    <string name="race_gnom2">Скальный Гном</string>
     <string name="title_activity_character_setup">Настройка персонажа</string>
     <string name="tab_appearance">Внешность</string>
     <string name="tab_specs">Параметры</string>

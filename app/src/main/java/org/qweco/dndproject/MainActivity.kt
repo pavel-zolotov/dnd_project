@@ -54,7 +54,23 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener({
             val builder = AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog)
             builder.setTitle(resources.getString(R.string.race_label))
-            val races = arrayOf(resources.getString(R.string.race_human), resources.getString(R.string.race_dwarf), resources.getString(R.string.race_elf), resources.getString(R.string.race_tifling), resources.getString(R.string.race_half_orc), resources.getString(R.string.race_half_elf), resources.getString(R.string.race_dragonborn), resources.getString(R.string.race_halfling), resources.getString(R.string.race_gnom))
+            val races = arrayOf(resources.getString(R.string.race_human),
+                                resources.getString(R.string.race_dwarf),
+                                resources.getString(R.string.race_dwarf1),
+                                resources.getString(R.string.race_dwarf2),
+                                resources.getString(R.string.race_elf),
+                                resources.getString(R.string.race_elf1),
+                                resources.getString(R.string.race_elf2),
+                                resources.getString(R.string.race_tifling),
+                                resources.getString(R.string.race_half_orc),
+                                resources.getString(R.string.race_half_elf),
+                                resources.getString(R.string.race_dragonborn),
+                                resources.getString(R.string.race_halfling),
+                                resources.getString(R.string.race_halfling1),
+                                resources.getString(R.string.race_halfling2),
+                                resources.getString(R.string.race_gnom),
+                                resources.getString(R.string.race_gnom1),
+                                resources.getString(R.string.race_gnom2) )
             builder.setItems(races) { _, item ->
                 val intent = Intent(this, CharacterSetupActivity::class.java)
                 intent.putExtra("race", item)

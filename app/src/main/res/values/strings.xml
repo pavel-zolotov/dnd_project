@@ -19,13 +19,22 @@
 
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
+    <string name="race_elf1">High Elf</string>
+    <string name="race_elf2">Wood Elf</string>
+    <string name="race_elf3">Dark Elf</string>
     <string name="race_dwarf">Dwarf</string>
-    <string name="race_tifling">Tifling</string>
-    <string name="race_half_orc">Halforc</string>
-    <string name="race_half_elf">Halfelf</string>
+    <string name="race_dwarf1">Hill Dwarf</string>
+    <string name="race_dwarf2">Mountain Dwarf</string>
+    <string name="race_tifling">Tiefling</string>
+    <string name="race_half_orc">Half-Orc</string>
+    <string name="race_half_elf">Half-Elf</string>
     <string name="race_dragonborn">Dragonborn</string>
     <string name="race_halfling">Halfling</string>
+    <string name="race_halfling1">Lightfoot Halfling</string>
+    <string name="race_halfling2">Stout Halfling</string>
     <string name="race_gnom">Gnome</string>
+    <string name="race_gnom1">Forest Gnome</string>
+    <string name="race_gnom2">Rock Gnome</string>
     <string name="title_activity_character_setup">Character Setup</string>
     <string name="action_settings">Settings</string>
     <string name="tab_appearance">Appearance</string>

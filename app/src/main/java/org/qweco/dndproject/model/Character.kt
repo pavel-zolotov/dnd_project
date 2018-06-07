@@ -39,13 +39,21 @@ data class Character (
         //Races
         const val HUMAN = 0
         const val DWARF = 1
-        const val ELF = 2
-        const val TIFLING = 3
-        const val HALF_ORC = 4
-        const val HALF_ELF = 5
-        const val DRAGONBORN = 6
-        const val HALFLING = 7
-        const val GNOM = 8
+        const val HILL_DWARF = 2
+        const val MOUNTAIN_DWARF = 3
+        const val ELF = 4
+        const val HIGH_ELF = 5
+        const val WOOD_ELF = 6
+        const val TIFLING = 7
+        const val HALF_ORC = 8
+        const val HALF_ELF = 9
+        const val DRAGONBORN = 10
+        const val HALFLING = 11
+        const val LIGHTFOOT_HALFLING = 12
+        const val STOUT_HALFLING = 13
+        const val GNOM = 14
+        const val FOREST_GNOM = 15
+        const val ROCK_GNOM = 16
 
         //Classes
         const val WIZARD = 0
@@ -110,8 +118,20 @@ data class Character (
             Character.DWARF -> {
                 return context.resources.getString(R.string.race_dwarf)
             }
+            Character.HILL_DWARF -> {
+                return context.resources.getString(R.string.race_dwarf1)
+            }
+            Character.MOUNTAIN_DWARF -> {
+                return context.resources.getString(R.string.race_dwarf2)
+            }
             Character.ELF -> {
                 return context.resources.getString(R.string.race_elf)
+            }
+            Character.HIGH_ELF -> {
+                return context.resources.getString(R.string.race_elf1)
+            }
+            Character.WOOD_ELF -> {
+                return context.resources.getString(R.string.race_elf2)
             }
             Character.TIFLING -> {
                 return context.resources.getString(R.string.race_tifling)
@@ -128,8 +148,20 @@ data class Character (
             Character.HALFLING -> {
                 return context.resources.getString(R.string.race_halfling)
             }
+            Character.LIGHTFOOT_HALFLING -> {
+                return context.resources.getString(R.string.race_halfling1)
+            }
+            Character.STOUT_HALFLING -> {
+                return context.resources.getString(R.string.race_halfling2)
+            }
             Character.GNOM -> {
                 return context.resources.getString(R.string.race_gnom)
+            }
+            Character.FOREST_GNOM -> {
+                return context.resources.getString(R.string.race_gnom1)
+            }
+            Character.ROCK_GNOM -> {
+                return context.resources.getString(R.string.race_gnom2)
             }
         }
 
