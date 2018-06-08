@@ -16,6 +16,20 @@
     <string name="class_paladin">Паладин</string>
     <string name="class_cleric">Жрец</string>
 
+    <string name="strength">СИЛ</string>
+    <string name="dexterity">ЛОВК</string>
+    <string name="constitution">ТЕЛ</string>
+    <string name="intelligence">ИНТ</string>
+    <string name="wisdom">МУДР</string>
+    <string name="charisma">ХАР</string>
+
+    <string name="hit_dice">Кость Хитов</string>
+    <string name="speed">Скорость</string>
+    <string name="hp">ХП</string>
+    <string name="initiative">Инициатива</string>
+    <string name="armor_class">КД</string>
+    <string name="proficiency">Мастерство</string>
+
     <string name="race_human">Человек</string>
     <string name="race_elf">Эльф</string>
     <string name="race_elf1">Высший Эльф</string>
