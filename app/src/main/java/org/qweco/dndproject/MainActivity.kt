@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                                 resources.getString(R.string.race_elf),
                                 resources.getString(R.string.race_elf1),
                                 resources.getString(R.string.race_elf2),
+                                resources.getString(R.string.race_elf3),
                                 resources.getString(R.string.race_tifling),
                                 resources.getString(R.string.race_half_orc),
                                 resources.getString(R.string.race_half_elf),

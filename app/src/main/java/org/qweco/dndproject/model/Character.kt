@@ -36,23 +36,24 @@ data class Character (
 
     companion object {
         //Races
-        const val HUMAN = 0
-        const val DWARF = 1
-        const val HILL_DWARF = 2
-        const val MOUNTAIN_DWARF = 3
-        const val ELF = 4
-        const val HIGH_ELF = 5
-        const val WOOD_ELF = 6
-        const val TIFLING = 7
-        const val HALF_ORC = 8
-        const val HALF_ELF = 9
-        const val DRAGONBORN = 10
-        const val HALFLING = 11
-        const val LIGHTFOOT_HALFLING = 12
-        const val STOUT_HALFLING = 13
-        const val GNOM = 14
-        const val FOREST_GNOM = 15
-        const val ROCK_GNOM = 16
+        const val HUMAN = 0 // WTF ALL +1 speed 30
+        const val DWARF = 1 // con +2 speed 25
+        const val HILL_DWARF = 2// wis +1 speed 25
+        const val MOUNTAIN_DWARF = 3 // str +2 speed
+        const val ELF = 4 // dex +2 speed 30
+        const val HIGH_ELF = 5 // int +1 speed 30
+        const val WOOD_ELF = 6 // wis +1 speed 30
+        const val DARK_ELF = 7 // cha +1 speed 30
+        const val TIFLING = 8 // int +1 cha +2 speed 30
+        const val HALF_ORC = 9 // str +2 con +1 speed 30
+        const val HALF_ELF = 10 // cha +2 speed 30
+        const val DRAGONBORN = 11 // str +2 cha +1 speed 30
+        const val HALFLING = 12 // dex +2 speed 25
+        const val LIGHTFOOT_HALFLING = 13 // cha +1 speed 25
+        const val STOUT_HALFLING = 14 // con +1 speed 25
+        const val GNOM = 15 // int +2 speed 25
+        const val FOREST_GNOM = 16 // dex +1 speed 25
+        const val ROCK_GNOM = 17 // con +1 speed 25
 
         //Classes
         const val WIZARD = 0
@@ -132,6 +133,9 @@ data class Character (
             Character.WOOD_ELF -> {
                 return context.resources.getString(R.string.race_elf2)
             }
+            Character.DARK_ELF -> {
+                return context.resources.getString(R.string.race_elf3)
+            }
             Character.TIFLING -> {
                 return context.resources.getString(R.string.race_tifling)
             }
@@ -209,6 +213,333 @@ data class Character (
         }
 
         return ""
+
+    }
+
+    fun getRaceBonusStrength (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1;
+            }
+            Character.MOUNTAIN_DWARF -> {
+                return 2
+            }
+            Character.HALF_ORC -> {
+                return 2
+            }
+            Character.DRAGONBORN -> {
+                return 2
+            }
+        }
+
+        return 0;
+    }
+
+    fun getRaceBonusDexterity (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1
+            }
+            Character.ELF -> {
+                return 2
+            }
+            Character.HALFLING -> {
+                return 2
+            }
+            Character.FOREST_GNOM -> {
+                return 1
+            }
+        }
+
+        return 0;
+    }
+
+    fun getRaceBonusConstitution (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1;
+            }
+            Character.DWARF -> {
+                return 2
+            }
+            Character.HALF_ORC -> {
+                return 1
+            }
+            Character.STOUT_HALFLING -> {
+                return 1
+            }
+        }
+
+        return 0;
+    }
+
+    fun getRaceBonusIntelligence (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1;
+            }
+            Character.HIGH_ELF -> {
+                return 1
+            }
+            Character.TIFLING -> {
+                return 1
+            }
+            Character.GNOM -> {
+                return 2
+            }
+        }
+
+        return 0;
+    }
+
+    fun getRaceBonusWisdom (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1;
+            }
+            Character.HILL_DWARF -> {
+                return 1
+            }
+            Character.WOOD_ELF -> {
+                return 1
+            }
+        }
+
+        return 0;
+    }
+
+    fun getRaceBonusCharisma (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 1;
+            }
+            Character.DARK_ELF -> {
+                return 1
+            }
+            Character.TIFLING -> {
+                return 2
+            }
+            Character.HALF_ELF -> {
+                return 2
+            }
+            Character.DRAGONBORN -> {
+                return 1
+            }
+            Character.LIGHTFOOT_HALFLING -> {
+                return 1
+            }
+        }
+
+        return 0;
+    }
+
+    fun getDefaultSpeed (context: Context) : Int
+    {
+        when (race){
+            Character.HUMAN -> {
+                return 30;
+            }
+            Character.ELF -> {
+                return 30
+            }
+            Character.HIGH_ELF -> {
+                return 30
+            }
+            Character.WOOD_ELF -> {
+                return 30
+            }
+            Character.DARK_ELF -> {
+                return 30
+            }
+            Character.TIFLING -> {
+                return 30
+            }
+            Character.HALF_ORC -> {
+                return 30
+            }
+            Character.HALF_ELF -> {
+                return 30
+            }
+            Character.DRAGONBORN -> {
+                return 30
+            }
+        }
+
+        return 25
+    }
+
+    fun getSawethrows (context: Context) : Array<String>
+    {
+        when (race){
+            Character.HUMAN -> {
+                return arrayOf()
+            }
+            Character.DWARF -> {
+                return arrayOf()
+            }
+            Character.HILL_DWARF -> {
+                return arrayOf()
+            }
+            Character.MOUNTAIN_DWARF -> {
+                return arrayOf()
+            }
+            Character.ELF -> {
+                return arrayOf()
+            }
+            Character.HIGH_ELF -> {
+                return arrayOf()
+            }
+            Character.WOOD_ELF -> {
+                return arrayOf()
+            }
+            Character.DARK_ELF -> {
+                return arrayOf()
+            }
+            Character.TIFLING -> {
+                return arrayOf()
+            }
+            Character.HALF_ORC -> {
+                return arrayOf()
+            }
+            Character.HALF_ELF -> {
+                return arrayOf()
+            }
+            Character.DRAGONBORN -> {
+                return arrayOf()
+            }
+            Character.HALFLING -> {
+                return arrayOf()
+            }
+            Character.LIGHTFOOT_HALFLING -> {
+                return arrayOf()
+            }
+            Character.STOUT_HALFLING -> {
+                return arrayOf()
+            }
+            Character.GNOM -> {
+                return arrayOf()
+            }
+            Character.FOREST_GNOM -> {
+                return arrayOf()
+            }
+            Character.ROCK_GNOM -> {
+                return arrayOf()
+            }
+        }
+
+        return arrayOf()
+    }
+
+    fun getSkills (context: Context) : Array<String>
+    {
+        when (race){
+            Character.HUMAN -> {
+                return arrayOf()
+            }
+            Character.DWARF -> {
+                return arrayOf()
+            }
+            Character.HILL_DWARF -> {
+                return arrayOf()
+            }
+            Character.MOUNTAIN_DWARF -> {
+                return arrayOf()
+            }
+            Character.ELF -> {
+                return arrayOf()
+            }
+            Character.HIGH_ELF -> {
+                return arrayOf()
+            }
+            Character.WOOD_ELF -> {
+                return arrayOf()
+            }
+            Character.DARK_ELF -> {
+                return arrayOf()
+            }
+            Character.TIFLING -> {
+                return arrayOf()
+            }
+            Character.HALF_ORC -> {
+                return arrayOf()
+            }
+            Character.HALF_ELF -> {
+                return arrayOf()
+            }
+            Character.DRAGONBORN -> {
+                return arrayOf()
+            }
+            Character.HALFLING -> {
+                return arrayOf()
+            }
+            Character.LIGHTFOOT_HALFLING -> {
+                return arrayOf()
+            }
+            Character.STOUT_HALFLING -> {
+                return arrayOf()
+            }
+            Character.GNOM -> {
+                return arrayOf()
+            }
+            Character.FOREST_GNOM -> {
+                return arrayOf()
+            }
+            Character.ROCK_GNOM -> {
+                return arrayOf()
+            }
+        }
+
+        return arrayOf()
+    }
+
+    fun getHitDiceForClass(context: Context): Int //we need to make it a second char in a string, like "Hit dice: d${here this int}" so it looks like "Hit dice: d6"
+    {
+        when (character_class){
+            Character.WIZARD -> {
+                return 6
+            }
+            Character.WARLOCK -> {
+                return 8
+            }
+            Character.SORCERER -> {
+                return 6
+            }
+            Character.WARRIOR -> {
+                return 10
+            }
+            Character.MONK -> {
+                return 8
+            }
+            Character.RANGER -> {
+                return 10
+            }
+            Character.THIEF -> {
+                return 8
+            }
+            Character.CLERIC -> {
+                return 8
+            }
+            Character.PALADIN -> {
+                return 10
+            }
+            Character.BARBARIAN -> {
+                return 12
+            }
+            Character.DRUID -> {
+                return 8
+            }
+            Character.BARD -> {
+                return 8
+            }
+        }
+
+        return 0
 
     }
 
