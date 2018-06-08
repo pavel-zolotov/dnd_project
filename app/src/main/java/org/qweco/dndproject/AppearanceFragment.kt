@@ -19,7 +19,7 @@ class AppearanceFragment : Fragment() {
         return rootView
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         eyeColorBlue.setOnClickListener({changeEyeTickVisibility(0)
             eye_color = Character.EYE_COLOR_BLUE})
         eyeColorRed.setOnClickListener({changeEyeTickVisibility(1)
