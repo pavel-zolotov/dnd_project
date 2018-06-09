@@ -52,8 +52,7 @@ class CharacterSetupActivity : AppCompatActivity() {
 
         tabs.setupWithViewPager(container)
 
-        character = Character(-1, "", Character.WIZARD, Character.HUMAN, 10, 2, 10, 5, 3, 2, 3, mapOf(0 to 0, 1 to 1), mapOf(0 to 0, 1 to 1), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-
+        character = Character()
         character.race = intent.extras.getInt("race")
 
         fab.setOnClickListener { view ->

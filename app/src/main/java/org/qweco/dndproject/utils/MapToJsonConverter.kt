@@ -5,10 +5,10 @@ import com.google.gson.reflect.TypeToken;
 class MapToJsonConverter {
     /*
      * @Description: Method to convert Map to JSON String
-     * @param: map Map<Int, Int>
+     * @param: map Map<String, Int?>
      * @return: json String
      */
-    fun convert(map: Map<Int, Int?>): String {
+    fun convert(map: Map<String, Int?>): String {
         val gson = Gson()
         return gson.toJson(map)
     }
@@ -16,11 +16,11 @@ class MapToJsonConverter {
     /*
      * @Description: Method to convert JSON String to Map
      * @param: json String
-     * @return: map Map<Int, Int?>
+     * @return: map Map<String, Int?>
      */
-    fun revert(json: String): Map<Int, Int?> {
+    fun revert(json: String): Map<String, Int?> {
         val gson = Gson()
-        val type = object : TypeToken<Map<Int, Int?>>() {}.type
+        val type = object : TypeToken<Map<String, Int?>>() {}.type
         return gson.fromJson(json, type)
     }
 }

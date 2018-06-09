@@ -28,6 +28,10 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import android.view.ViewGroup
 import android.animation.ValueAnimator
+import android.support.annotation.NonNull
+import android.support.v4.app.ActivityCompat.startActivityForResult
+import android.support.v4.content.ContextCompat
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -35,6 +39,10 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.android.gms.tasks.Task
+import com.google.firebase.firestore.*
+import org.qweco.dndproject.R.id.*
 import org.qweco.dndproject.view.SlideAnimation
 
 
@@ -43,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: CharacterAdapter
     private val RC_SIGN_IN = 123     // Choose an arbitrary request code value
     private val RC_NEW_CHARACTER = 456
+    private lateinit var menu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,8 +77,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.itemAnimator.moveDuration = 500
         recyclerView.itemAnimator.changeDuration = 500
 
-        recyclerView.setAdapter(adapter)
+        recyclerView.adapter = adapter
         recyclerView.setEmptyView(emptyView)
+
+        if (FirebaseAuth.getInstance().currentUser != null){
+            setupRemoteDB()
+        }
 
         fab.setOnClickListener({
             val builder = AlertDialog.Builder(this, R.style.Base_Theme_AppCompat_Dialog)
@@ -99,18 +112,6 @@ class MainActivity : AppCompatActivity() {
             builder.show()})
     }
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val auth = FirebaseAuth.getInstance()
-        if (auth.currentUser != null) {
-            //updateAuthUI ()
-            // already signed in
-        } else {
-
-        }
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -125,7 +126,22 @@ class MainActivity : AppCompatActivity() {
 
             // Successfully signed in
             if (resultCode == Activity.RESULT_OK) {
-                //updateAuthUI ()
+                val db = FirebaseFirestore.getInstance()
+                val auth = FirebaseAuth.getInstance()
+
+                db.collection(auth.currentUser!!.uid).get().addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        if (task.result.size() > 0) { //if remote data exists, write it to a local db
+                            exportRemoteData(task.result)
+                        }else{ //otherwise, export all local data to a remote db
+                            for (ch in characterList){
+                                db.collection(auth.currentUser!!.uid).document(ch.id.toString()).set(ch)
+                            }
+                        }
+                    }
+                }
+
+                setupRemoteDB()
             } else {
                 // Sign in failed
                 if (response == null) {
@@ -143,14 +159,45 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showSnackbar (resString: Int){
+    private fun showSnackbar (resString: Int){
         Snackbar.make(contentView, resources.getString(resString), Snackbar.LENGTH_LONG)
                 .show()
+    }
+
+    private fun exportRemoteData (snapshot: QuerySnapshot){
+        Manager().deleteAllCharactersLocalOnly(this) //delete all previous data to prevent duplication
+        // (in case user had already signed in, signed out and when signed in once again)
+        for (document in snapshot.documents) {
+            Manager().insertCharacterLocalOnly(this, document.toObject(Character::class.java)!!)
+        }
+
+        characterList = Manager().loadCharacters(this)
+        adapter.setCharactersList(characterList)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun setupRemoteDB (){
+        // remote db settings
+        val db = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
+
+        FirebaseFirestore.setLoggingEnabled(true)
+        val settings = FirebaseFirestoreSettings.Builder()
+                .setPersistenceEnabled(true)
+                .build();
+        db.firestoreSettings = settings
+        db.collection(auth.currentUser!!.uid).addSnapshotListener(EventListener<QuerySnapshot> { //listen for a runtime changes at the remote db
+            snapshot: QuerySnapshot?, e: FirebaseFirestoreException? ->
+            if (e == null && snapshot != null) {
+                exportRemoteData(snapshot)
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
+        this.menu = menu
         return true
     }
 
@@ -169,83 +216,59 @@ class MainActivity : AppCompatActivity() {
                                     .build(),
                             RC_SIGN_IN);
                 }else{
-                    val px = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100f, resources.displayMetrics)
-
                     if (accountLayout.visibility == View.GONE) {
-                        /*accountLayout.visibility = View.VISIBLE
-                        val slide_down = AnimationUtils.loadAnimation(this, R.anim.slide_down)
-                        val slide_up = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up)
-
-                        // Start animation
-                        accountLayout.startAnimation(slide_down);*/
-
-                        accountLayout.visibility = View.VISIBLE
-                        // Start the animation
-                        contentMain.animate()
-                                .translationY(accountLayout.height.toFloat())
-                                .setListener(null)
-
-                        /*val animation = SlideAnimation(0, px.toInt(), accountLayout);
-
-                        // this interpolator only speeds up as it keeps going
-                        animation.interpolator = AccelerateInterpolator()
-                        animation.duration = 300
-                        accountLayout.animation = animation
-                        accountLayout.startAnimation(animation)*/
-
-                        /*val anim = ValueAnimator.ofInt(accountLayout.getMeasuredHeight(), px.toInt())
-                        anim.addUpdateListener { valueAnimator ->
-                            val `val` = valueAnimator.animatedValue as Int
-                            val layoutParams = accountLayout.getLayoutParams()
-                            layoutParams.height = `val`
-                            accountLayout.setLayoutParams(layoutParams)
-                        }
-                        anim.duration = 500
-                        anim.start()*/
-
-                        val user = auth.currentUser!!
-                        name.text = user.displayName
-                        email.text = user.email
-                        Glide.with(this).load(user.photoUrl).apply(RequestOptions.circleCropTransform()).into(profilePic);
+                        showUserLayout()
                     }else{
-                        contentMain.animate()
-                            .translationY(0.toFloat())
-                            .alpha(0.0f)
-                            .setListener(object : AnimatorListenerAdapter() {
-                                override fun onAnimationEnd(animation: Animator) {
-                                    super.onAnimationEnd(animation)
-                                    accountLayout.visibility = View.GONE
-                                }
-                            })
-
-                        /*val animation = SlideAnimation(px.toInt(), 0, accountLayout);
-
-                        // this interpolator only speeds up as it keeps going
-                        animation.interpolator = AccelerateInterpolator()
-                        animation.duration = 300
-                        accountLayout.animation = animation
-                        accountLayout.startAnimation(animation)*/
-
-
-                        /*val anim = ValueAnimator.ofInt(accountLayout.getMeasuredHeight(), (-1*px).toInt())
-                        anim.addUpdateListener { valueAnimator ->
-                            val `val` = valueAnimator.animatedValue as Int
-                            val layoutParams = accountLayout.getLayoutParams()
-                            layoutParams.height = `val`
-                            if (`val` == 1){
-                                accountLayout.visibility = View.GONE
-                            }
-                            accountLayout.setLayoutParams(layoutParams)
-                        }
-                        anim.duration = 1000 //but.. why? why duration 500 at the start lasts as 1000 at the end?
-                        // but the most important - it works!
-                        anim.start()*/
+                        hideUserLayout()
                     }
                 }
                 return true
             }
             else -> super.onOptionsItemSelected(item)
         }
-        return false
+    }
+
+    private fun showUserLayout (){
+        val auth = FirebaseAuth.getInstance()
+        menu.getItem(0).icon = ContextCompat.getDrawable(this, R.drawable.ic_close_white_24dp)
+
+        accountLayout.visibility = View.VISIBLE
+        val anim = ValueAnimator.ofInt(appbar.measuredHeight, 480) //I don't know why 480, but it works
+        anim.addUpdateListener { valueAnimator ->
+            val `val` = valueAnimator.animatedValue as Int
+            val layoutParams = appbar.layoutParams
+            layoutParams.height = `val`
+            appbar.layoutParams = layoutParams
+        }
+        anim.duration = 500
+        anim.start()
+
+        val user = auth.currentUser!!
+        name.text = user.displayName
+        email.text = user.email
+        if (user.photoUrl != null) {
+            Glide.with(this).load(user.photoUrl).apply(RequestOptions.circleCropTransform()).into(profilePic)
+        }
+        signOut.setOnClickListener({
+            AuthUI.getInstance().signOut(this)
+            hideUserLayout()
+        })
+    }
+
+    private fun hideUserLayout() {
+        menu.getItem(0).icon = ContextCompat.getDrawable(this, R.drawable.ic_account_circle_white_24dp)
+
+        val anim = ValueAnimator.ofInt(appbar.measuredHeight, 170)
+        anim.addUpdateListener { valueAnimator ->
+            val `val` = valueAnimator.animatedValue as Int
+            val layoutParams = appbar.layoutParams
+            layoutParams.height = `val`
+            appbar.layoutParams = layoutParams
+            if (`val` == 170){
+                accountLayout.visibility = View.GONE
+            }
+        }
+        anim.duration = 500
+        anim.start()
     }
 }

@@ -4,6 +4,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.provider.BaseColumns
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
 import org.qweco.dndproject.model.Character
 import org.qweco.dndproject.utils.MapToJsonConverter
@@ -17,6 +19,19 @@ import org.qweco.dndproject.utils.MapToJsonConverter
 class Manager {
     /* Insert into database*/
     fun insertCharacter (context: Context, ch: Character): Long {
+        val id = insertCharacterLocalOnly(context, ch)
+
+        val auth = FirebaseAuth.getInstance() // add entry to a Firestore if user is signed in
+        if (auth.currentUser != null) {
+            val db = FirebaseFirestore.getInstance()
+            db.collection(auth.currentUser!!.uid).document(id.toString()).set(ch)
+        }
+        return id
+    }
+
+    /* Insert into local database
+    * Not for common use! */
+    fun insertCharacterLocalOnly (context: Context, ch: Character): Long {
         // 1. get reference to writable DB
         val db = Helper(context).writableDatabase
 
@@ -25,10 +40,11 @@ class Manager {
 
         // 3. close
         db.close()
+
         return id
     }
 
-    /*update a row from database*/
+    /* Update a row from database*/
     fun updateCharacter (context: Context, ch: Character): Long {
         if (ch.id == (-1).toLong()) { //check if character already exists
             return insertCharacter (context, ch)
@@ -41,17 +57,60 @@ class Manager {
 
             // 3. close
             db.close()
+
+            val auth = FirebaseAuth.getInstance() // update entry to a Firestore if user is signed in
+            if (auth.currentUser != null) {
+                val db = FirebaseFirestore.getInstance()
+                db.collection(auth.currentUser!!.uid).document(ch.id.toString()).set(ch)
+            }
             return ch.id
         }
     }
 
-    /*delete a row from database*/
+    /* Update a row from database
+    * Not for common use! */
+    /*fun updateCharacterLocalOnly (context: Context, ch: Character): Long {
+        if (ch.id == (-1).toLong()) { //check if character already exists
+            return insertCharacterLocalOnly (context, ch)
+        } else {
+            // 1. get reference to writable DB
+            val db = Helper(context).writableDatabase
+
+            // 2. update
+            db.update(Contract.CharactersTable.TABLE_NAME, generateContentValues(ch), "_id" + " = ? ", arrayOf((ch.id).toString()))
+
+            // 3. close
+            db.close()
+            return ch.id
+        }
+    }*/
+
+
+    /* Delete a row from database*/
     fun deleteCharacter (context: Context, id: Long) {
         // 1. get reference to writable DB
         val db = Helper(context).writableDatabase
 
         // 2. delete
         db.delete(Contract.CharactersTable.TABLE_NAME, "_id" + " = ?", arrayOf(id.toString()))
+
+        // 3. close
+        db.close()
+
+        val auth = FirebaseAuth.getInstance() // delete entry to a Firestore if user is signed in
+        if (auth.currentUser != null) {
+            val db = FirebaseFirestore.getInstance()
+            db.collection(auth.currentUser!!.uid).document(id.toString()).delete()
+        }
+    }
+
+    /* Delete all rows from database*/
+    fun deleteAllCharactersLocalOnly (context: Context) {
+        // 1. get reference to writable DB
+        val db = Helper(context).writableDatabase
+
+        // 2. delete
+        db.delete(Contract.CharactersTable.TABLE_NAME, null, null)
 
         // 3. close
         db.close()

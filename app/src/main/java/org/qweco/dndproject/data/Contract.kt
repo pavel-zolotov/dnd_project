@@ -52,7 +52,7 @@ internal class Contract {
 
             // Creating table query
             val SQL_CREATE_TABLE = "CREATE TABLE " + Contract.CharactersTable.TABLE_NAME + " (" + /* default table definition syntax */
-                BaseColumns._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + /* create ID which will be given to a new entry automatically */
+                BaseColumns._ID + " INTEGER PRIMARY KEY," + /* create ID which will be given to a new entry automatically */
                 Contract.CharactersTable.COLUMN_NAME_NAME + TEXT_TYPE + NOT_NULL + COMMA_SEP + //defining all the columns with their types
                 Contract.CharactersTable.COLUMN_NAME_CLASS + INTEGER_TYPE + NOT_NULL + COMMA_SEP +
                 Contract.CharactersTable.COLUMN_NAME_RACE + INTEGER_TYPE + NOT_NULL + COMMA_SEP +

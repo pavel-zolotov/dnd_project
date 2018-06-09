@@ -18,8 +18,8 @@ data class Character (
         var armourClass: Int,
         var proficiency: Int,
 
-        var skills: Map<Int, Int?>, //use constants from class body, pls
-        var savingThrows: Map<Int, Int?>, //here the same
+        var skills: Map<String, Int?>, //use constants from class body, pls
+        var savingThrows: Map<String, Int?>, //here the same
 
         var strength: Int,
         var dexterity: Int,
@@ -33,6 +33,8 @@ data class Character (
         var eyeColor: Int,
         var hairStyle: Int,
         var skinColor: Int): Serializable{
+
+    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     companion object {
         //Races
@@ -70,32 +72,32 @@ data class Character (
 
 
         //Skills
-        const val ACROBATICS = 0        //DEX
-        const val ANIMAL_HANDLING = 1   //WIS
-        const val ARCANA = 2            //INT
-        const val ATHLETICS = 3         //STR
-        const val DECEPTION = 4         //CHA
-        const val HISTORY = 5           //INT
-        const val INSIGHT = 6           //WIS
-        const val INTIMIDATION = 7      //CHA
-        const val INVESTIGATION = 8     //INT
-        const val MEDICINE = 9          //WIS
-        const val NATURE = 10           //INT
-        const val PERCEPTION = 11       //WIS
-        const val PERFORMANCE = 12      //CHA
-        const val PERSUASION = 13       //CHA
-        const val RELIGION = 14         //INT
-        const val SLEIGHT_OF_HAND = 15  //DEX
-        const val STEALTH = 16          //DEX
-        const val SURVIVAL = 17         //WIS
+        const val ACROBATICS = "ACROBATICS"            //DEX
+        const val ANIMAL_HANDLING = "ANIMAL_HANDLING"  //WIS
+        const val ARCANA = "ARCANA"                    //INT
+        const val ATHLETICS = "ATHLETICS"              //STR
+        const val DECEPTION = "DECEPTION"              //CHA
+        const val HISTORY = "HISTORY"                  //INT
+        const val INSIGHT = "INSIGHT"                  //WIS
+        const val INTIMIDATION = "INTIMIDATION"        //CHA
+        const val INVESTIGATION = "INVESTIGATION"      //INT
+        const val MEDICINE = "MEDICINE"                //WIS
+        const val NATURE = "NATURE"                    //INT
+        const val PERCEPTION = "PERCEPTION"            //WIS
+        const val PERFORMANCE = "PERFORMANCE"          //CHA
+        const val PERSUASION = "PERSUASION"            //CHA
+        const val RELIGION = "RELIGION"                //INT
+        const val SLEIGHT_OF_HAND = "SLEIGHT_OF_HAND"  //DEX
+        const val STEALTH = "STEALTH"                  //DEX
+        const val SURVIVAL = "SURVIVAL"                //WIS
 
         //Saving Throws
-        const val STR = 0
-        const val DEX = 1
-        const val CONST = 2
-        const val INT = 3
-        const val WIS = 4
-        const val CHA = 5
+        const val STR = "STR"
+        const val DEX = "DEX"
+        const val CONST = "CONST"
+        const val INT = "INT"
+        const val WIS = "WIS"
+        const val CHA = "CHA"
 
         //Apperance
         const val EYE_COLOR_BLUE = 0
