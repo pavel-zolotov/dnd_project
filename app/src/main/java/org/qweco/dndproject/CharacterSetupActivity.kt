@@ -21,6 +21,7 @@ import android.widget.Spinner
 import android.R.attr.data
 import android.view.View
 import android.widget.ArrayAdapter
+import kotlinx.android.synthetic.main.fragment_character_specs.*
 
 
 class CharacterSetupActivity : AppCompatActivity() {
@@ -61,8 +62,10 @@ class CharacterSetupActivity : AppCompatActivity() {
             val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
 
             if (editText.text == null || editText.text.toString() == ""){
-                Snackbar.make(contentView, resources.getString(R.string.fill_the_name), Snackbar.LENGTH_LONG).show()
-            }else {
+                showFillTheSnackbar(R.string.name)
+            }else if (txtInitiativeValue.text == null || txtInitiativeValue.text.toString() == "") {
+                //showFillTheSnackbar(R.string.)
+            }else{
                 character.name = editText.text.toString()
                 character.eyeColor = fragment1.eye_color
                 character.skinColor = fragment1.skin_color
@@ -103,6 +106,9 @@ class CharacterSetupActivity : AppCompatActivity() {
 
     }
 
+    fun showFillTheSnackbar (resString: Int) {
+        Snackbar.make(contentView, "${resources.getString(R.string.fill_the)} ${resources.getString(resString)}", Snackbar.LENGTH_LONG).show()
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
