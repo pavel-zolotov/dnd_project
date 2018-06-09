@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Initiative"
+                    android:text="@string/initiative"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -138,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="HP"
+                    android:text="@string/hp"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Speed"
+                    android:text="@string/speed"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -201,7 +201,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Hit Dice"
+                    android:text="@string/hit_dice"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -229,7 +229,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Armour class"
+                    android:text="@string/armor_class"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -258,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
-                    android:text="Proficiency"
+                    android:text="@string/proficiency"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
@@ -302,7 +302,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
-                            android:text="STR"
+                            android:text="@string/strength"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="20sp" />
 
@@ -359,7 +359,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="8dp"
-                            android:text="DEX"
+                            android:text="@string/dexterity"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="20sp" />
 
@@ -416,7 +416,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="CON"
+                        android:text="@string/constitution"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
@@ -481,7 +481,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="INT"
+                        android:text="@string/intelligence"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
@@ -539,7 +539,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="WIS"
+                        android:text="@string/wisdom"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
@@ -598,7 +598,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="CHA"
+                        android:text="@string/charisma"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 

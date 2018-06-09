@@ -17,6 +17,20 @@
     <string name="class_paladin">Paladin</string>
     <string name="class_cleric">Cleric</string>
 
+    <string name="strength">STR</string>
+    <string name="dexterity">DEX</string>
+    <string name="constitution">CON</string>
+    <string name="intelligence">INT</string>
+    <string name="wisdom">WIS</string>
+    <string name="charisma">CHA</string>
+
+    <string name="hit_dice">Hit Dice</string>
+    <string name="speed">Speed</string>
+    <string name="hp">HP</string>
+    <string name="initiative">Initiative</string>
+    <string name="armor_class">Armor class</string>
+    <string name="proficiency">Proficiency</string>
+
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
     <string name="race_elf1">High Elf</string>
