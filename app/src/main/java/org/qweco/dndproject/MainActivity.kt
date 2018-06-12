@@ -42,6 +42,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.*
+import com.idescout.sql.SqlScoutServer
 import org.qweco.dndproject.R.id.*
 import org.qweco.dndproject.view.SlideAnimation
 
@@ -57,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        SqlScoutServer.create(this, getPackageName());
 
         recyclerView.setHasFixedSize(true)
         val llm = LinearLayoutManager(this)
@@ -169,7 +172,9 @@ class MainActivity : AppCompatActivity() {
         Manager().deleteAllCharactersLocalOnly(this) //delete all previous data to prevent duplication
         // (in case user had already signed in, signed out and when signed in once again)
         for (document in snapshot.documents) {
-            Manager().insertCharacterLocalOnly(this, document.toObject(Character::class.java)!!)
+            val character = document.toObject(Character::class.java)!!
+            character.id = document.id.toLong()
+            Manager().insertCharacterLocalOnlyWithId(this, character)
         }
 
         characterList = Manager().loadCharacters(this)

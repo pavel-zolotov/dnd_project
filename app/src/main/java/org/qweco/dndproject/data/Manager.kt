@@ -17,9 +17,16 @@ import org.qweco.dndproject.utils.MapToJsonConverter
  * Actually, we have a sort of a hamburger of a .data classes, where Manager is the most high-level
  */
 class Manager {
-    /* Insert into database*/
+    /* Insert into database and give an id automatically */
     fun insertCharacter (context: Context, ch: Character): Long {
-        val id = insertCharacterLocalOnly(context, ch)
+        // 1. get reference to writable DB
+        val db = Helper(context).writableDatabase
+
+        // 2. insert and auto generate id
+        val id = db.insert(Contract.CharactersTable.TABLE_NAME, null, generateContentValues(ch))
+
+        // 3. close
+        db.close()
 
         val auth = FirebaseAuth.getInstance() // add entry to a Firestore if user is signed in
         if (auth.currentUser != null) {
@@ -29,14 +36,14 @@ class Manager {
         return id
     }
 
-    /* Insert into local database
+    /* Insert into local database and give a specified id
     * Not for common use! */
-    fun insertCharacterLocalOnly (context: Context, ch: Character): Long {
+    fun insertCharacterLocalOnlyWithId (context: Context, ch: Character): Long {
         // 1. get reference to writable DB
         val db = Helper(context).writableDatabase
 
-        // 2. insert
-        val id = db.insert(Contract.CharactersTable.TABLE_NAME, null, generateContentValues(ch))
+        // 2. insert character WITH specified id
+        val id = db.insert(Contract.CharactersTable.TABLE_NAME, null, generateContentValuesWithId(ch))
 
         // 3. close
         db.close()
@@ -66,25 +73,6 @@ class Manager {
             return ch.id
         }
     }
-
-    /* Update a row from database
-    * Not for common use! */
-    /*fun updateCharacterLocalOnly (context: Context, ch: Character): Long {
-        if (ch.id == (-1).toLong()) { //check if character already exists
-            return insertCharacterLocalOnly (context, ch)
-        } else {
-            // 1. get reference to writable DB
-            val db = Helper(context).writableDatabase
-
-            // 2. update
-            db.update(Contract.CharactersTable.TABLE_NAME, generateContentValues(ch), "_id" + " = ? ", arrayOf((ch.id).toString()))
-
-            // 3. close
-            db.close()
-            return ch.id
-        }
-    }*/
-
 
     /* Delete a row from database*/
     fun deleteCharacter (context: Context, id: Long) {
@@ -167,7 +155,7 @@ class Manager {
         return modelList
     }
 
-    fun generateContentValues (ch: Character): ContentValues {
+    private fun generateContentValues (ch: Character): ContentValues {
         val values = ContentValues()
         values.put(Contract.CharactersTable.COLUMN_NAME_NAME, ch.name)
         values.put(Contract.CharactersTable.COLUMN_NAME_CLASS, ch.character_class)
@@ -191,6 +179,12 @@ class Manager {
         values.put(Contract.CharactersTable.COLUMN_NAME_EYE_COLOR, ch.eyeColor)
         values.put(Contract.CharactersTable.COLUMN_NAME_HAIR_STYLE, ch.hairStyle)
         values.put(Contract.CharactersTable.COLUMN_NAME_SKIN_COLOR, ch.skinColor)
+        return values
+    }
+
+    private fun generateContentValuesWithId (ch: Character): ContentValues {
+        val values = generateContentValues(ch)
+        values.put(BaseColumns._ID, ch.id)
         return values
     }
 }

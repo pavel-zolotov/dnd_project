@@ -22,6 +22,10 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+        maven {
+            url 'http://www.idescout.com/maven/repo/'
+            name 'IDEScout, Inc.'
+        }
     }
 }
 
