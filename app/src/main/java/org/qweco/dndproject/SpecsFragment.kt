@@ -2,11 +2,13 @@ package org.qweco.dndproject
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_character_specs.*
 import org.qweco.dndproject.model.Character
+import org.qweco.dndproject.utils.InputFilterMinMax
 
 class SpecsFragment : Fragment() {
 
@@ -18,12 +20,18 @@ class SpecsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
-        txtStrengthRace.setText(character.getRaceBonusStrength(context!!).toString())
-        txtDexterityRace.setText(character.getRaceBonusDexterity(context!!).toString())
-        txtConstitutionRace.setText(character.getRaceBonusConstitution(context!!).toString())
-        txtIntelligenceRace.setText(character.getRaceBonusIntelligence(context!!).toString())
-        txtWisdomRace.setText(character.getRaceBonusWisdom(context!!).toString())
-        txtCharismaRace.setText(character.getRaceBonusCharisma(context!!).toString())
+        txtStrengthValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtStrengthRaceBonus.text = "+ ${character.getRaceBonusStrength(context!!)}"
+        txtDexterityValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtDexterityBonus.text = "+ ${character.getRaceBonusDexterity(context!!)}"
+        txtConstitutionValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtConstitutionBonus.text  = "+ ${character.getRaceBonusConstitution(context!!)}"
+        txtIntelligenceValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtIntelligenceBonus.text = "+ ${character.getRaceBonusIntelligence(context!!)}"
+        txtWisdomValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtWisdomBonus.text = "+ ${character.getRaceBonusWisdom(context!!)}"
+        txtCharismaValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtCharismaBonus.text = "+ ${character.getRaceBonusCharisma(context!!)}"
     }
 
     companion object {

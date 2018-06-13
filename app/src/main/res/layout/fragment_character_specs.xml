@@ -7,88 +7,6 @@
     tools:context="org.qweco.dndproject.AppearanceFragment"
     android:orientation="vertical">
 
-    <!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/characterImg"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerInParent="true"
-            app:srcCompat="@drawable/ic_person_grey_200_36dp" />
-
-
-        <TextView
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/characterImg"
-            android:text="@string/name"
-            android:layout_centerInParent="true"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="22sp" />
-
-        &lt;!&ndash;
-
-        <TextView
-            android:id="@+id/txtRaceLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/txtName"
-            android:layout_below="@id/txtName"
-            android:layout_marginTop="8dp"
-            android:text="@string/race_label"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="14sp" />
-
-        <TextView
-            android:id="@+id/txtClassLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/txtRaceValue"
-            android:layout_alignBottom="@+id/txtRaceValue"
-            android:layout_toEndOf="@+id/txtName"
-            android:layout_toRightOf="@+id/txtName"
-            android:text="@string/class_label"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="14sp" />
-
-        &ndash;&gt;
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/txtName"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp">
-
-            <TextView
-                android:id="@+id/txtRaceValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="14sp"
-                android:layout_marginRight="5dp" />
-
-            <TextView
-                android:id="@+id/txtClassValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="14sp"
-                android:layout_marginLeft="5dp" />
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -314,28 +232,28 @@
                             android:paddingBottom="15dp"
                             android:layout_below="@id/txtStrengthLabel">
 
-                            <TextView
-                                android:id="@+id/txtStrengthRace"
+                            <EditText
+                                android:id="@+id/txtStrengthValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/txtStrengthLabel"
-                                android:layout_marginRight="25dp"
+                                android:layout_marginRight="5dp"
+                                android:layout_alignParentRight="true"
+                                android:hint="28"
+                                android:layout_marginTop="3dp"
+                                android:inputType="number"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtStrengthRaceBonus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginTop="5dp"
                                 android:inputType="number"
                                 android:text="26"
                                 android:textSize="16sp" />
-
-                            <EditText
-                                android:id="@+id/txtStrengthPlayer"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
-                                android:layout_marginLeft="25dp"
-                                android:layout_alignParentRight="true"
-                                android:hint="28"
-                                android:inputType="number"
-                                android:textAppearance="?android:attr/textAppearanceSmall"
-                                android:textSize="14sp" />
 
                         </LinearLayout>
 
@@ -353,8 +271,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:cardCornerRadius="10dp"
-                    >
+                    app:cardCornerRadius="10dp">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -370,31 +287,38 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="20sp" />
 
-                        <EditText
-                            android:id="@+id/txtDexterityRace"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/txtDexterityLabel"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="25dp"
-                            android:layout_alignParentLeft="true"
-                            android:hint="26"
-                            android:inputType="number"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="15dp"
+                            android:layout_below="@id/txtDexterityLabel">
 
-                        <EditText
-                            android:id="@+id/txtDexterityPlayer"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtDexterityLabel"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginRight="25dp"
-                            android:layout_alignParentRight="true"
-                            android:hint="28"
-                            android:inputType="number"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="14sp" />
+                            <EditText
+                                android:id="@+id/txtDexterityValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
+                                android:layout_marginRight="5dp"
+                                android:layout_alignParentRight="true"
+                                android:hint="28"
+                                android:layout_marginTop="3dp"
+                                android:inputType="number"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtDexterityBonus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
+                                android:layout_marginTop="5dp"
+                                android:inputType="number"
+                                android:text="26"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
@@ -427,31 +351,38 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/txtConstitutionRace"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtConstitutionLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_alignParentLeft="true"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="15dp"
+                        android:layout_below="@id/txtConstitutionLabel">
 
-                    <EditText
-                        android:id="@+id/txtConstitutionPlayer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtConstitutionLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_alignParentRight="true"
-                        android:hint="28"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        <EditText
+                            android:id="@+id/txtConstitutionValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginRight="5dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:layout_marginTop="3dp"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txtConstitutionBonus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:text="26"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
@@ -492,31 +423,38 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/txtIntelligenceRace"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtIntelligenceLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_alignParentLeft="true"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="15dp"
+                        android:layout_below="@id/txtIntelligenceLabel">
 
-                    <EditText
-                        android:id="@+id/txtIntelligencePlayer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtIntelligenceLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_alignParentRight="true"
-                        android:hint="28"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        <EditText
+                            android:id="@+id/txtIntelligenceValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginRight="5dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:layout_marginTop="3dp"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txtIntelligenceBonus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:text="26"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                 </RelativeLayout>
 
@@ -550,31 +488,38 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/txtWisdomRace"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtWisdomLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_alignParentLeft="true"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="15dp"
+                        android:layout_below="@id/txtWisdomLabel">
 
-                    <EditText
-                        android:id="@+id/txtWisdomPlayer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtWisdomLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_alignParentRight="true"
-                        android:hint="28"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        <EditText
+                            android:id="@+id/txtWisdomValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginRight="5dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:layout_marginTop="3dp"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/txtWisdomBonus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:text="26"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                 </RelativeLayout>
 
@@ -609,84 +554,41 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="20sp" />
 
-                    <EditText
-                        android:id="@+id/txtCharismaRace"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtCharismaLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_alignParentLeft="true"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:paddingBottom="15dp"
+                        android:layout_below="@id/txtCharismaLabel">
 
-                    <EditText
-                        android:id="@+id/txtCharismaPlayer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtCharismaLabel"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_alignParentRight="true"
-                        android:hint="28"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        <EditText
+                            android:id="@+id/txtCharismaValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtCharismaLabel"
+                            android:layout_marginRight="5dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:layout_marginTop="3dp"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
 
+                        <TextView
+                            android:id="@+id/txtCharismaBonus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="5dp"
+                            android:inputType="number"
+                            android:text="26"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
                 </RelativeLayout>
-
             </android.support.v7.widget.CardView>
-
             </RelativeLayout>
-
         </LinearLayout>
-
-
     </LinearLayout>
 </LinearLayout>
-<!--
-            <TextView
-                android:id="@+id/txtRaceValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@id/txtName"
-                android:layout_below="@id/txtName"
-                android:layout_marginTop="8dp"
-                android:layout_toRightOf="@+id/txtRaceLabel"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/txtClassValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBaseline="@+id/txtRaceValue"
-                android:layout_alignBottom="@+id/txtRaceValue"
-                android:layout_toEndOf="@+id/txtName"
-                android:layout_toRightOf="@+id/txtName"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textSize="14sp" />
-
-                ALLAHY SLAVA
-
-                <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="10dp">
-
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:cardCornerRadius="10dp">
-
-
-
-            </android.support.v7.widget.CardView>
-
-            </RelativeLayout>
-
--->
