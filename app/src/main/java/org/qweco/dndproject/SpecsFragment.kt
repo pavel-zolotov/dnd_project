@@ -5,8 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.activity_character_view.*
-import kotlinx.android.synthetic.main.fragment_character_specs.view.*
+import kotlinx.android.synthetic.main.fragment_character_specs.*
 import org.qweco.dndproject.model.Character
 
 class SpecsFragment : Fragment() {
@@ -17,6 +16,15 @@ class SpecsFragment : Fragment() {
         return rootView
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
+        txtStrengthRace.setText(character.getRaceBonusStrength(context!!).toString())
+        txtDexterityRace.setText(character.getRaceBonusDexterity(context!!).toString())
+        txtConstitutionRace.setText(character.getRaceBonusConstitution(context!!).toString())
+        txtIntelligenceRace.setText(character.getRaceBonusIntelligence(context!!).toString())
+        txtWisdomRace.setText(character.getRaceBonusWisdom(context!!).toString())
+        txtCharismaRace.setText(character.getRaceBonusCharisma(context!!).toString())
+    }
 
     companion object {
         /**

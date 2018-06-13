@@ -55,15 +55,16 @@ class CharacterSetupActivity : AppCompatActivity() {
         character = Character()
         character.race = intent.extras.getInt("race")
 
-        // get fragment 1 & fragment 2
-        val fragment1 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":0") as AppearanceFragment
-        val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
-
         fab.setOnClickListener { view ->
+            // get fragment 1 & fragment 2
+            val fragment1 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":0") as AppearanceFragment
+            val fragment2 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":1") as SpecsFragment
+
             if (editText.text == null || editText.text.toString() == ""){
                 showFillTheSnackbar(R.string.name)
             }else if (txtInitiativeValue.text == null || txtInitiativeValue.text.toString() == "") {
-                //showFillTheSnackbar(R.string.)
+                showFillTheSnackbar(R.string.initiative)
+                // TODO: continue doing checks!
             }else{
                 character.name = editText.text.toString()
                 character.eyeColor = fragment1.eye_color
@@ -102,13 +103,6 @@ class CharacterSetupActivity : AppCompatActivity() {
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}
         }
-
-        fragment2.txtStrengthRace.setText(character.getRaceBonusStrength(this).toString())
-        fragment2.txtDexterityRace.setText(character.getRaceBonusDexterity(this).toString())
-        fragment2.txtConstitutionRace.setText(character.getRaceBonusConstitution(this).toString())
-        fragment2.txtIntelligenceRace.setText(character.getRaceBonusIntelligence(this).toString())
-        fragment2.txtWisdomRace.setText(character.getRaceBonusWisdom(this).toString())
-        fragment2.txtCharismaRace.setText(character.getRaceBonusCharisma(this).toString())
     }
 
     fun showFillTheSnackbar (resString: Int) {
