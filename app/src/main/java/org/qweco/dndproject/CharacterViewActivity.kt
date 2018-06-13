@@ -19,6 +19,24 @@ class CharacterViewActivity : AppCompatActivity() {
         txtName.text = character.name
         txtRaceAndClass.text = "${character.getStringForRace(this)} ${character.getStringForClass(this)}"
 
+        val StrSum = character.getRaceBonusStrength(this) + character.strength
+        val StrMod = (StrSum-10)/2
+
+        val DexSum = character.getRaceBonusDexterity(this) + character.dexterity
+        val DexMod = (DexSum-10)/2
+
+        val ConstSum = character.getRaceBonusConstitution(this) + character.constitution
+        val ConstMod = (ConstSum-10)/2
+
+        val IntSum = character.getRaceBonusIntelligence(this) + character.intelligence
+        val IntMod = (IntSum-10)/2
+
+        val WisSum = character.getRaceBonusWisdom(this) + character.wisdom
+        val WisMod = (WisSum-10)/2
+
+        val CharSum = character.getRaceBonusCharisma(this) + character.charisma
+        val CharMod = (CharSum-10)/2
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
