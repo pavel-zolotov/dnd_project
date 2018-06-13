@@ -22,6 +22,10 @@ class CharacterViewActivity : AppCompatActivity() {
         val StrSum = character.getRaceBonusStrength(this) + character.strength
         val StrMod = (StrSum-10)/2
 
+        txtStrengthRace.text = StrSum.toString()
+        txtStrengthPlayer.text = StrMod.toString()
+
+
         val DexSum = character.getRaceBonusDexterity(this) + character.dexterity
         val DexMod = (DexSum-10)/2
 

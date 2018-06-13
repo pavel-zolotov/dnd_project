@@ -291,7 +291,7 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="20sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/txtStrengthRace"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -304,7 +304,7 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="14sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/txtStrengthPlayer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -623,26 +623,3 @@
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
-    <!--
-                <TextView
-                    android:id="@+id/txtRaceValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/txtName"
-                    android:layout_below="@id/txtName"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@+id/txtRaceLabel"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txtClassValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/txtRaceValue"
-                    android:layout_alignBottom="@+id/txtRaceValue"
-                    android:layout_toEndOf="@+id/txtName"
-                    android:layout_toRightOf="@+id/txtName"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-    -->

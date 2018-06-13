@@ -64,11 +64,14 @@ class CharacterSetupActivity : AppCompatActivity() {
                 showFillTheSnackbar(R.string.name)
             }else if (txtInitiativeValue.text == null || txtInitiativeValue.text.toString() == "") {
                 showFillTheSnackbar(R.string.initiative)
+            }else if (txtStrengthValue.text == null || txtStrengthValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.strength)
                 // TODO: continue doing checks!
             }else{
                 character.name = editText.text.toString()
                 character.eyeColor = fragment1.eye_color
                 character.skinColor = fragment1.skin_color
+                character.strength = txtStrengthValue.text.toString().toInt()
                 Manager().insertCharacter(this, character)
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
