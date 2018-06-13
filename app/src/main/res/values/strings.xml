@@ -58,7 +58,7 @@
     <string name="skin_color">Skin color</string>
     <string name="name">Name</string>
     <string name="item_deleted">Character deleted</string>
-    <string name="fill_the">Fill the</string>
+    <string name="fill_the">Fill the "%1$s" field</string>
     <string name="character_profile_activity_title">Character profile</string>
     <string name="account">Account</string>
     <string name="no_internet_connection">No internet connection</string>

@@ -2,7 +2,6 @@ package org.qweco.dndproject
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +18,13 @@ class SpecsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        txtInitiativeValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtHpValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtSpeedValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtHitDiceValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtArmourClassValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtProficiencyValue.filters = arrayOf(InputFilterMinMax(1, 100))
+
         val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
         txtStrengthValue.filters = arrayOf(InputFilterMinMax(1, 100))
         txtStrengthRaceBonus.text = "+ ${character.getRaceBonusStrength(context!!)}"

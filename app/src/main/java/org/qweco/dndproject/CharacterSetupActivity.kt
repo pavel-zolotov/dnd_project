@@ -52,8 +52,7 @@ class CharacterSetupActivity : AppCompatActivity() {
 
         tabs.setupWithViewPager(container)
 
-        character = Character()
-        character.race = intent.extras.getInt("race")
+        character = Character(intent.extras.getInt("race"))
 
         fab.setOnClickListener { view ->
             // get fragment 1 & fragment 2
@@ -64,14 +63,45 @@ class CharacterSetupActivity : AppCompatActivity() {
                 showFillTheSnackbar(R.string.name)
             }else if (txtInitiativeValue.text == null || txtInitiativeValue.text.toString() == "") {
                 showFillTheSnackbar(R.string.initiative)
+            }else if (txtHpValue.text == null || txtHpValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.hp)
+            }else if (txtSpeedValue.text == null || txtSpeedValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.speed)
+            }else if (txtHitDiceValue.text == null || txtHitDiceValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.hit_dice)
+            }else if (txtArmourClassValue.text == null || txtArmourClassValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.armor_class)
+            }else if (txtProficiencyValue.text == null || txtProficiencyValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.proficiency)
             }else if (txtStrengthValue.text == null || txtStrengthValue.text.toString() == "") {
                 showFillTheSnackbar(R.string.strength)
-                // TODO: continue doing checks!
+            }else if (txtDexterityValue.text == null || txtDexterityValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.dexterity)
+            }else if (txtConstitutionValue.text == null || txtConstitutionValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.constitution)
+            }else if (txtIntelligenceValue.text == null || txtIntelligenceValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.intelligence)
+            }else if (txtWisdomValue.text == null || txtWisdomValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.wisdom)
+            }else if (txtCharismaValue.text == null || txtCharismaValue.text.toString() == "") {
+                showFillTheSnackbar(R.string.charisma)
             }else{
                 character.name = editText.text.toString()
                 character.eyeColor = fragment1.eye_color
                 character.skinColor = fragment1.skin_color
+                character.initiative = txtInitiativeValue.text.toString().toInt()
+                character.hp = txtHpValue.text.toString().toInt()
+                character.speed = txtSpeedValue.text.toString().toInt()
+                character.hitDice = txtHitDiceValue.text.toString().toInt()
+                character.armourClass = txtArmourClassValue.text.toString().toInt()
+                character.proficiency = txtProficiencyValue.text.toString().toInt()
                 character.strength = txtStrengthValue.text.toString().toInt()
+                character.dexterity = txtDexterityValue.text.toString().toInt()
+                character.constitution = txtConstitutionValue.text.toString().toInt()
+                character.intelligence = txtIntelligenceValue.text.toString().toInt()
+                character.wisdom = txtWisdomValue.text.toString().toInt()
+                character.charisma = txtCharismaValue.text.toString().toInt()
+
                 Manager().insertCharacter(this, character)
                 val intent = Intent()
                 setResult(RESULT_OK, intent)
@@ -109,7 +139,7 @@ class CharacterSetupActivity : AppCompatActivity() {
     }
 
     fun showFillTheSnackbar (resString: Int) {
-        Snackbar.make(contentView, "${resources.getString(R.string.fill_the)} ${resources.getString(resString)}", Snackbar.LENGTH_LONG).show()
+        Snackbar.make(contentView, resources.getString(R.string.fill_the, resources.getString(resString)), Snackbar.LENGTH_LONG).show()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
