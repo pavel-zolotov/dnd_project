@@ -306,31 +306,38 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:textSize="20sp" />
 
-                        <EditText
-                            android:id="@+id/txtStrengthRace"
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/txtStrengthLabel"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginLeft="25dp"
-                            android:layout_alignParentLeft="true"
-                            android:hint="26"
-                            android:inputType="number"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="14sp" />
+                            android:orientation="horizontal"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="15dp"
+                            android:layout_below="@id/txtStrengthLabel">
 
-                        <EditText
-                            android:id="@+id/txtStrengthPlayer"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtStrengthLabel"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginRight="25dp"
-                            android:layout_alignParentRight="true"
-                            android:hint="28"
-                            android:inputType="number"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/txtStrengthRace"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
+                                android:layout_marginRight="25dp"
+                                android:layout_marginTop="5dp"
+                                android:inputType="number"
+                                android:text="26"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/txtStrengthPlayer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
+                                android:layout_marginLeft="25dp"
+                                android:layout_alignParentRight="true"
+                                android:hint="28"
+                                android:inputType="number"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
 
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>

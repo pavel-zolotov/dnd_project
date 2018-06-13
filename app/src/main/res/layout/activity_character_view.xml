@@ -99,7 +99,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="20sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/txtInitiativeValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -259,6 +259,366 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="14sp" />
             </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtStrengthLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/strength"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtStrengthRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtStrengthPlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtStrengthLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtDexterityLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/dexterity"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtDexterityRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtDexterityLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtDexterityPlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtDexterityLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtConstitutionLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/constitution"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtConstitutionRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtConstitutionLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtConstitutionPlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtConstitutionLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtIntelligenceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/intelligence"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtIntelligenceRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtIntelligenceLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtIntelligencePlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtIntelligenceLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtWisdomLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/wisdom"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtWisdomRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtWisdomLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtWisdomPlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtWisdomLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="10dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtCharismaLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/charisma"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="20sp" />
+
+                        <EditText
+                            android:id="@+id/txtCharismaRace"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtCharismaLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_alignParentLeft="true"
+                            android:hint="26"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/txtCharismaPlayer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtCharismaLabel"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="25dp"
+                            android:layout_alignParentRight="true"
+                            android:hint="28"
+                            android:inputType="number"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+
         </LinearLayout>
 
     </LinearLayout>

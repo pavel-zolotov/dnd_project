@@ -2,7 +2,9 @@ package org.qweco.dndproject
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.view.MenuItem
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_character_view.*
 import org.qweco.dndproject.model.Character
 
@@ -18,6 +20,7 @@ class CharacterViewActivity : AppCompatActivity() {
         val character = intent.extras.getSerializable("data") as Character
         txtName.text = character.name
         txtRaceAndClass.text = "${character.getStringForRace(this)} ${character.getStringForClass(this)}"
+        txtStrengthRace.setText(character.getRaceBonusStrength(this).toString())
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
