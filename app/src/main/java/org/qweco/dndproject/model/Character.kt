@@ -35,6 +35,7 @@ data class Character (
         var skinColor: Int): Serializable{
 
     constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     companion object {
         //Races

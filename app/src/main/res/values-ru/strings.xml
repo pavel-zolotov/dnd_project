@@ -16,7 +16,7 @@
     <string name="class_paladin">Паладин</string>
     <string name="class_cleric">Жрец</string>
 
-    <string name="strength">СИЛ</string>
+    <string name="strength">СИЛА</string>
     <string name="dexterity">ЛОВК</string>
     <string name="constitution">ТЕЛ</string>
     <string name="intelligence">ИНТ</string>
@@ -56,7 +56,7 @@
     <string name="skin_color">Цвет кожи</string>
     <string name="name">Имя</string>
     <string name="item_deleted">Персонаж удален</string>
-    <string name="fill_the">Заполните</string>
+    <string name="fill_the">Заполните поле "%1$s"</string>
     <string name="character_profile_activity_title">Профиль персонажа</string>
     <string name="account">Аккаунт</string>
     <string name="no_internet_connection">Нет подключения к сети</string>

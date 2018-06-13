@@ -1,5 +1,6 @@
 package org.qweco.dndproject.data
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -35,6 +36,26 @@ class Manager {
         }
         return id
     }
+
+    /* Insert into database and give a specified id */
+    fun insertCharacterWithId(context: Context, ch: Character): Long {
+        // 1. get reference to writable DB
+        val db = Helper(context).writableDatabase
+
+        // 2. insert and auto generate id
+        val id = db.insert(Contract.CharactersTable.TABLE_NAME, null, generateContentValuesWithId(ch))
+
+        // 3. close
+        db.close()
+
+        val auth = FirebaseAuth.getInstance() // add entry to a Firestore if user is signed in
+        if (auth.currentUser != null) {
+            val db = FirebaseFirestore.getInstance()
+            db.collection(auth.currentUser!!.uid).document(id.toString()).set(ch)
+        }
+        return id
+    }
+
 
     /* Insert into local database and give a specified id
     * Not for common use! */

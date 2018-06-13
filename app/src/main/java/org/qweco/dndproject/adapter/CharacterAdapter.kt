@@ -66,13 +66,13 @@ class CharacterAdapter(private var list: ArrayList<Character>, val activity: Act
     }
 
     override fun onItemDismiss(position: Int) {
-        val ch = list.get(position)
+        val ch = list[position]
         Manager().deleteCharacter(activity, ch.id)
         removeItem(position)
 
         Snackbar.make(activity.contentView, activity.resources.getString(R.string.item_deleted), Snackbar.LENGTH_LONG)
                 .setAction(activity.resources.getString(android.R.string.cancel), {
-                        ch.id = Manager().insertCharacter(activity, ch)
+                        ch.id = Manager().insertCharacterWithId(activity, ch)
                         restoreItem(ch, position)
                 })
                 .show()

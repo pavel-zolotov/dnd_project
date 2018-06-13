@@ -72,217 +72,567 @@
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtInitiativeLabel"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="Initiative"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
+                    android:layout_weight="1">
 
-                <EditText
-                    android:id="@+id/txtInitiativeValue"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txtInitiativeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/initiative"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtInitiativeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtInitiativeLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txtInitiativeLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="2"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-            </RelativeLayout>
+                    android:layout_weight="1">
 
-            <RelativeLayout
+                    <TextView
+                        android:id="@+id/txtHpLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/hp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtHpValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtHpLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtSpeedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/speed"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtSpeedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSpeedLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtHpLabel"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="HP"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
+                    android:layout_weight="1">
 
-                <EditText
-                    android:id="@+id/txtHpValue"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txtHitDiceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/hit_dice"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtHitDiceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtHitDiceLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txtHpLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="11"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
+                    android:layout_weight="1">
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/txtArmourClassLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/armor_class"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
 
-            <RelativeLayout
+                    <TextView
+                        android:id="@+id/txtArmourClassValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtArmourClassLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtProficiencyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/proficiency"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtProficiencyValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtProficiencyLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="12dp"
+                        android:textSize="18sp"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/txtSpeedLabel"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="Speed"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
+                    android:layout_weight="1"
+                    android:padding="10dp">
 
-                <EditText
-                    android:id="@+id/txtSpeedValue"
-                    android:layout_width="wrap_content"
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtStrengthLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/strength"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtStrengthValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtStrengthValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtStrengthBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/txtSpeedLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="14"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-            </RelativeLayout>
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtDexterityLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/dexterity"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtDexterityValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtDexterityLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtDexterityValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtDexterityBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtConstitutionLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/constitution"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtConstitutionValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtConstitutionLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtConstitutionValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtConstitutionBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtIntelligenceLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/intelligence"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtIntelligenceValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtIntelligenceLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtIntelligenceValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtIntelligenceBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtWisdomLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/wisdom"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtWisdomValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtWisdomLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtWisdomValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtWisdomBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtCharismaLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/charisma"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtCharismaValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtCharismaLabel"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtCharismaValue"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtCharismaBonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/txtHitDiceLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="Hit Dice"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/txtHitDiceValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txtHitDiceLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="26"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/txtArmourClassLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="Armour class"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/txtArmourClassValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txtArmourClassLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="9"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/txtProficiencyLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:text="Proficiency"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/txtProficiencyValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txtProficiencyLabel"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="8dp"
-                    android:hint="2"
-                    android:inputType="number"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-            </RelativeLayout>
-        </LinearLayout>
-
-    </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
-    <!--
-                <TextView
-                    android:id="@+id/txtRaceValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/txtName"
-                    android:layout_below="@id/txtName"
-                    android:layout_marginTop="8dp"
-                    android:layout_toRightOf="@+id/txtRaceLabel"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/txtClassValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/txtRaceValue"
-                    android:layout_alignBottom="@+id/txtRaceValue"
-                    android:layout_toEndOf="@+id/txtName"
-                    android:layout_toRightOf="@+id/txtName"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textSize="14sp" />
-    -->
