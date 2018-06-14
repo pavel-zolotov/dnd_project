@@ -64,44 +64,65 @@ class CharacterViewActivity : AppCompatActivity() {
             0 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_STR)
 
-                txtSavethrow1Bonus.text = character.strength.toString()
+                txtSavethrow1Bonus.text = "+${character.dexterity}"
             }
             1 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_DEX)
+
+                txtSavethrow1Bonus.text = "+${character.dexterity}"
             }
             2 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CON)
+
+                txtSavethrow1Bonus.text = "+${character.constitution}"
             }
             3 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_INT)
+
+                txtSavethrow1Bonus.text = "+${character.intelligence}"
             }
             4 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_WIS)
+
+                txtSavethrow1Bonus.text = "+${character.wisdom}"
             }
             5 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CHA)
-            }
 
+                txtSavethrow1Bonus.text = "+${character.charisma}"
+            }
         }
 
         when (temp[1]){
             0 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_STR)
+
+                txtSavethrow2Bonus.text = "+${character.dexterity}"
             }
             1 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_DEX)
+
+                txtSavethrow2Bonus.text = "+${character.dexterity}"
             }
             2 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CON)
+
+                txtSavethrow2Bonus.text = "+${character.constitution}"
             }
             3 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_INT)
+
+                txtSavethrow2Bonus.text = "+${character.intelligence}"
             }
             4 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_WIS)
+
+                txtSavethrow2Bonus.text = "+${character.wisdom}"
             }
             5 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CHA)
+
+                txtSavethrow2Bonus.text = "+${character.charisma}"
             }
 
         }

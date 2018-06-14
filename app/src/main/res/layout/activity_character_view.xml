@@ -667,20 +667,11 @@
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="20sp" />
 
-                            <TextView
-                                android:id="@+id/txtSavethrow2Value"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtSavethrow2Label"
-                                android:layout_marginTop="12dp"
-                                android:layout_centerHorizontal="true"
-                                android:textSize="18sp"
-                                android:textAppearance="?android:attr/textAppearanceSmall" />
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtSavethrow2Value"
+                                android:layout_below="@id/txtSavethrow2Label"
                                 android:layout_marginTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:paddingTop="10dp"
@@ -730,20 +721,10 @@
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="20sp" />
 
-                            <TextView
-                                android:id="@+id/txtSavethrow1Value"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/txtSavethrow1Label"
-                                android:layout_marginTop="12dp"
-                                android:layout_centerHorizontal="true"
-                                android:textSize="18sp"
-                                android:textAppearance="?android:attr/textAppearanceSmall" />
-
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtSavethrow1Value"
+                                android:layout_below="@id/txtSavethrow1Label"
                                 android:layout_marginTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:paddingTop="10dp"
