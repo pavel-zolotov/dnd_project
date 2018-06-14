@@ -31,6 +31,34 @@
     <string name="armor_class">Armor class</string>
     <string name="proficiency">Proficiency</string>
 
+    <string name="Skill_ACROBATICS">Acrobatics</string>
+    <string name="Skill_ANIMAL_HANDLING">Animal handling</string>
+    <string name="Skill_ARCANA">Arcana</string>
+    <string name="Skill_ATHLETICS">Athletics</string>
+    <string name="Skill_DECEPTION">Deception</string>
+    <string name="Skill_HISTORY">History</string>
+    <string name="Skill_INSIGHT">Insight</string>
+    <string name="Skill_INTIMIDATION">Intimidation</string>
+    <string name="Skill_INVESTIGATION">Investigation</string>
+    <string name="Skill_MEDICINE">Medicine</string>
+    <string name="Skill_NATURE">Nature</string>
+    <string name="Skill_PERCEPTION">Perception</string>
+    <string name="Skill_PERFORMANCE">Performance</string>
+    <string name="Skill_PERSUASION">Persuasion</string>
+    <string name="Skill_RELIGION">Religion</string>
+    <string name="Skill_SLEIGHT_OF_HAND">Sleight of hand</string>
+    <string name="Skill_STEALTH">Stealth</string>
+    <string name="Skill_SURVIVAL">Survival</string>
+
+    <string name="Savethrow_STR">STR</string>
+    <string name="Savethrow_DEX">DEX</string>
+    <string name="Savethrow_CON">CON</string>
+    <string name="Savethrow_INT">INT</string>
+    <string name="Savethrow_WIS">WIS</string>
+    <string name="Savethrow_CHA">CHA</string>
+
+    ACROBATICS ANIMAL_HANDLING ARCANA ATHLETICS DECEPTION HISTORY INSIGHT INTIMIDATION INVESTIGATION MEDICINE NATURE PERCEPTION PERFORMANCE PERSUASION RELIGION SLEIGHT_OF_HAND STEALTH SURVIVAL
+
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
     <string name="race_elf1">High Elf</string>

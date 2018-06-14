@@ -30,6 +30,32 @@
     <string name="armor_class">КД</string>
     <string name="proficiency">Мастерство</string>
 
+    <string name="Skill_ACROBATICS">Акробатика</string>
+    <string name="Skill_ANIMAL_HANDLING">Уход за животными</string>
+    <string name="Skill_ARCANA">Магия</string>
+    <string name="Skill_ATHLETICS">Атлетика</string>
+    <string name="Skill_DECEPTION">Обман</string>
+    <string name="Skill_HISTORY">История</string>
+    <string name="Skill_INSIGHT">Проницательность</string>
+    <string name="Skill_INTIMIDATION">Запугивание</string>
+    <string name="Skill_INVESTIGATION">Анализ</string>
+    <string name="Skill_MEDICINE">Медицина</string>
+    <string name="Skill_NATURE">Природа</string>
+    <string name="Skill_PERCEPTION">Внимательность</string>
+    <string name="Skill_PERFORMANCE">Выступление</string>
+    <string name="Skill_PERSUASION">Убеждение</string>
+    <string name="Skill_RELIGION">Религия</string>
+    <string name="Skill_SLEIGHT_OF_HAND">Ловкость рук</string>
+    <string name="Skill_STEALTH">Скрытность</string>
+    <string name="Skill_SURVIVAL">Выживание</string>
+
+    <string name="Savethrow_STR">СИЛ</string>
+    <string name="Savethrow_DEX">ЛОВ</string>
+    <string name="Savethrow_CON">ТЕЛ</string>
+    <string name="Savethrow_INT">ИНТ</string>
+    <string name="Savethrow_WIS">МУДР</string>
+    <string name="Savethrow_CHA">ХАР</string>
+
     <string name="race_human">Человек</string>
     <string name="race_elf">Эльф</string>
     <string name="race_elf1">Высший Эльф</string>

@@ -74,6 +74,30 @@ data class Character (
 
 
         //Skills
+        const val ACROBATICS = 0            //DEX
+        const val ANIMAL_HANDLING = 1       //WIS
+        const val ARCANA = 2                //INT
+        const val ATHLETICS = 3             //STR
+        const val DECEPTION = 4             //CHA
+        const val HISTORY = 5               //INT
+        const val INSIGHT = 6               //WIS
+        const val INTIMIDATION = 7          //CHA
+        const val INVESTIGATION = 8         //INT
+        const val MEDICINE = 9              //WIS
+        const val NATURE = 10               //INT
+        const val PERCEPTION = 11           //WIS
+        const val PERFORMANCE = 12          //CHA
+        const val PERSUASION = 13           //CHA
+        const val RELIGION = 14             //INT
+        const val SLEIGHT_OF_HAND = 15      //DEX
+        const val STEALTH = 16              //DEX
+        const val SURVIVAL = 17             //WIS
+
+        /*
+
+        ACROBATICS ANIMAL_HANDLING ARCANA ATHLETICS DECEPTION HISTORY INSIGHT INTIMIDATION INVESTIGATION MEDICINE NATURE PERCEPTION PERFORMANCE PERSUASION RELIGION SLEIGHT_OF_HAND STEALTH SURVIVAL
+
+                //Skills BACKUP
         const val ACROBATICS = "ACROBATICS"            //DEX
         const val ANIMAL_HANDLING = "ANIMAL_HANDLING"  //WIS
         const val ARCANA = "ARCANA"                    //INT
@@ -92,14 +116,15 @@ data class Character (
         const val SLEIGHT_OF_HAND = "SLEIGHT_OF_HAND"  //DEX
         const val STEALTH = "STEALTH"                  //DEX
         const val SURVIVAL = "SURVIVAL"                //WIS
+         */
 
         //Saving Throws
-        const val STR = "STR"
-        const val DEX = "DEX"
-        const val CONST = "CONST"
-        const val INT = "INT"
-        const val WIS = "WIS"
-        const val CHA = "CHA"
+        const val STR = 0
+        const val DEX = 1
+        const val CONST = 2
+        const val INT = 3
+        const val WIS = 4
+        const val CHA = 5
 
         //Apperance
         const val EYE_COLOR_BLUE = 0
@@ -377,124 +402,88 @@ data class Character (
         return 25
     }
 
-    fun getSawethrows (context: Context) : Array<String>
+    fun getSawethrows (context: Context) : Array<Int>
     {
-        when (race){
-            Character.HUMAN -> {
-                return arrayOf()
+        when (character_class){
+            Character.WIZARD -> {
+                return arrayOf(INT, WIS)
             }
-            Character.DWARF -> {
-                return arrayOf()
+            Character.WARLOCK -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.HILL_DWARF -> {
-                return arrayOf()
+            Character.SORCERER -> {
+                return arrayOf(CONST, CHA)
             }
-            Character.MOUNTAIN_DWARF -> {
-                return arrayOf()
+            Character.WARRIOR -> {
+                return arrayOf(STR, CONST)
             }
-            Character.ELF -> {
-                return arrayOf()
+            Character.MONK -> {
+                return arrayOf(STR, DEX)
             }
-            Character.HIGH_ELF -> {
-                return arrayOf()
+            Character.RANGER -> {
+                return arrayOf(STR, DEX)
             }
-            Character.WOOD_ELF -> {
-                return arrayOf()
+            Character.THIEF -> {
+                return arrayOf(DEX, INT)
             }
-            Character.DARK_ELF -> {
-                return arrayOf()
+            Character.CLERIC -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.TIFLING -> {
-                return arrayOf()
+            Character.PALADIN -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.HALF_ORC -> {
-                return arrayOf()
+            Character.BARBARIAN -> {
+                return arrayOf(STR, CONST)
             }
-            Character.HALF_ELF -> {
-                return arrayOf()
+            Character.DRUID -> {
+                return arrayOf(INT, WIS)
             }
-            Character.DRAGONBORN -> {
-                return arrayOf()
-            }
-            Character.HALFLING -> {
-                return arrayOf()
-            }
-            Character.LIGHTFOOT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.STOUT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.GNOM -> {
-                return arrayOf()
-            }
-            Character.FOREST_GNOM -> {
-                return arrayOf()
-            }
-            Character.ROCK_GNOM -> {
-                return arrayOf()
+            Character.BARD -> {
+                return arrayOf(DEX, CHA)
             }
         }
 
         return arrayOf()
     }
 
-    fun getSkills (context: Context) : Array<String>
+    fun getSkills (context: Context) : Array<Int>
     {
-        when (race){
-            Character.HUMAN -> {
-                return arrayOf()
+        when (character_class){
+            Character.WIZARD -> {
+                return arrayOf(INVESTIGATION, HISTORY, ARCANA, MEDICINE, INSIGHT, RELIGION)
             }
-            Character.DWARF -> {
-                return arrayOf()
+            Character.WARLOCK -> {
+                return arrayOf(INVESTIGATION, INTIMIDATION, HISTORY, ARCANA, DECEPTION, NATURE, RELIGION)
             }
-            Character.HILL_DWARF -> {
-                return arrayOf()
+            Character.SORCERER -> {
+                return arrayOf(INTIMIDATION, ARCANA, DECEPTION, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.MOUNTAIN_DWARF -> {
-                return arrayOf()
+            Character.WARRIOR -> {
+                return arrayOf(ACROBATICS, ATHLETICS, PERCEPTION, SURVIVAL, INTIMIDATION, HISTORY, INSIGHT, ANIMAL_HANDLING)
             }
-            Character.ELF -> {
-                return arrayOf()
+            Character.MONK -> {
+                return arrayOf(ACROBATICS, ATHLETICS, HISTORY, INSIGHT, RELIGION, STEALTH)
             }
-            Character.HIGH_ELF -> {
-                return arrayOf()
+            Character.RANGER -> {
+                return arrayOf(INVESTIGATION, ATHLETICS, PERCEPTION, SURVIVAL, NATURE, INSIGHT, STEALTH, ANIMAL_HANDLING)
             }
-            Character.WOOD_ELF -> {
-                return arrayOf()
+            Character.THIEF -> {
+                return arrayOf(ACROBATICS, INVESTIGATION, ATHLETICS, PERCEPTION, PERFORMANCE, INTIMIDATION, SLEIGHT_OF_HAND, DECEPTION, INSIGHT, STEALTH, PERSUASION)
             }
-            Character.DARK_ELF -> {
-                return arrayOf()
+            Character.CLERIC -> {
+                return arrayOf(HISTORY, MEDICINE, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.TIFLING -> {
-                return arrayOf()
+            Character.PALADIN -> {
+                return arrayOf(ATHLETICS, INTIMIDATION, MEDICINE, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.HALF_ORC -> {
-                return arrayOf()
+            Character.BARBARIAN -> {
+                return arrayOf(ATHLETICS, PERCEPTION, SURVIVAL, INTIMIDATION, NATURE, ANIMAL_HANDLING)
             }
-            Character.HALF_ELF -> {
-                return arrayOf()
+            Character.DRUID -> {
+                return arrayOf(PERCEPTION, SURVIVAL, ARCANA, MEDICINE, ANIMAL_HANDLING, NATURE, INSIGHT, RELIGION)
             }
-            Character.DRAGONBORN -> {
-                return arrayOf()
-            }
-            Character.HALFLING -> {
-                return arrayOf()
-            }
-            Character.LIGHTFOOT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.STOUT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.GNOM -> {
-                return arrayOf()
-            }
-            Character.FOREST_GNOM -> {
-                return arrayOf()
-            }
-            Character.ROCK_GNOM -> {
-                return arrayOf()
+            Character.BARD -> {
+                return arrayOf(ACROBATICS, ANIMAL_HANDLING, ARCANA, ATHLETICS, DECEPTION, HISTORY, INSIGHT, INTIMIDATION, INVESTIGATION, MEDICINE, NATURE, PERCEPTION, PERFORMANCE, PERSUASION, RELIGION, SLEIGHT_OF_HAND, STEALTH, SURVIVAL)
             }
         }
 
