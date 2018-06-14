@@ -145,8 +145,16 @@ class CharacterSetupActivity : AppCompatActivity() {
                 for (skill in character.getAvailableSkills(applicationContext)){ //load all available skills
                     skills[skill.toString()] = null
                 }
-                val adapterSkills = SkillAdapter(skills,  applicationContext)
+                val adapterSkills = object:SkillAdapter(skills,  applicationContext, character.getAmountOfSkills(applicationContext)){
+                    override fun selectedAmountChanged (amount: Int){
+                        //change label args
+                        txtSkillsLabel.text = resources.getString(R.string.skills, amount, character.getAmountOfSkills(applicationContext))
+                    }
+                }
+                txtSkillsLabel.text = resources.getString(R.string.skills, 0, character.getAmountOfSkills(applicationContext))
                 skillList.adapter = adapterSkills
+
+                //set character image
                 characterImg.setImageDrawable(character.getDrawableForClass(applicationContext))
             }
 

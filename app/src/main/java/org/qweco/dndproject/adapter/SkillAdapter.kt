@@ -18,11 +18,14 @@ import org.qweco.dndproject.data.Manager
 import android.support.v4.view.ViewCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.util.Log
+import android.widget.CheckBox
+import android.widget.CompoundButton
 import android.widget.ImageView
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class SkillAdapter(private var list:  LinkedHashMap<String, Int?>, val context: Context) : RecyclerView.Adapter<SkillAdapter.ViewHolder>(){
+abstract class SkillAdapter(private var list:  LinkedHashMap<String, Int?>, val context: Context, private val maxSkillsAmount: Int) : RecyclerView.Adapter<SkillAdapter.ViewHolder>(){
+    private var checked = 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pos = holder.adapterPosition
@@ -48,19 +51,32 @@ class SkillAdapter(private var list:  LinkedHashMap<String, Int?>, val context: 
             Character.STEALTH.toString() -> holder.checkBox.text = context.resources.getString(R.string.Skill_STEALTH)
             Character.SURVIVAL.toString() -> holder.checkBox.text = context.resources.getString(R.string.Skill_SURVIVAL)
         }
+
+        holder.checkBox.setOnCheckedChangeListener({ _: CompoundButton, isChecked: Boolean ->
+            // control the amount of checked checkBoxes
+            if (isChecked) {
+                if (checked+1 > maxSkillsAmount) {
+                    holder.checkBox.isChecked = false
+                } else {
+                    checked++
+                }
+            }else{
+                if (checked-1 <= maxSkillsAmount) {
+                    checked--
+                }
+            }
+            selectedAmountChanged(checked)
+        })
     }
+
+    abstract fun selectedAmountChanged (amount: Int)
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    fun setCharactersList(list: LinkedHashMap<String, Int?>) {
-        this.list = list
-        notifyDataSetChanged()
-    }
-
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        var checkBox: TextView = v.findViewById(R.id.checkBox)
+        var checkBox: CheckBox = v.findViewById(R.id.checkBox)
         var value: TextView = v.findViewById(R.id.editText)
     }
 

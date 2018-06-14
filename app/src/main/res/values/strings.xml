@@ -92,5 +92,5 @@
     <string name="no_internet_connection">No internet connection</string>
     <string name="unknown_error">Unknown error</string>
     <string name="signOut">Sign out</string>
-    <string name="skills">Skills</string>
+    <string name="skills">Skills (%1$d out of %2$d selected)</string>
 </resources>
