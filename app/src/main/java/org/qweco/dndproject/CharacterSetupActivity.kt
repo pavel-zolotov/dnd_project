@@ -125,13 +125,13 @@ class CharacterSetupActivity : AppCompatActivity() {
                 resources.getString(R.string.class_cleric))
         val adapter = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
         spinner.adapter = adapter
         spinner.prompt = resources.getString(R.string.race_label)
         spinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?,
                                         position: Int, id: Long) {
                 character.character_class = position
+                characterImg.setImageDrawable(character.getDrawableForClass(applicationContext))
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}
