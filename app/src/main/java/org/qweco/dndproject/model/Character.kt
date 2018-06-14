@@ -33,8 +33,8 @@ data class Character (
         @Deprecated("will be deleted") var hairStyle: Int,
         var skinColor: Int): Serializable{
 
-    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, LinkedHashMap<String, Int?>(), LinkedHashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, LinkedHashMap<String, Int?>(), LinkedHashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     companion object {
         //Races
@@ -445,7 +445,7 @@ data class Character (
         return arrayOf()
     }
 
-    fun getSkills (context: Context) : Array<Int>
+    fun getAvailableSkills (context: Context) : Array<Int>
     {
         when (character_class){
             Character.WIZARD -> {
