@@ -18,41 +18,30 @@ import org.qweco.dndproject.model.Character
 import android.support.v7.widget.helper.ItemTouchHelper
 import org.qweco.dndproject.adapter.itemTouchHelper.MyItemTouchHelperCallback
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.firebase.ui.auth.ErrorCodes
-import android.R.attr.data
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.widget.Toast
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
-import android.view.ViewGroup
 import android.animation.ValueAnimator
-import android.support.annotation.NonNull
-import android.support.v4.app.ActivityCompat.startActivityForResult
 import android.support.v4.content.ContextCompat
-import android.util.Log
-import android.util.TypedValue
 import android.view.View
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.*
 import com.idescout.sql.SqlScoutServer
-import org.qweco.dndproject.R.id.*
-import org.qweco.dndproject.view.SlideAnimation
+import android.content.IntentFilter
+import android.content.BroadcastReceiver
+import android.content.Context
 
 
 class MainActivity : AppCompatActivity() {
     private var characterList: ArrayList<Character> = ArrayList()
     private lateinit var adapter: CharacterAdapter
+    private lateinit var menu: Menu
+    private var mReceiver: UpdateUIReceiver? = null
+
+    val ACTION_UPDATE_LIST_INTENT = "ACTION_UPDATE_LIST_INTENT"
     private val RC_SIGN_IN = 123     // Choose an arbitrary request code value
     private val RC_NEW_CHARACTER = 456
-    private lateinit var menu: Menu
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         SqlScoutServer.create(this, getPackageName());
+
+        if (mReceiver == null) mReceiver = UpdateUIReceiver()
+        val fltr = IntentFilter(Intent.ACTION_DATE_CHANGED)
+        fltr.addAction(ACTION_UPDATE_LIST_INTENT)
+        registerReceiver(mReceiver, fltr)
 
         recyclerView.setHasFixedSize(true)
         val llm = LinearLayoutManager(this)
@@ -121,9 +115,7 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == RC_NEW_CHARACTER) {
             if (resultCode == Activity.RESULT_OK) {
-                characterList = Manager().loadCharacters(this)
-                adapter.setCharactersList(characterList)
-                adapter.notifyDataSetChanged()
+                updateList()
             }
         }else if (requestCode == RC_SIGN_IN) { // RC_SIGN_IN is the request code you passed into startActivityForResult(...) when starting the sign in flow.
             val response = IdpResponse.fromResultIntent(data)
@@ -163,9 +155,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(mReceiver)
+        mReceiver = null
+    }
+
     private fun showSnackbar (resString: Int){
         Snackbar.make(contentView, resources.getString(resString), Snackbar.LENGTH_LONG)
                 .show()
+    }
+
+    private fun updateList(){
+        characterList = Manager().loadCharacters(this)
+        adapter.setCharactersList(characterList)
+        adapter.notifyDataSetChanged()
     }
 
     private fun exportRemoteData (snapshot: QuerySnapshot){
@@ -177,9 +181,7 @@ class MainActivity : AppCompatActivity() {
             Manager().insertCharacterLocalOnlyWithId(this, character)
         }
 
-        characterList = Manager().loadCharacters(this)
-        adapter.setCharactersList(characterList)
-        adapter.notifyDataSetChanged()
+        updateList()
     }
 
     private fun setupRemoteDB (){
@@ -276,5 +278,13 @@ class MainActivity : AppCompatActivity() {
         }
         anim.duration = 500
         anim.start()
+    }
+
+    private inner class UpdateUIReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.action == ACTION_UPDATE_LIST_INTENT) {
+                updateList()
+            }
+        }
     }
 }

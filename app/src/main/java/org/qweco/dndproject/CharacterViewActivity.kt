@@ -2,10 +2,19 @@ package org.qweco.dndproject
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_character_view.*
-import org.qweco.dndproject.R.string.charisma
+import org.qweco.dndproject.R.string.skills
+import org.qweco.dndproject.adapter.SkillAdapter
+import org.qweco.dndproject.adapter.SkillAdapterView
+import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
+import android.content.Intent.ACTION_DELETE
+import android.support.v4.view.accessibility.AccessibilityEventCompat.setAction
+import android.content.Intent
+import android.view.View
+
 
 class CharacterViewActivity : AppCompatActivity() {
 
@@ -63,32 +72,26 @@ class CharacterViewActivity : AppCompatActivity() {
         when (temp[0]){
             0 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_STR)
-
                 txtSavethrow1Bonus.text = "+${character.dexterity}"
             }
             1 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_DEX)
-
                 txtSavethrow1Bonus.text = "+${character.dexterity}"
             }
             2 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CON)
-
                 txtSavethrow1Bonus.text = "+${character.constitution}"
             }
             3 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_INT)
-
                 txtSavethrow1Bonus.text = "+${character.intelligence}"
             }
             4 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_WIS)
-
                 txtSavethrow1Bonus.text = "+${character.wisdom}"
             }
             5 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CHA)
-
                 txtSavethrow1Bonus.text = "+${character.charisma}"
             }
         }
@@ -96,37 +99,114 @@ class CharacterViewActivity : AppCompatActivity() {
         when (temp[1]){
             0 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_STR)
-
                 txtSavethrow2Bonus.text = "+${character.dexterity}"
             }
             1 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_DEX)
-
                 txtSavethrow2Bonus.text = "+${character.dexterity}"
             }
             2 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CON)
-
                 txtSavethrow2Bonus.text = "+${character.constitution}"
             }
             3 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_INT)
-
                 txtSavethrow2Bonus.text = "+${character.intelligence}"
             }
             4 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_WIS)
-
                 txtSavethrow2Bonus.text = "+${character.wisdom}"
             }
             5 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CHA)
-
                 txtSavethrow2Bonus.text = "+${character.charisma}"
             }
-
         }
 
+
+        //set up skills list
+        if (character.skills.size > 0){
+            val llm = LinearLayoutManager(applicationContext)
+            llm.orientation = LinearLayoutManager.VERTICAL
+            skillList.layoutManager = llm
+
+            val adapterSkills = SkillAdapterView(character.skills,  applicationContext)
+            skillList.adapter = adapterSkills
+        }else{
+            txtSkillsLabel.text = resources.getString(R.string.no_skills)
+        }
+
+        //set up buttons
+        if (character.hp == 99) {
+            incrHP.visibility = View.INVISIBLE
+        }else if(character.hp == 0){
+            decrHP.visibility = View.INVISIBLE
+        }
+
+        incrHP.setOnClickListener{
+            character.hp++
+            txtHpValue.text = character.hp.toString()
+            Manager().updateCharacter(this, character)
+            sendUpdateBroadcast()
+
+            if (character.hp == 99){
+                it.visibility = View.INVISIBLE
+            }
+
+            decrHP.visibility = View.VISIBLE
+        }
+
+        decrHP.setOnClickListener{
+            character.hp--
+            txtHpValue.text = character.hp.toString()
+            Manager().updateCharacter(this, character)
+            sendUpdateBroadcast()
+
+            if (character.hp == 0){
+                it.visibility = View.INVISIBLE
+            }
+
+            incrHP.visibility = View.VISIBLE
+        }
+
+
+        if (character.armourClass == 99) {
+            incrArmourClass.visibility = View.INVISIBLE
+        }else if(character.armourClass == 0){
+            decrArmourClass.visibility = View.INVISIBLE
+        }
+
+        incrArmourClass.setOnClickListener{
+            character.armourClass++
+            txtArmourClassValue.text = character.armourClass.toString()
+            Manager().updateCharacter(this, character)
+            sendUpdateBroadcast()
+
+            if (character.armourClass == 99){
+                it.visibility = View.INVISIBLE
+            }
+
+            decrArmourClass.visibility = View.VISIBLE
+        }
+
+        decrArmourClass.setOnClickListener{
+            character.armourClass--
+            txtArmourClassValue.text = character.armourClass.toString()
+            Manager().updateCharacter(this, character)
+            sendUpdateBroadcast()
+
+            if (character.armourClass == 0){
+                it.visibility = View.INVISIBLE
+            }
+
+            incrArmourClass.visibility = View.VISIBLE
+        }
+    }
+
+    private fun sendUpdateBroadcast() {
+        val broadcast = Intent()
+        broadcast.action = MainActivity().ACTION_UPDATE_LIST_INTENT
+        sendBroadcast(broadcast)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

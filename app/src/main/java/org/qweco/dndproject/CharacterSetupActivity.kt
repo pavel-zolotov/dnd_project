@@ -1,6 +1,7 @@
 package org.qweco.dndproject
 
 import android.content.Intent
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.view.Menu
 import android.view.MenuItem
 
@@ -20,6 +22,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.fragment_character_specs.*
+import kotlinx.android.synthetic.main.fragment_character_specs.view.*
 import org.qweco.dndproject.adapter.SkillAdapter
 
 
@@ -50,6 +53,16 @@ class CharacterSetupActivity : AppCompatActivity() {
         container.adapter = mSectionsPagerAdapter
 
         tabs.setupWithViewPager(container)
+
+        //show bas on selected tab change
+        container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
+        tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                fab.show()
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
 
         character = Character(intent.extras.getInt("race"))
 
@@ -85,26 +98,40 @@ class CharacterSetupActivity : AppCompatActivity() {
             }else if (txtCharismaValue.text == null || txtCharismaValue.text.toString() == "") {
                 showFillTheSnackbar(R.string.charisma)
             }else{
-                character.name = editText.text.toString()
-                character.eyeColor = fragment1.eye_color
-                character.skinColor = fragment1.skin_color
-                character.initiative = txtInitiativeValue.text.toString().toInt()
-                character.hp = txtHpValue.text.toString().toInt()
-                character.speed = txtSpeedValue.text.toString().toInt()
-                character.hitDice = txtHitDiceValue.text.toString().toInt()
-                character.armourClass = txtArmourClassValue.text.toString().toInt()
-                character.proficiency = txtProficiencyValue.text.toString().toInt()
-                character.strength = txtStrengthValue.text.toString().toInt()
-                character.dexterity = txtDexterityValue.text.toString().toInt()
-                character.constitution = txtConstitutionValue.text.toString().toInt()
-                character.intelligence = txtIntelligenceValue.text.toString().toInt()
-                character.wisdom = txtWisdomValue.text.toString().toInt()
-                character.charisma = txtCharismaValue.text.toString().toInt()
+                //check skills list, prevent writing null values for a skill
+                var counter = 0
+                for(data in (skillList.adapter as SkillAdapter).list){
+                    if (data.value != null){
+                        counter++
+                    }
+                }
 
-                Manager().insertCharacter(this, character)
-                val intent = Intent()
-                setResult(RESULT_OK, intent)
-                finish()
+                if (counter < (skillList.adapter as SkillAdapter).checked){
+                    Snackbar.make(contentView, resources.getString(R.string.fill_all_skills_values), Snackbar.LENGTH_LONG).show()
+                }else {
+                    character.name = editText.text.toString()
+                    character.eyeColor = fragment1.eye_color
+                    character.skinColor = fragment1.skin_color
+                    character.initiative = txtInitiativeValue.text.toString().toInt()
+                    character.hp = txtHpValue.text.toString().toInt()
+                    character.speed = txtSpeedValue.text.toString().toInt()
+                    character.hitDice = txtHitDiceValue.text.toString().toInt()
+                    character.armourClass = txtArmourClassValue.text.toString().toInt()
+                    character.proficiency = txtProficiencyValue.text.toString().toInt()
+                    character.strength = txtStrengthValue.text.toString().toInt()
+                    character.dexterity = txtDexterityValue.text.toString().toInt()
+                    character.constitution = txtConstitutionValue.text.toString().toInt()
+                    character.intelligence = txtIntelligenceValue.text.toString().toInt()
+                    character.wisdom = txtWisdomValue.text.toString().toInt()
+                    character.charisma = txtCharismaValue.text.toString().toInt()
+
+                    character.skills = (skillList.adapter as SkillAdapter).list
+
+                    Manager().insertCharacter(this, character)
+                    val intent = Intent()
+                    setResult(RESULT_OK, intent)
+                    finish()
+                }
             }
         }
 

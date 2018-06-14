@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -135,9 +136,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtHitDiceLabel"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="16dp"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -190,9 +191,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/txtSpeedLabel"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="16dp"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
+                        android:textSize="16sp" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -584,14 +585,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/skills"
-                        android:layout_margin="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="10dp"
                         android:textSize="18sp"/>
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/skillList"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtSkillsLabel"/>
+                        android:layout_below="@id/txtSkillsLabel"
+                        android:layout_marginBottom="5dp"/>
 
                 </RelativeLayout>
 
