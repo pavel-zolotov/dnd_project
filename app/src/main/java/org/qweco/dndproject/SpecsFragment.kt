@@ -38,6 +38,10 @@ class SpecsFragment : Fragment() {
         txtWisdomBonus.text = "+ ${character.getRaceBonusWisdom(context!!)}"
         txtCharismaValue.filters = arrayOf(InputFilterMinMax(1, 100))
         txtCharismaBonus.text = "+ ${character.getRaceBonusCharisma(context!!)}"
+
+        txtSpeedValue.text = character.getDefaultSpeed(context!!).toString()
+
+        txtHitDiceValue.text = character.getHitDiceForClass(context!!).toString()
     }
 
     companion object {
