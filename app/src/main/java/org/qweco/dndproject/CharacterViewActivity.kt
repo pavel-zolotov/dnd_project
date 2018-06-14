@@ -30,23 +30,23 @@ class CharacterViewActivity : AppCompatActivity() {
         val strengthSum = character.getRaceBonusStrength(this) + character.strength
         val strengthMod = (strengthSum-10)/2
         txtStrengthValue.text = strengthSum.toString()
-        txtStrengthBonus.text = if (strengthMod > 0) "+ ${Math.abs(strengthMod)}" else "- ${Math.abs(strengthMod)}"
+        txtStrengthBonus.text = if (strengthMod > 0) "+${strengthMod}" else strengthMod.toString()
 
 
         val dexteritySum = character.getRaceBonusDexterity(this) + character.dexterity
         val dexterityMod = (dexteritySum-10)/2
         txtDexterityValue.text = dexteritySum.toString()
-        txtDexterityBonus.text = if (dexterityMod > 0) "+ ${Math.abs(dexterityMod)}" else "- ${Math.abs(dexterityMod)}"
+        txtDexterityBonus.text = if (dexterityMod > 0) "+${dexterityMod}" else dexterityMod.toString()
 
         val constitutionSum = character.getRaceBonusConstitution(this) + character.constitution
         val constitutionMod = (constitutionSum-10)/2
         txtConstitutionValue.text = constitutionSum.toString()
-        txtConstitutionBonus.text = if (constitutionMod > 0) "+ ${Math.abs(constitutionMod)}" else "- ${Math.abs(constitutionMod)}"
+        txtConstitutionBonus.text = if (constitutionMod > 0) "+${constitutionMod}" else constitutionMod.toString()
 
         val intelligenceSum = character.getRaceBonusIntelligence(this) + character.intelligence
         val intelligenceMod = (intelligenceSum-10)/2
         txtIntelligenceValue.text = intelligenceSum.toString()
-        txtIntelligenceBonus.text = if (intelligenceMod > 0) "+ ${Math.abs(intelligenceMod)}" else "- ${Math.abs(intelligenceMod)}"
+        txtIntelligenceBonus.text = if (intelligenceMod > 0) "+${intelligenceMod}" else intelligenceMod.toString()
 
         val wisdomSum = character.getRaceBonusWisdom(this) + character.wisdom
         val wisdomMod = (wisdomSum-10)/2
