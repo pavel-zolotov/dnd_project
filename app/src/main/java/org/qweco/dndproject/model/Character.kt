@@ -535,4 +535,22 @@ data class Character (
 
     }
 
+    fun getAmountOfSkills (context: Context) :Int
+    {
+        when (character_class){
+
+            Character.RANGER -> {
+                return 3
+            }
+            Character.THIEF -> {
+                return 4
+            }
+            Character.BARD -> {
+                return 3
+            }
+        }
+
+        return 2
+    }
+
 }

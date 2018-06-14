@@ -57,6 +57,9 @@ class CharacterViewActivity : AppCompatActivity() {
         val charismaMod = (charismaSum-10)/2
         txtCharismaValue.text = charismaSum.toString()
         txtCharismaBonus.text = if (charismaMod > 0) "+ ${Math.abs(charismaMod)}" else "- ${Math.abs(charismaMod)}"
+
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
