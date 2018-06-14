@@ -63,6 +63,8 @@ class CharacterViewActivity : AppCompatActivity() {
         when (temp[0]){
             0 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_STR)
+
+                txtSavethrow1Bonus.text = character.strength.toString()
             }
             1 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_DEX)
