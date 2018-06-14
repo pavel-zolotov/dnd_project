@@ -51,17 +51,14 @@ class CharacterViewActivity : AppCompatActivity() {
         val wisdomSum = character.getRaceBonusWisdom(this) + character.wisdom
         val wisdomMod = (wisdomSum-10)/2
         txtWisdomValue.text = wisdomSum.toString()
-        txtWisdomBonus.text = if (wisdomMod > 0) "+ ${Math.abs(wisdomMod)}" else "- ${Math.abs(wisdomMod)}"
+        txtWisdomBonus.text = if (wisdomMod > 0) "+${wisdomMod}" else wisdomMod.toString()
 
         val charismaSum = character.getRaceBonusCharisma(this) + character.charisma
         val charismaMod = (charismaSum-10)/2
         txtCharismaValue.text = charismaSum.toString()
-        txtCharismaBonus.text = if (charismaMod > 0) "+ ${Math.abs(charismaMod)}" else "- ${Math.abs(charismaMod)}"
+        txtCharismaBonus.text = if (charismaMod > 0) "+${charismaMod}" else charismaMod.toString()
 
         val temp = character.getSawethrows(applicationContext)
-
-        val Savethrow_1 = temp[0]
-        val Savethrow_2 = temp[1]
 
         when (temp[0]){
             0 -> {
