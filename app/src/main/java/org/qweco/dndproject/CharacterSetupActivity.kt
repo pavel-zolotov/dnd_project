@@ -147,6 +147,7 @@ class CharacterSetupActivity : AppCompatActivity() {
                 }
                 val adapterSkills = SkillAdapter(skills,  applicationContext)
                 skillList.adapter = adapterSkills
+                characterImg.setImageDrawable(character.getDrawableForClass(applicationContext))
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}

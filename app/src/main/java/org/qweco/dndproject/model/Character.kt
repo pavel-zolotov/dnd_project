@@ -1,6 +1,7 @@
 package org.qweco.dndproject.model
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import org.qweco.dndproject.R
 import java.io.Serializable
 
@@ -552,4 +553,47 @@ data class Character (
         return 2
     }
 
+    fun getDrawableForClass (context: Context) : Drawable
+    {
+        when (character_class){
+            Character.WIZARD -> {
+                return context.resources.getDrawable(R.drawable.wizard)
+            }
+            Character.WARLOCK -> {
+                return context.resources.getDrawable(R.drawable.warlock)
+            }
+            Character.SORCERER -> {
+                return context.resources.getDrawable(R.drawable.sorcerer)
+            }
+            Character.WARRIOR -> {
+                return context.resources.getDrawable(R.drawable.warrior)
+            }
+            Character.MONK -> {
+                return context.resources.getDrawable(R.drawable.monk)
+            }
+            Character.RANGER -> {
+                return context.resources.getDrawable(R.drawable.ranger)
+            }
+            Character.THIEF -> {
+                return context.resources.getDrawable(R.drawable.thief)
+            }
+            Character.CLERIC -> {
+                return context.resources.getDrawable(R.drawable.cleric)
+            }
+            Character.PALADIN -> {
+                return context.resources.getDrawable(R.drawable.paladin)
+            }
+            Character.BARBARIAN -> {
+                return context.resources.getDrawable(R.drawable.barbarian)
+            }
+            Character.DRUID -> {
+                return context.resources.getDrawable(R.drawable.druid)
+            }
+            Character.BARD -> {
+                return context.resources.getDrawable(R.drawable.bard)
+            }
+        }
+
+        return context.resources.getDrawable(R.drawable.warrior)
+    }
 }
