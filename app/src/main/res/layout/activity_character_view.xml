@@ -150,25 +150,26 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/txtSpeedLabel"
+                        android:id="@+id/txtProficiencyLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="@string/speed"
+                        android:text="@string/proficiency"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txtSpeedValue"
+                        android:id="@+id/txtProficiencyValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtSpeedLabel"
+                        android:layout_below="@id/txtProficiencyLabel"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textSize="18sp"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
                 </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -235,20 +236,20 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/txtProficiencyLabel"
+                        android:id="@+id/txtSpeedLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="@string/proficiency"
+                        android:text="@string/speed"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txtProficiencyValue"
+                        android:id="@+id/txtSpeedValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtProficiencyLabel"
+                        android:layout_below="@id/txtSpeedLabel"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="12dp"
                         android:textSize="18sp"
@@ -633,6 +634,138 @@
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
             </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtSavethrow2Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/intelligence"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtSavethrow2Value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtSavethrow2Label"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtSavethrow2Value"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtSavethrow2Bonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="10dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/txtSavethrow1Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/charisma"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:id="@+id/txtSavethrow1Value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtSavethrow1Label"
+                                android:layout_marginTop="12dp"
+                                android:layout_centerHorizontal="true"
+                                android:textSize="18sp"
+                                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/txtSavethrow1Value"
+                                android:layout_marginTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:paddingTop="10dp"
+                                android:background="@color/material_gray_700">
+
+                                <TextView
+                                    android:id="@+id/txtSavethrow1Bonus"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:textSize="18sp"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="?attr/colorAccent"/>
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

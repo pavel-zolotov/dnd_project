@@ -58,7 +58,54 @@ class CharacterViewActivity : AppCompatActivity() {
         txtCharismaValue.text = charismaSum.toString()
         txtCharismaBonus.text = if (charismaMod > 0) "+ ${Math.abs(charismaMod)}" else "- ${Math.abs(charismaMod)}"
 
+        val temp = character.getSawethrows(applicationContext)
 
+        val Savethrow_1 = temp[0]
+        val Savethrow_2 = temp[1]
+
+        when (temp[0]){
+            0 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_STR)
+            }
+            1 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_DEX)
+            }
+            2 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CON)
+            }
+            3 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_INT)
+            }
+            4 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_WIS)
+            }
+            5 -> {
+                txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CHA)
+            }
+
+        }
+
+        when (temp[1]){
+            0 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_STR)
+            }
+            1 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_DEX)
+            }
+            2 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CON)
+            }
+            3 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_INT)
+            }
+            4 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_WIS)
+            }
+            5 -> {
+                txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CHA)
+            }
+
+        }
 
     }
 
