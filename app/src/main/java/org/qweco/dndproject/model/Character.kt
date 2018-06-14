@@ -19,7 +19,7 @@ data class Character (
         var proficiency: Int,
 
         var skills: Map<String, Int?>, //use constants from class body, pls
-        var savingThrows: Map<String, Int?>, //here the same
+        @Deprecated("will be deleted") var savingThrows: Map<String, Int?>, //here the same
 
         var strength: Int,
         var dexterity: Int,
@@ -29,9 +29,8 @@ data class Character (
         var perception: Int,
         var charisma: Int,
 
-
         var eyeColor: Int,
-        var hairStyle: Int,
+        @Deprecated("will be deleted") var hairStyle: Int,
         var skinColor: Int): Serializable{
 
     constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
@@ -248,7 +247,7 @@ data class Character (
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.MOUNTAIN_DWARF -> {
                 return 2
@@ -261,7 +260,7 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusDexterity (context: Context) : Int
@@ -281,14 +280,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusConstitution (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.DWARF -> {
                 return 2
@@ -301,14 +300,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusIntelligence (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.HIGH_ELF -> {
                 return 1
@@ -321,14 +320,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusWisdom (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.HILL_DWARF -> {
                 return 1
@@ -338,14 +337,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusCharisma (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.DARK_ELF -> {
                 return 1
@@ -364,14 +363,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getDefaultSpeed (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 30;
+                return 30
             }
             Character.ELF -> {
                 return 30
