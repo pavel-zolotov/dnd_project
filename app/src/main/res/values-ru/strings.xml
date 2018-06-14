@@ -88,4 +88,5 @@
     <string name="no_internet_connection">Нет подключения к сети</string>
     <string name="unknown_error">Неизвестная ошибка</string>
     <string name="signOut">Выйти</string>
+    <string name="skills">Навыки</string>
 </resources>

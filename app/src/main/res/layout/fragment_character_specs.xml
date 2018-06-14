@@ -46,6 +46,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
                         android:inputType="number"
+                        android:hint="0"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -73,6 +74,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
                         android:inputType="number"
+                        android:hint="10"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
 
@@ -84,22 +86,24 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/txtSpeedLabel"
+                        android:id="@+id/txtProficiencyLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="@string/speed"
+                        android:text="@string/proficiency"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/txtSpeedValue"
+                    <EditText
+                        android:id="@+id/txtProficiencyValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtSpeedLabel"
+                        android:layout_below="@id/txtProficiencyLabel"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="8dp"
+                        android:inputType="number"
+                        android:hint="1"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -159,6 +163,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
                         android:inputType="number"
+                        android:hint="10"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
 
@@ -170,23 +175,22 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/txtProficiencyLabel"
+                        android:id="@+id/txtSpeedLabel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:text="@string/proficiency"
+                        android:text="@string/speed"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="18sp" />
 
-                    <EditText
-                        android:id="@+id/txtProficiencyValue"
+                    <TextView
+                        android:id="@+id/txtSpeedValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/txtProficiencyLabel"
+                        android:layout_below="@id/txtSpeedLabel"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:inputType="number"
+                        android:layout_marginTop="10dp"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -238,6 +242,7 @@
                                     android:layout_alignParentRight="true"
                                     android:layout_marginTop="3dp"
                                     android:inputType="number"
+                                    android:hint="10"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
                                     android:textSize="14sp" />
 
@@ -296,6 +301,7 @@
                                     android:layout_alignParentRight="true"
                                     android:layout_marginTop="3dp"
                                     android:inputType="number"
+                                    android:hint="10"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
                                     android:textSize="14sp" />
 
@@ -355,6 +361,7 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -422,6 +429,7 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -482,6 +490,7 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -543,6 +552,7 @@
                                 android:layout_alignParentRight="true"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -558,6 +568,34 @@
                 </android.support.v7.widget.CardView>
                 </RelativeLayout>
             </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtSkillsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skills"
+                        android:layout_margin="15dp"
+                        android:textSize="18sp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/skillList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSkillsLabel"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

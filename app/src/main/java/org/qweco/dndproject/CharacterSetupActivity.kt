@@ -10,18 +10,17 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_character_setup.*
 import org.qweco.dndproject.data.Manager
 import org.qweco.dndproject.model.Character
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
-import android.widget.Spinner
-import android.R.attr.data
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.fragment_character_specs.*
+import org.qweco.dndproject.adapter.SkillAdapter
 
 
 class CharacterSetupActivity : AppCompatActivity() {
@@ -131,7 +130,23 @@ class CharacterSetupActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object : OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?,
                                         position: Int, id: Long) {
+                //set class value
                 character.character_class = position
+
+                //set hit dice value
+                txtHitDiceValue.text = character.getHitDiceForClass(applicationContext ).toString()
+
+                //set up skills list
+                val llm = LinearLayoutManager(applicationContext)
+                llm.orientation = LinearLayoutManager.VERTICAL
+                skillList.layoutManager = llm
+
+                val skills = LinkedHashMap<String, Int?>()
+                for (skill in character.getAvailableSkills(applicationContext)){ //load all available skills
+                    skills[skill.toString()] = null
+                }
+                val adapterSkills = SkillAdapter(skills,  applicationContext)
+                skillList.adapter = adapterSkills
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}

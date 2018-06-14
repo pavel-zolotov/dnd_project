@@ -18,30 +18,28 @@ class SpecsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        txtInitiativeValue.filters = arrayOf(InputFilterMinMax(1, 100))
-        txtHpValue.filters = arrayOf(InputFilterMinMax(1, 100))
-        txtSpeedValue.filters = arrayOf(InputFilterMinMax(1, 100))
-        txtHitDiceValue.filters = arrayOf(InputFilterMinMax(1, 100))
-        txtArmourClassValue.filters = arrayOf(InputFilterMinMax(1, 100))
-        txtProficiencyValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtInitiativeValue.filters = arrayOf(InputFilterMinMax(0, 100))
+        txtHpValue.filters = arrayOf(InputFilterMinMax(0, 100))
+        txtSpeedValue.filters = arrayOf(InputFilterMinMax(0, 100))
+        txtHitDiceValue.filters = arrayOf(InputFilterMinMax(0, 100))
+        txtArmourClassValue.filters = arrayOf(InputFilterMinMax(0, 100))
+        txtProficiencyValue.filters = arrayOf(InputFilterMinMax(0, 100))
 
         val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
-        txtStrengthValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtStrengthValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtStrengthRaceBonus.text = "+ ${character.getRaceBonusStrength(context!!)}"
-        txtDexterityValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtDexterityValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtDexterityBonus.text = "+ ${character.getRaceBonusDexterity(context!!)}"
-        txtConstitutionValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtConstitutionValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtConstitutionBonus.text  = "+ ${character.getRaceBonusConstitution(context!!)}"
-        txtIntelligenceValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtIntelligenceValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtIntelligenceBonus.text = "+ ${character.getRaceBonusIntelligence(context!!)}"
-        txtWisdomValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtWisdomValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtWisdomBonus.text = "+ ${character.getRaceBonusWisdom(context!!)}"
-        txtCharismaValue.filters = arrayOf(InputFilterMinMax(1, 100))
+        txtCharismaValue.filters = arrayOf(InputFilterMinMax(0, 100))
         txtCharismaBonus.text = "+ ${character.getRaceBonusCharisma(context!!)}"
 
         txtSpeedValue.text = character.getDefaultSpeed(context!!).toString()
-
-        txtHitDiceValue.text = character.getHitDiceForClass(context!!).toString()
     }
 
     companion object {
