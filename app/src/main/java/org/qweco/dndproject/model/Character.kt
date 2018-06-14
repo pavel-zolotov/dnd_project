@@ -18,8 +18,8 @@ data class Character (
         var armourClass: Int,
         var proficiency: Int,
 
-        var skills: Map<String, Int?>, //use constants from class body, pls
-        @Deprecated("will be deleted") var savingThrows: Map<String, Int?>, //here the same
+        var skills: LinkedHashMap<String, Int?>, //use constants from class body, pls
+        @Deprecated("will be deleted") var savingThrows: LinkedHashMap<String, Int?>, //here the same
 
         var strength: Int,
         var dexterity: Int,
