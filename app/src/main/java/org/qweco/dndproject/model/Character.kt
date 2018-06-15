@@ -19,8 +19,8 @@ data class Character (
         var armourClass: Int,
         var proficiency: Int,
 
-        var skills: LinkedHashMap<String, Int?>, //use constants from class body, pls
-        @Deprecated("will be deleted") var savingThrows: LinkedHashMap<String, Int?>, //here the same
+        var skills: HashMap<String, Int?>, //use constants from class body, pls
+        @Deprecated("will be deleted") var savingThrows: HashMap<String, Int?>, //here the same
 
         var strength: Int,
         var dexterity: Int,
@@ -34,8 +34,8 @@ data class Character (
         @Deprecated("will be deleted") var hairStyle: Int,
         var skinColor: Int): Serializable{
 
-    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, LinkedHashMap<String, Int?>(), LinkedHashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, LinkedHashMap<String, Int?>(), LinkedHashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, HashMap<String, Int?>(), HashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, HashMap<String, Int?>(), HashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     companion object {
         //Races

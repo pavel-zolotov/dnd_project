@@ -168,7 +168,7 @@ class CharacterSetupActivity : AppCompatActivity() {
                 llm.orientation = LinearLayoutManager.VERTICAL
                 skillList.layoutManager = llm
 
-                val skills = LinkedHashMap<String, Int?>()
+                val skills = HashMap<String, Int?>()
                 for (skill in character.getAvailableSkills(applicationContext)){ //load all available skills
                     skills[skill.toString()] = null
                 }

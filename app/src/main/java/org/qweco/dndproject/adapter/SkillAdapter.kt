@@ -15,8 +15,8 @@ import android.widget.*
 import org.qweco.dndproject.utils.InputFilterMinMax
 
 
-abstract class SkillAdapter(var list:  LinkedHashMap<String, Int?>, val context: Context, private val maxSkillsAmount: Int) : RecyclerView.Adapter<SkillAdapter.ViewHolder>(){
-    public var checked = 0
+abstract class SkillAdapter(var list:  HashMap<String, Int?>, val context: Context, private val maxSkillsAmount: Int) : RecyclerView.Adapter<SkillAdapter.ViewHolder>(){
+    var checked = 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pos = holder.adapterPosition
