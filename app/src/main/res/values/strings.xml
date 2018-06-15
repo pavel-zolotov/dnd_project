@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DnD project</string>
+    <string name="app_name">D&amp;D Character</string>
     <string name="race_label">Race:</string>
     <string name="class_label">Class</string>
     <string name="no_characters">No characters</string>
