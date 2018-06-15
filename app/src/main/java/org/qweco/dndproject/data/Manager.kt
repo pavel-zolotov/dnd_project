@@ -1,4 +1,4 @@
-package org.qweco.dndproject.data
+package com.coolguys.dndproject.data
 
 import android.app.Activity
 import android.content.ContentValues
@@ -8,8 +8,8 @@ import android.provider.BaseColumns
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.ArrayList
-import org.qweco.dndproject.model.Character
-import org.qweco.dndproject.utils.MapToJsonConverter
+import com.coolguys.dndproject.model.Character
+import com.coolguys.dndproject.utils.MapToJsonConverter
 
 // high-level class, available outside of .data package
 /**

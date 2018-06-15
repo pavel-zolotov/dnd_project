@@ -1,4 +1,4 @@
-package org.qweco.dndproject.utils
+package com.coolguys.dndproject.utils
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

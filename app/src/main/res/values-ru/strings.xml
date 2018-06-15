@@ -3,18 +3,18 @@
     <string name="race_label">Раса:</string>
     <string name="no_characters">Нет персонажей</string>
 
-    <string name="class_wizard">Волшебник</string>
+    <string name="class_wizard">волшебник</string>
     <string name="class_sorcerer">Чародей</string>
     <string name="class_warlock">Колдун</string>
-    <string name="class_warrior">Воин</string>
-    <string name="class_barbarian">Варвар</string>
-    <string name="class_druid">Друид</string>
-    <string name="class_bard">Бард</string>
+    <string name="class_warrior">воин</string>
+    <string name="class_barbarian">варвар</string>
+    <string name="class_druid">друид</string>
+    <string name="class_bard">бард</string>
     <string name="class_ranger">Следопыт</string>
     <string name="class_thief">Плут</string>
     <string name="class_monk">Монах</string>
     <string name="class_paladin">Паладин</string>
-    <string name="class_cleric">Жрец</string>
+    <string name="class_cleric">жрец</string>
 
     <string name="strength">СИЛА</string>
     <string name="dexterity">ЛОВК</string>

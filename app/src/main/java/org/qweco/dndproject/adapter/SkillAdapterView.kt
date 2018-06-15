@@ -1,4 +1,4 @@
-package org.qweco.dndproject.adapter
+package com.coolguys.dndproject.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -8,11 +8,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import org.qweco.dndproject.R
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.R
+import com.coolguys.dndproject.model.Character
 import java.util.*
 import android.widget.*
-import org.qweco.dndproject.utils.InputFilterMinMax
+import com.coolguys.dndproject.utils.InputFilterMinMax
 
 
 class SkillAdapterView(var list:  HashMap<String, Int?>, val context: Context) : RecyclerView.Adapter<SkillAdapterView.ViewHolder>(){

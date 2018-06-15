@@ -1,4 +1,4 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import android.app.Activity
 import android.content.Intent
@@ -12,11 +12,11 @@ import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import org.qweco.dndproject.adapter.CharacterAdapter
-import org.qweco.dndproject.data.Manager
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.adapter.CharacterAdapter
+import com.coolguys.dndproject.data.Manager
+import com.coolguys.dndproject.model.Character
 import android.support.v7.widget.helper.ItemTouchHelper
-import org.qweco.dndproject.adapter.itemTouchHelper.MyItemTouchHelperCallback
+import com.coolguys.dndproject.adapter.itemTouchHelper.MyItemTouchHelperCallback
 import com.google.firebase.auth.FirebaseAuth
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.AuthUI

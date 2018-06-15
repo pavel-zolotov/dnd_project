@@ -1,4 +1,4 @@
-package org.qweco.dndproject.adapter
+package com.coolguys.dndproject.adapter
 
 import android.app.Activity
 import android.content.Context
@@ -8,13 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import org.qweco.dndproject.R
-import org.qweco.dndproject.adapter.itemTouchHelper.ItemTouchHelperAdapter
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.R
+import com.coolguys.dndproject.adapter.itemTouchHelper.ItemTouchHelperAdapter
+import com.coolguys.dndproject.model.Character
 import java.util.*
 import android.support.design.widget.Snackbar
-import org.qweco.dndproject.CharacterViewActivity
-import org.qweco.dndproject.data.Manager
+import com.coolguys.dndproject.CharacterViewActivity
+import com.coolguys.dndproject.data.Manager
 import android.support.v4.view.ViewCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.widget.ImageView

@@ -1,4 +1,4 @@
-package org.qweco.dndproject.adapter.itemTouchHelper
+package com.coolguys.dndproject.adapter.itemTouchHelper
 
 import android.support.v7.widget.RecyclerView
 

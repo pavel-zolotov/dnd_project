@@ -1,8 +1,8 @@
-package org.qweco.dndproject.model
+package com.coolguys.dndproject.model
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import org.qweco.dndproject.R
+import com.coolguys.dndproject.R
 import java.io.Serializable
 
 data class Character (

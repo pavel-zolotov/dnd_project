@@ -1,4 +1,4 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import android.os.Build
 import android.os.Bundle
@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_character_setup.*
 import kotlinx.android.synthetic.main.fragment_character_specs.*
 import kotlinx.android.synthetic.main.fragment_character_specs.view.*
-import org.qweco.dndproject.model.Character
-import org.qweco.dndproject.utils.InputFilterMinMax
+import com.coolguys.dndproject.model.Character
+import com.coolguys.dndproject.utils.InputFilterMinMax
 
 class SpecsFragment : Fragment() {
 

@@ -1,15 +1,15 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_character_view.*
-import org.qweco.dndproject.R.string.skills
-import org.qweco.dndproject.adapter.SkillAdapter
-import org.qweco.dndproject.adapter.SkillAdapterView
-import org.qweco.dndproject.data.Manager
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.R.string.skills
+import com.coolguys.dndproject.adapter.SkillAdapter
+import com.coolguys.dndproject.adapter.SkillAdapterView
+import com.coolguys.dndproject.data.Manager
+import com.coolguys.dndproject.model.Character
 import android.content.Intent.ACTION_DELETE
 import android.support.v4.view.accessibility.AccessibilityEventCompat.setAction
 import android.content.Intent
@@ -28,6 +28,7 @@ class CharacterViewActivity : AppCompatActivity() {
         val character = intent.extras.getSerializable("data") as Character
         txtName.text = character.name
         txtRaceAndClass.text = "${character.getStringForRace(this)} ${character.getStringForClass(this)}"
+        characterImg.setImageDrawable(character.getDrawableForClass(this))
 
         txtInitiativeValue.text = character.initiative.toString()
         txtHpValue.text = character.hp.toString()

@@ -1,4 +1,4 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import android.content.Intent
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
@@ -14,8 +14,8 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_character_setup.*
-import org.qweco.dndproject.data.Manager
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.data.Manager
+import com.coolguys.dndproject.model.Character
 import android.widget.AdapterView
 import android.widget.AdapterView.OnItemSelectedListener
 import android.support.v7.widget.LinearLayoutManager
@@ -23,7 +23,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.fragment_character_specs.*
 import kotlinx.android.synthetic.main.fragment_character_specs.view.*
-import org.qweco.dndproject.adapter.SkillAdapter
+import com.coolguys.dndproject.adapter.SkillAdapter
 
 
 class CharacterSetupActivity : AppCompatActivity() {

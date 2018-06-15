@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "org.qweco.dndproject"
+        applicationId "com.coolguys.dndproject"
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
