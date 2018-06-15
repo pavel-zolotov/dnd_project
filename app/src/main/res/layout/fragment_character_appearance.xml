@@ -137,7 +137,7 @@
                                             app:srcCompat="@drawable/ic_check_white_24dp" />
                                 </RelativeLayout>
 
-                                <RelativeLayout
+                                <!--<RelativeLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1">
@@ -157,12 +157,12 @@
                                             android:padding="10dp"
                                             android:visibility="gone"
                                             app:srcCompat="@drawable/ic_check_black_24dp" />
-                                </RelativeLayout>
+                                </RelativeLayout>-->
                         </LinearLayout>
                 </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        <!--<android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp">
@@ -243,6 +243,6 @@
                                 </RelativeLayout>
                         </LinearLayout>
                 </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>-->
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

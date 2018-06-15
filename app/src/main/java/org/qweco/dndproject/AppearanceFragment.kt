@@ -28,13 +28,13 @@ class AppearanceFragment : Fragment() {
             eye_color = Character.EYE_COLOR_AMBER})
         eyeColorGreen.setOnClickListener({changeEyeTickVisibility(3)
             eye_color = Character.EYE_COLOR_GREEN})
-        eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
+        /*eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
             eye_color = Character.EYE_COLOR_WHITE})
 
         skinColorLight.setOnClickListener({changeSkinTickVisibility(0)
             skin_color = Character.SKIN_COLOR_LIGHT})
         skinColorDark.setOnClickListener({changeSkinTickVisibility(1)
-            skin_color = Character.SKIN_COLOR_DARK})
+            skin_color = Character.SKIN_COLOR_DARK})*/
     }
 
     private fun changeEyeTickVisibility (pos: Int){
@@ -42,13 +42,13 @@ class AppearanceFragment : Fragment() {
         eyeTickRed.visibility = if (pos == 1) View.VISIBLE else View.GONE
         eyeTickAmber.visibility = if (pos == 2) View.VISIBLE else View.GONE
         eyeTickGreen.visibility = if (pos == 3) View.VISIBLE else View.GONE
-        eyeTickWhite.visibility = if (pos == 4) View.VISIBLE else View.GONE
+        //eyeTickWhite.visibility = if (pos == 4) View.VISIBLE else View.GONE
     }
 
-    private fun changeSkinTickVisibility (pos: Int) {
+    /*private fun changeSkinTickVisibility (pos: Int) {
         skinTickLight.visibility = if (pos == 0) View.VISIBLE else View.GONE
         skinTickDark.visibility = if (pos == 1) View.VISIBLE else View.GONE
-    }
+    }*/
 
     companion object {
         /**

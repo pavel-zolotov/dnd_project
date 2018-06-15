@@ -111,7 +111,7 @@ class CharacterSetupActivity : AppCompatActivity() {
                 }else {
                     character.name = editText.text.toString()
                     character.eyeColor = fragment1.eye_color
-                    character.skinColor = fragment1.skin_color
+                    character.skinColor = Character.SKIN_COLOR_LIGHT //TODO: delete
                     character.initiative = txtInitiativeValue.text.toString().toInt()
                     character.hp = txtHpValue.text.toString().toInt()
                     character.speed = txtSpeedValue.text.toString().toInt()
