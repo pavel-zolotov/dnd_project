@@ -53,6 +53,7 @@ class CharacterViewActivity : AppCompatActivity() {
         txtConstitutionValue.text = constitutionSum.toString()
         txtConstitutionBonus.text = if (constitutionMod > 0) "+${constitutionMod}" else constitutionMod.toString()
 
+
         val intelligenceSum = character.getRaceBonusIntelligence(this) + character.intelligence
         val intelligenceMod = (intelligenceSum-10)/2
         txtIntelligenceValue.text = intelligenceSum.toString()
@@ -73,54 +74,66 @@ class CharacterViewActivity : AppCompatActivity() {
         when (temp[0]){
             0 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_STR)
-                txtSavethrow1Bonus.text = "+${strengthMod}"
+                //txtSavethrow1Bonus.text = "+${strengthMod}"
+                txtSavethrow1Bonus.text = if (strengthMod > 0) "+${strengthMod}" else strengthMod.toString()
             }
             1 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_DEX)
-                txtSavethrow1Bonus.text = "+${dexterityMod}"
+                //txtSavethrow1Bonus.text = "+${dexterityMod}"
+                txtSavethrow1Bonus.text = if (dexterityMod > 0) "+${dexterityMod}" else dexterityMod.toString()
             }
             2 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CON)
-                txtSavethrow1Bonus.text = "+${constitutionMod}"
+                //txtSavethrow1Bonus.text = "+${constitutionMod}"
+                txtSavethrow1Bonus.text = if (constitutionMod > 0) "+${constitutionMod}" else constitutionMod.toString()
             }
             3 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_INT)
-                txtSavethrow1Bonus.text = "+${intelligenceMod}"
+                //txtSavethrow1Bonus.text = "+${intelligenceMod}"
+                txtSavethrow1Bonus.text = if (intelligenceMod > 0) "+${intelligenceMod}" else intelligenceMod.toString()
             }
             4 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_WIS)
-                txtSavethrow1Bonus.text = "+${wisdomMod}"
+                //txtSavethrow1Bonus.text = "+${wisdomMod}"
+                txtSavethrow1Bonus.text = if (wisdomMod > 0) "+${wisdomMod}" else wisdomMod.toString()
             }
             5 -> {
                 txtSavethrow1Label.text = resources.getString(R.string.Savethrow_CHA)
-                txtSavethrow1Bonus.text = "+${charismaMod}"
+                //txtSavethrow1Bonus.text = "+${charismaMod}"
+                txtSavethrow1Bonus.text = if (charismaMod > 0) "+${charismaMod}" else charismaMod.toString()
             }
         }
 
         when (temp[1]){
             0 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_STR)
-                txtSavethrow2Bonus.text = "+${strengthMod}"
+                //txtSavethrow2Bonus.text = "+${strengthMod}"
+                txtSavethrow2Bonus.text = if (strengthMod > 0) "+${strengthMod}" else strengthMod.toString()
             }
             1 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_DEX)
-                txtSavethrow2Bonus.text = "+${dexterityMod}"
+                //txtSavethrow2Bonus.text = "+${dexterityMod}"
+                txtSavethrow2Bonus.text = if (dexterityMod > 0) "+${dexterityMod}" else dexterityMod.toString()
             }
             2 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CON)
-                txtSavethrow2Bonus.text = "+${constitutionMod}"
+                //txtSavethrow2Bonus.text = "+${constitutionMod}"
+                txtSavethrow2Bonus.text = if (constitutionMod > 0) "+${constitutionMod}" else constitutionMod.toString()
             }
             3 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_INT)
-                txtSavethrow2Bonus.text = "+${intelligenceMod}"
+                //txtSavethrow2Bonus.text = "+${intelligenceMod}"
+                txtSavethrow2Bonus.text = if (intelligenceMod > 0) "+${intelligenceMod}" else intelligenceMod.toString()
             }
             4 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_WIS)
                 txtSavethrow2Bonus.text = "+${wisdomMod}"
+                txtSavethrow2Bonus.text = if (wisdomMod > 0) "+${wisdomMod}" else wisdomMod.toString()
             }
             5 -> {
                 txtSavethrow2Label.text = resources.getString(R.string.Savethrow_CHA)
                 txtSavethrow2Bonus.text = "+${charismaMod}"
+                txtSavethrow2Bonus.text = if (charismaMod > 0) "+${charismaMod}" else charismaMod.toString()
             }
         }
 
