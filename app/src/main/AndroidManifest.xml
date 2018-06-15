@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.qweco.dndproject">
+    package="com.coolguys.dndproject">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_final"
+        android:icon="@mipmap/ic_launcher3"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher3_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -23,10 +23,11 @@
             android:name=".CharacterSetupActivity"
             android:label="@string/title_activity_character_setup"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.qweco.dndproject.MainActivity" />
+                android:value="com.coolguys.dndproject.MainActivity" />
         </activity>
         <activity android:name=".CharacterViewActivity"
             android:label="@string/character_profile_activity_title"
@@ -34,7 +35,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.qweco.dndproject.MainActivity" />
+                android:value="com.coolguys.dndproject.MainActivity" />
         </activity>
     </application>
 

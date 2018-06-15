@@ -1,4 +1,4 @@
-package org.qweco.dndproject.view
+package com.coolguys.dndproject.view
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

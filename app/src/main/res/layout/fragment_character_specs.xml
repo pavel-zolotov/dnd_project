@@ -2,6 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -10,7 +11,7 @@
         android:id="@+id/relLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="org.qweco.dndproject.AppearanceFragment"
+        tools:context="com.coolguys.dndproject.AppearanceFragment"
         android:orientation="vertical">
 
         <LinearLayout
@@ -45,8 +46,8 @@
                         android:layout_below="@id/txtInitiativeLabel"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:hint="2"
                         android:inputType="number"
+                        android:hint="0"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -73,99 +74,8 @@
                         android:layout_below="@id/txtHpLabel"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:hint="11"
                         android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/txtSpeedLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/speed"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/txtSpeedValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtSpeedLabel"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:hint="14"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/txtHitDiceLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/hit_dice"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/txtHitDiceValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtHitDiceLabel"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="14sp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/txtArmourClassLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/armor_class"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/txtArmourClassValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtArmourClassLabel"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:hint="9"
-                        android:inputType="number"
+                        android:hint="10"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
 
@@ -193,10 +103,97 @@
                         android:layout_below="@id/txtProficiencyLabel"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="8dp"
-                        android:hint="2"
                         android:inputType="number"
+                        android:hint="1"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtHitDiceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/hit_dice"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtHitDiceValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtHitDiceLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtArmourClassLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/armor_class"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/txtArmourClassValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtArmourClassLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:inputType="number"
+                        android:hint="10"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtSpeedLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/speed"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtSpeedValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSpeedLabel"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="16sp" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -242,12 +239,11 @@
                                     android:id="@+id/txtStrengthValue"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/txtStrengthLabel"
                                     android:layout_marginRight="5dp"
                                     android:layout_alignParentRight="true"
-                                    android:hint="28"
                                     android:layout_marginTop="3dp"
                                     android:inputType="number"
+                                    android:hint="10"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
                                     android:textSize="14sp" />
 
@@ -255,10 +251,7 @@
                                     android:id="@+id/txtStrengthRaceBonus"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/txtStrengthLabel"
                                     android:layout_marginTop="5dp"
-                                    android:inputType="number"
-                                    android:text="26"
                                     android:textSize="16sp" />
 
                             </LinearLayout>
@@ -305,12 +298,11 @@
                                     android:id="@+id/txtDexterityValue"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/txtStrengthLabel"
                                     android:layout_marginRight="5dp"
                                     android:layout_alignParentRight="true"
-                                    android:hint="28"
                                     android:layout_marginTop="3dp"
                                     android:inputType="number"
+                                    android:hint="10"
                                     android:textAppearance="?android:attr/textAppearanceSmall"
                                     android:textSize="14sp" />
 
@@ -318,10 +310,7 @@
                                     android:id="@+id/txtDexterityBonus"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/txtStrengthLabel"
                                     android:layout_marginTop="5dp"
-                                    android:inputType="number"
-                                    android:text="26"
                                     android:textSize="16sp" />
 
                             </LinearLayout>
@@ -369,12 +358,11 @@
                                 android:id="@+id/txtConstitutionValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginRight="5dp"
                                 android:layout_alignParentRight="true"
-                                android:hint="28"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -382,10 +370,7 @@
                                 android:id="@+id/txtConstitutionBonus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginTop="5dp"
-                                android:inputType="number"
-                                android:text="26"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -443,9 +428,9 @@
                                 android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginRight="5dp"
                                 android:layout_alignParentRight="true"
-                                android:hint="28"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -453,10 +438,7 @@
                                 android:id="@+id/txtIntelligenceBonus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginTop="5dp"
-                                android:inputType="number"
-                                android:text="26"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -505,12 +487,11 @@
                                 android:id="@+id/txtWisdomValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginRight="5dp"
                                 android:layout_alignParentRight="true"
-                                android:hint="28"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -518,10 +499,7 @@
                                 android:id="@+id/txtWisdomBonus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginTop="5dp"
-                                android:inputType="number"
-                                android:text="26"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -571,12 +549,11 @@
                                 android:id="@+id/txtCharismaValue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtCharismaLabel"
                                 android:layout_marginRight="5dp"
                                 android:layout_alignParentRight="true"
-                                android:hint="28"
                                 android:layout_marginTop="3dp"
                                 android:inputType="number"
+                                android:hint="10"
                                 android:textAppearance="?android:attr/textAppearanceSmall"
                                 android:textSize="14sp" />
 
@@ -584,10 +561,7 @@
                                 android:id="@+id/txtCharismaBonus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/txtStrengthLabel"
                                 android:layout_marginTop="5dp"
-                                android:inputType="number"
-                                android:text="26"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -595,6 +569,37 @@
                 </android.support.v7.widget.CardView>
                 </RelativeLayout>
             </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtSkillsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skills"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="18sp"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/skillList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSkillsLabel"
+                        android:layout_marginBottom="5dp"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

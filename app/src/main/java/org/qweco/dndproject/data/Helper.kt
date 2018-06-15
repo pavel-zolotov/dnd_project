@@ -1,4 +1,4 @@
-package org.qweco.dndproject.data
+package com.coolguys.dndproject.data
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

@@ -1,4 +1,4 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import org.junit.Test
 

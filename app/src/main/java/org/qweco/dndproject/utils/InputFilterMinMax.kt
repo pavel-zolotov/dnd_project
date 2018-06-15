@@ -1,4 +1,4 @@
-package org.qweco.dndproject.utils
+package com.coolguys.dndproject.utils
 
 import android.text.InputFilter
 import android.text.Spanned

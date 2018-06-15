@@ -1,7 +1,8 @@
-package org.qweco.dndproject.model
+package com.coolguys.dndproject.model
 
 import android.content.Context
-import org.qweco.dndproject.R
+import android.graphics.drawable.Drawable
+import com.coolguys.dndproject.R
 import java.io.Serializable
 
 data class Character (
@@ -18,8 +19,8 @@ data class Character (
         var armourClass: Int,
         var proficiency: Int,
 
-        var skills: Map<String, Int?>, //use constants from class body, pls
-        var savingThrows: Map<String, Int?>, //here the same
+        var skills: HashMap<String, Int?>, //use constants from class body, pls
+        @Deprecated("will be deleted") var savingThrows: HashMap<String, Int?>, //here the same
 
         var strength: Int,
         var dexterity: Int,
@@ -29,13 +30,12 @@ data class Character (
         var perception: Int,
         var charisma: Int,
 
-
         var eyeColor: Int,
-        var hairStyle: Int,
+        @Deprecated("will be deleted") var hairStyle: Int,
         var skinColor: Int): Serializable{
 
-    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, mapOf(), mapOf(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(): this(-1, "", 0, 0, 0, 0, 0, 0, 0, 0, 0, HashMap<String, Int?>(), HashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+    constructor(race: Int): this(-1, "", 0, race, 0, 0, 0, 0, 0, 0, 0, HashMap<String, Int?>(), HashMap<String, Int?>(), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
     companion object {
         //Races
@@ -74,6 +74,30 @@ data class Character (
 
 
         //Skills
+        const val ACROBATICS = 0            //DEX
+        const val ANIMAL_HANDLING = 1       //WIS
+        const val ARCANA = 2                //INT
+        const val ATHLETICS = 3             //STR
+        const val DECEPTION = 4             //CHA
+        const val HISTORY = 5               //INT
+        const val INSIGHT = 6               //WIS
+        const val INTIMIDATION = 7          //CHA
+        const val INVESTIGATION = 8         //INT
+        const val MEDICINE = 9              //WIS
+        const val NATURE = 10               //INT
+        const val PERCEPTION = 11           //WIS
+        const val PERFORMANCE = 12          //CHA
+        const val PERSUASION = 13           //CHA
+        const val RELIGION = 14             //INT
+        const val SLEIGHT_OF_HAND = 15      //DEX
+        const val STEALTH = 16              //DEX
+        const val SURVIVAL = 17             //WIS
+
+        /*
+
+        ACROBATICS ANIMAL_HANDLING ARCANA ATHLETICS DECEPTION HISTORY INSIGHT INTIMIDATION INVESTIGATION MEDICINE NATURE PERCEPTION PERFORMANCE PERSUASION RELIGION SLEIGHT_OF_HAND STEALTH SURVIVAL
+
+                //Skills BACKUP
         const val ACROBATICS = "ACROBATICS"            //DEX
         const val ANIMAL_HANDLING = "ANIMAL_HANDLING"  //WIS
         const val ARCANA = "ARCANA"                    //INT
@@ -92,14 +116,15 @@ data class Character (
         const val SLEIGHT_OF_HAND = "SLEIGHT_OF_HAND"  //DEX
         const val STEALTH = "STEALTH"                  //DEX
         const val SURVIVAL = "SURVIVAL"                //WIS
+         */
 
         //Saving Throws
-        const val STR = "STR"
-        const val DEX = "DEX"
-        const val CONST = "CONST"
-        const val INT = "INT"
-        const val WIS = "WIS"
-        const val CHA = "CHA"
+        const val STR = 0
+        const val DEX = 1
+        const val CONST = 2
+        const val INT = 3
+        const val WIS = 4
+        const val CHA = 5
 
         //Apperance
         const val EYE_COLOR_BLUE = 0
@@ -223,7 +248,7 @@ data class Character (
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.MOUNTAIN_DWARF -> {
                 return 2
@@ -236,7 +261,7 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusDexterity (context: Context) : Int
@@ -256,14 +281,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusConstitution (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.DWARF -> {
                 return 2
@@ -276,14 +301,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusIntelligence (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.HIGH_ELF -> {
                 return 1
@@ -296,14 +321,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusWisdom (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.HILL_DWARF -> {
                 return 1
@@ -313,14 +338,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getRaceBonusCharisma (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 1;
+                return 1
             }
             Character.DARK_ELF -> {
                 return 1
@@ -339,14 +364,14 @@ data class Character (
             }
         }
 
-        return 0;
+        return 0
     }
 
     fun getDefaultSpeed (context: Context) : Int
     {
         when (race){
             Character.HUMAN -> {
-                return 30;
+                return 30
             }
             Character.ELF -> {
                 return 30
@@ -377,124 +402,88 @@ data class Character (
         return 25
     }
 
-    fun getSawethrows (context: Context) : Array<String>
+    fun getSawethrows (context: Context) : Array<Int>
     {
-        when (race){
-            Character.HUMAN -> {
-                return arrayOf()
+        when (character_class){
+            Character.WIZARD -> {
+                return arrayOf(INT, WIS)
             }
-            Character.DWARF -> {
-                return arrayOf()
+            Character.WARLOCK -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.HILL_DWARF -> {
-                return arrayOf()
+            Character.SORCERER -> {
+                return arrayOf(CONST, CHA)
             }
-            Character.MOUNTAIN_DWARF -> {
-                return arrayOf()
+            Character.WARRIOR -> {
+                return arrayOf(STR, CONST)
             }
-            Character.ELF -> {
-                return arrayOf()
+            Character.MONK -> {
+                return arrayOf(STR, DEX)
             }
-            Character.HIGH_ELF -> {
-                return arrayOf()
+            Character.RANGER -> {
+                return arrayOf(STR, DEX)
             }
-            Character.WOOD_ELF -> {
-                return arrayOf()
+            Character.THIEF -> {
+                return arrayOf(DEX, INT)
             }
-            Character.DARK_ELF -> {
-                return arrayOf()
+            Character.CLERIC -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.TIFLING -> {
-                return arrayOf()
+            Character.PALADIN -> {
+                return arrayOf(WIS, CHA)
             }
-            Character.HALF_ORC -> {
-                return arrayOf()
+            Character.BARBARIAN -> {
+                return arrayOf(STR, CONST)
             }
-            Character.HALF_ELF -> {
-                return arrayOf()
+            Character.DRUID -> {
+                return arrayOf(INT, WIS)
             }
-            Character.DRAGONBORN -> {
-                return arrayOf()
-            }
-            Character.HALFLING -> {
-                return arrayOf()
-            }
-            Character.LIGHTFOOT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.STOUT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.GNOM -> {
-                return arrayOf()
-            }
-            Character.FOREST_GNOM -> {
-                return arrayOf()
-            }
-            Character.ROCK_GNOM -> {
-                return arrayOf()
+            Character.BARD -> {
+                return arrayOf(DEX, CHA)
             }
         }
 
         return arrayOf()
     }
 
-    fun getSkills (context: Context) : Array<String>
+    fun getAvailableSkills (context: Context) : Array<Int>
     {
-        when (race){
-            Character.HUMAN -> {
-                return arrayOf()
+        when (character_class){
+            Character.WIZARD -> {
+                return arrayOf(INVESTIGATION, HISTORY, ARCANA, MEDICINE, INSIGHT, RELIGION)
             }
-            Character.DWARF -> {
-                return arrayOf()
+            Character.WARLOCK -> {
+                return arrayOf(INVESTIGATION, INTIMIDATION, HISTORY, ARCANA, DECEPTION, NATURE, RELIGION)
             }
-            Character.HILL_DWARF -> {
-                return arrayOf()
+            Character.SORCERER -> {
+                return arrayOf(INTIMIDATION, ARCANA, DECEPTION, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.MOUNTAIN_DWARF -> {
-                return arrayOf()
+            Character.WARRIOR -> {
+                return arrayOf(ACROBATICS, ATHLETICS, PERCEPTION, SURVIVAL, INTIMIDATION, HISTORY, INSIGHT, ANIMAL_HANDLING)
             }
-            Character.ELF -> {
-                return arrayOf()
+            Character.MONK -> {
+                return arrayOf(ACROBATICS, ATHLETICS, HISTORY, INSIGHT, RELIGION, STEALTH)
             }
-            Character.HIGH_ELF -> {
-                return arrayOf()
+            Character.RANGER -> {
+                return arrayOf(INVESTIGATION, ATHLETICS, PERCEPTION, SURVIVAL, NATURE, INSIGHT, STEALTH, ANIMAL_HANDLING)
             }
-            Character.WOOD_ELF -> {
-                return arrayOf()
+            Character.THIEF -> {
+                return arrayOf(ACROBATICS, INVESTIGATION, ATHLETICS, PERCEPTION, PERFORMANCE, INTIMIDATION, SLEIGHT_OF_HAND, DECEPTION, INSIGHT, STEALTH, PERSUASION)
             }
-            Character.DARK_ELF -> {
-                return arrayOf()
+            Character.CLERIC -> {
+                return arrayOf(HISTORY, MEDICINE, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.TIFLING -> {
-                return arrayOf()
+            Character.PALADIN -> {
+                return arrayOf(ATHLETICS, INTIMIDATION, MEDICINE, INSIGHT, RELIGION, PERSUASION)
             }
-            Character.HALF_ORC -> {
-                return arrayOf()
+            Character.BARBARIAN -> {
+                return arrayOf(ATHLETICS, PERCEPTION, SURVIVAL, INTIMIDATION, NATURE, ANIMAL_HANDLING)
             }
-            Character.HALF_ELF -> {
-                return arrayOf()
+            Character.DRUID -> {
+                return arrayOf(PERCEPTION, SURVIVAL, ARCANA, MEDICINE, ANIMAL_HANDLING, NATURE, INSIGHT, RELIGION)
             }
-            Character.DRAGONBORN -> {
-                return arrayOf()
-            }
-            Character.HALFLING -> {
-                return arrayOf()
-            }
-            Character.LIGHTFOOT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.STOUT_HALFLING -> {
-                return arrayOf()
-            }
-            Character.GNOM -> {
-                return arrayOf()
-            }
-            Character.FOREST_GNOM -> {
-                return arrayOf()
-            }
-            Character.ROCK_GNOM -> {
-                return arrayOf()
+            Character.BARD -> {
+                return arrayOf(ACROBATICS, ANIMAL_HANDLING, ARCANA, ATHLETICS, DECEPTION, HISTORY, INSIGHT, INTIMIDATION, INVESTIGATION, MEDICINE, NATURE, PERCEPTION, PERFORMANCE, PERSUASION, RELIGION, SLEIGHT_OF_HAND, STEALTH, SURVIVAL)
             }
         }
 
@@ -546,4 +535,174 @@ data class Character (
 
     }
 
+    fun getAmountOfSkills (context: Context) :Int
+    {
+        when (character_class){
+
+            Character.RANGER -> {
+                return 3
+            }
+            Character.THIEF -> {
+                return 4
+            }
+            Character.BARD -> {
+                return 3
+            }
+        }
+
+        return 2
+    }
+
+    fun getDrawableForClass (context: Context) : Drawable
+    {
+        when (character_class){
+            Character.WIZARD -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wizard_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wizard_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wizard_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wizard_green)
+                    }
+                }
+                        //context.resources.getDrawable(R.drawable.wizard)
+            }
+            Character.WARLOCK -> {
+                return context.resources.getDrawable(R.drawable.warlock)
+            }
+            Character.SORCERER -> {
+                return context.resources.getDrawable(R.drawable.sorcerer)
+            }
+            Character.WARRIOR -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warrior_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warrior_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warrior_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warrior_green)
+                    }
+                }
+            }
+            Character.MONK -> {
+                return context.resources.getDrawable(R.drawable.monk)
+            }
+            Character.RANGER -> {
+                return context.resources.getDrawable(R.drawable.ranger)
+            }
+            Character.THIEF -> {
+                return context.resources.getDrawable(R.drawable.thief)
+            }
+            Character.CLERIC -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cleric_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cleric_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cleric_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cleric_green)
+                    }
+                }
+            }
+            Character.PALADIN -> {
+                return context.resources.getDrawable(R.drawable.paladin)
+            }
+            Character.BARBARIAN -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.barbarian_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.barbarian_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.barbarian_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.barbarian_green)
+                    }
+                }
+            }
+            Character.DRUID -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.druid_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.druid_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.druid_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.druid_green)
+                    }
+                }
+            }
+            Character.BARD -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bard_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bard_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bard_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bard_green)
+                    }
+                }
+            }
+        }
+
+        return context.resources.getDrawable(R.drawable.warrior)
+    }
 }

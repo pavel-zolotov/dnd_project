@@ -1,4 +1,4 @@
-package org.qweco.dndproject
+package com.coolguys.dndproject
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_character_appearance.*
-import org.qweco.dndproject.model.Character
+import com.coolguys.dndproject.model.Character
+import kotlinx.android.synthetic.main.activity_character_setup.*
 
 class AppearanceFragment : Fragment() {
     var eye_color = Character.EYE_COLOR_BLUE
@@ -21,20 +22,31 @@ class AppearanceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         eyeColorBlue.setOnClickListener({changeEyeTickVisibility(0)
-            eye_color = Character.EYE_COLOR_BLUE})
+            eye_color = Character.EYE_COLOR_BLUE
+            changeImg()})
         eyeColorRed.setOnClickListener({changeEyeTickVisibility(1)
-            eye_color = Character.EYE_COLOR_RED})
+            eye_color = Character.EYE_COLOR_RED
+            changeImg()})
         eyeColorAmber.setOnClickListener({changeEyeTickVisibility(2)
-            eye_color = Character.EYE_COLOR_AMBER})
+            eye_color = Character.EYE_COLOR_AMBER
+            changeImg()})
         eyeColorGreen.setOnClickListener({changeEyeTickVisibility(3)
-            eye_color = Character.EYE_COLOR_GREEN})
-        eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
+            eye_color = Character.EYE_COLOR_GREEN
+            changeImg()})
+        /*eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
             eye_color = Character.EYE_COLOR_WHITE})
 
         skinColorLight.setOnClickListener({changeSkinTickVisibility(0)
             skin_color = Character.SKIN_COLOR_LIGHT})
         skinColorDark.setOnClickListener({changeSkinTickVisibility(1)
-            skin_color = Character.SKIN_COLOR_DARK})
+            skin_color = Character.SKIN_COLOR_DARK})*/
+    }
+
+    private fun changeImg (){
+        val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
+        character.character_class = activity!!.spinner.selectedItemPosition
+        character.eyeColor = eye_color
+        activity!!.characterImg.setImageDrawable(character.getDrawableForClass(context!!))
     }
 
     private fun changeEyeTickVisibility (pos: Int){
@@ -42,13 +54,13 @@ class AppearanceFragment : Fragment() {
         eyeTickRed.visibility = if (pos == 1) View.VISIBLE else View.GONE
         eyeTickAmber.visibility = if (pos == 2) View.VISIBLE else View.GONE
         eyeTickGreen.visibility = if (pos == 3) View.VISIBLE else View.GONE
-        eyeTickWhite.visibility = if (pos == 4) View.VISIBLE else View.GONE
+        //eyeTickWhite.visibility = if (pos == 4) View.VISIBLE else View.GONE
     }
 
-    private fun changeSkinTickVisibility (pos: Int) {
+    /*private fun changeSkinTickVisibility (pos: Int) {
         skinTickLight.visibility = if (pos == 0) View.VISIBLE else View.GONE
         skinTickDark.visibility = if (pos == 1) View.VISIBLE else View.GONE
-    }
+    }*/
 
     companion object {
         /**

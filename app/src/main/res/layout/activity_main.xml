@@ -5,7 +5,7 @@
     android:id="@+id/contentView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.qweco.dndproject.MainActivity">
+    tools:context="com.coolguys.dndproject.MainActivity">
 
 
     <android.support.design.widget.AppBarLayout

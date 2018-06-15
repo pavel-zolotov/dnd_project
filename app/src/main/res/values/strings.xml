@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">DnD project</string>
+    <string name="app_name">D&amp;D Character</string>
     <string name="race_label">Race:</string>
     <string name="class_label">Class</string>
     <string name="no_characters">No characters</string>
 
-    <string name="class_wizard">Wizard</string>
+    <string name="class_wizard">wizard</string>
     <string name="class_sorcerer">Sorcerer</string>
     <string name="class_warlock">Warlock</string>
-    <string name="class_warrior">Warrior</string>
-    <string name="class_barbarian">Barbarian</string>
-    <string name="class_druid">Druid</string>
-    <string name="class_bard">Bard</string>
+    <string name="class_warrior">warrior</string>
+    <string name="class_barbarian">barbarian</string>
+    <string name="class_druid">druid</string>
+    <string name="class_bard">bard</string>
     <string name="class_ranger">Ranger</string>
     <string name="class_thief">Thief</string>
     <string name="class_monk">Monk</string>
     <string name="class_paladin">Paladin</string>
-    <string name="class_cleric">Cleric</string>
+    <string name="class_cleric">cleric</string>
 
     <string name="strength">STR</string>
     <string name="dexterity">DEX</string>
@@ -30,6 +30,34 @@
     <string name="initiative">Initiative</string>
     <string name="armor_class">Armor class</string>
     <string name="proficiency">Proficiency</string>
+
+    <string name="Skill_ACROBATICS">Acrobatics</string>
+    <string name="Skill_ANIMAL_HANDLING">Animal handling</string>
+    <string name="Skill_ARCANA">Arcana</string>
+    <string name="Skill_ATHLETICS">Athletics</string>
+    <string name="Skill_DECEPTION">Deception</string>
+    <string name="Skill_HISTORY">History</string>
+    <string name="Skill_INSIGHT">Insight</string>
+    <string name="Skill_INTIMIDATION">Intimidation</string>
+    <string name="Skill_INVESTIGATION">Investigation</string>
+    <string name="Skill_MEDICINE">Medicine</string>
+    <string name="Skill_NATURE">Nature</string>
+    <string name="Skill_PERCEPTION">Perception</string>
+    <string name="Skill_PERFORMANCE">Performance</string>
+    <string name="Skill_PERSUASION">Persuasion</string>
+    <string name="Skill_RELIGION">Religion</string>
+    <string name="Skill_SLEIGHT_OF_HAND">Sleight of hand</string>
+    <string name="Skill_STEALTH">Stealth</string>
+    <string name="Skill_SURVIVAL">Survival</string>
+
+    <string name="Savethrow_STR">STR</string>
+    <string name="Savethrow_DEX">DEX</string>
+    <string name="Savethrow_CON">CON</string>
+    <string name="Savethrow_INT">INT</string>
+    <string name="Savethrow_WIS">WIS</string>
+    <string name="Savethrow_CHA">CHA</string>
+
+    ACROBATICS ANIMAL_HANDLING ARCANA ATHLETICS DECEPTION HISTORY INSIGHT INTIMIDATION INVESTIGATION MEDICINE NATURE PERCEPTION PERFORMANCE PERSUASION RELIGION SLEIGHT_OF_HAND STEALTH SURVIVAL
 
     <string name="race_human">Human</string>
     <string name="race_elf">Elf</string>
@@ -53,7 +81,7 @@
     <string name="action_settings">Settings</string>
     <string name="tab_appearance">Appearance</string>
     <string name="tab_specs">Specs</string>
-    <string name="eye_color">Eye color</string>
+    <string name="eye_color">Color</string>
     <string name="hair_style">Hair style</string>
     <string name="skin_color">Skin color</string>
     <string name="name">Name</string>
@@ -64,4 +92,8 @@
     <string name="no_internet_connection">No internet connection</string>
     <string name="unknown_error">Unknown error</string>
     <string name="signOut">Sign out</string>
+    <string name="skills">Skills (%1$d out of %2$d selected)</string>
+    <string name="bare_skills">Skills</string>
+    <string name="fill_all_skills_values">Fill all the skills values</string>
+    <string name="no_skills">No skills</string>
 </resources>
