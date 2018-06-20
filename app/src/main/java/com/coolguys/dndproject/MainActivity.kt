@@ -232,13 +232,18 @@ class MainActivity : AppCompatActivity() {
                 }
                 return true
             }
+            R.id.action_scan_qr -> {
+                val intent = Intent(this, QRScanActivity::class.java)
+                startActivityForResult(intent, RC_NEW_CHARACTER)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun showUserLayout (){
         val auth = FirebaseAuth.getInstance()
-        menu.getItem(0).icon = ContextCompat.getDrawable(this, R.drawable.ic_close_white_24dp)
+        menu.getItem(1).icon = ContextCompat.getDrawable(this, R.drawable.ic_close_white_24dp)
 
         accountLayout.visibility = View.VISIBLE
         val anim = ValueAnimator.ofInt(appbar.measuredHeight, 480) //I don't know why 480, but it works
@@ -264,7 +269,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideUserLayout() {
-        menu.getItem(0).icon = ContextCompat.getDrawable(this, R.drawable.ic_account_circle_white_24dp)
+        menu.getItem(1).icon = ContextCompat.getDrawable(this, R.drawable.ic_account_circle_white_24dp)
 
         val anim = ValueAnimator.ofInt(appbar.measuredHeight, 170)
         anim.addUpdateListener { valueAnimator ->

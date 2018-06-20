@@ -92,4 +92,8 @@
     <string name="bare_skills">Навыки</string>
     <string name="fill_all_skills_values">Заполните все значения навыков</string>
     <string name="no_skills">Нет навыков</string>
+    <string name="qr_sheet_label">Сканируйте QR код на другом устройстве в этом приложении</string>
+    <string name="scan_qr">Сканировать QR код</string>
+    <string name="pls_permission">Дайте разрешение на камеру, пожалуйста</string>
+    <string name="wrong_data_format">Неверный формат данных</string>
 </resources>

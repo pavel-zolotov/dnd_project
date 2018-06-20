@@ -95,4 +95,8 @@
     <string name="bare_skills">Skills</string>
     <string name="fill_all_skills_values">Fill all the skills values</string>
     <string name="no_skills">No skills</string>
+    <string name="qr_sheet_label">Scan QR code on another device using this application</string>
+    <string name="scan_qr">Scan QR code</string>
+    <string name="pls_permission">Give a camera permission, please</string>
+    <string name="wrong_data_format">Wrong data format</string>
 </resources>

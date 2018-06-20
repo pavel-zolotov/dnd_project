@@ -1,7 +1,5 @@
 package com.coolguys.dndproject.adapter
 
-import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -15,13 +13,14 @@ import java.util.*
 import android.support.design.widget.Snackbar
 import com.coolguys.dndproject.CharacterViewActivity
 import com.coolguys.dndproject.data.Manager
-import android.support.v4.view.ViewCompat
-import android.support.v4.app.ActivityOptionsCompat
+import android.support.v7.app.AppCompatActivity
+import android.widget.ImageButton
 import android.widget.ImageView
+import com.coolguys.dndproject.QRViewFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class CharacterAdapter(private var list: ArrayList<Character>, val activity: Activity) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>(), ItemTouchHelperAdapter {
+class CharacterAdapter(private var list: ArrayList<Character>, val activity: AppCompatActivity) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>(), ItemTouchHelperAdapter {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val pos = holder.adapterPosition
@@ -33,6 +32,11 @@ class CharacterAdapter(private var list: ArrayList<Character>, val activity: Act
             val intent = Intent(activity, CharacterViewActivity::class.java)
             intent.putExtra("data", character)
             activity.startActivity(intent)
+        })
+        holder.share.setOnClickListener({
+            val bottomSheetFragment = QRViewFragment()
+            bottomSheetFragment.character = character
+            bottomSheetFragment.show(activity.supportFragmentManager, bottomSheetFragment.tag)
         })
     }
 
@@ -53,6 +57,7 @@ class CharacterAdapter(private var list: ArrayList<Character>, val activity: Act
         var name: TextView = v.findViewById(R.id.txtName)
         var raceAndClass: TextView = v.findViewById(R.id.txtRaceAndClass)
         var image: ImageView = v.findViewById(R.id.characterImg)
+        var share: ImageButton = v.findViewById(R.id.imgShare)
     }
 
     fun removeItem(position: Int) {
