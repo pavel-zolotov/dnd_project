@@ -579,11 +579,45 @@ data class Character (
                         //context.resources.getDrawable(R.drawable.wizard)
             }
             Character.WARLOCK -> {
-                return context.resources.getDrawable(R.drawable.warlock)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warlock_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warlock_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warlock_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warlock_green)
+                    }
+                }            }
             Character.SORCERER -> {
-                return context.resources.getDrawable(R.drawable.sorcerer)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.sorcerer_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.sorcerer_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.sorcerer_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.sorcerer_green)
+                    }
+                }              }
             Character.WARRIOR -> {
                 when (eyeColor)
                 {
@@ -606,14 +640,65 @@ data class Character (
                 }
             }
             Character.MONK -> {
-                return context.resources.getDrawable(R.drawable.monk)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.monk_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.monk_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.monk_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.monk_green)
+                    }
+                }            }
             Character.RANGER -> {
-                return context.resources.getDrawable(R.drawable.ranger)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ranger_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ranger_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ranger_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ranger_green)
+                    }
+                }            }
             Character.THIEF -> {
-                return context.resources.getDrawable(R.drawable.thief)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.thief_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.thief_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.thief_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.thief_green)
+                    }
+                }            }
             Character.CLERIC -> {
                 when (eyeColor)
                 {
@@ -636,8 +721,25 @@ data class Character (
                 }
             }
             Character.PALADIN -> {
-                return context.resources.getDrawable(R.drawable.paladin)
-            }
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.paladin_blue)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.paladin_yellow)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.paladin_red)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.paladin_green)
+                    }
+                }            }
             Character.BARBARIAN -> {
                 when (eyeColor)
                 {
