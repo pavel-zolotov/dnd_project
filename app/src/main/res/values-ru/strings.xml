@@ -23,6 +23,8 @@
     <string name="wisdom">МУДР</string>
     <string name="charisma">ХАР</string>
 
+    <string name="perception">ВОСП</string>
+
     <string name="hit_dice">Кость Хитов</string>
     <string name="speed">Скорость</string>
     <string name="hp">ХП</string>

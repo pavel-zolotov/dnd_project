@@ -23,6 +23,8 @@
     <string name="wisdom">WIS</string>
     <string name="charisma">CHA</string>
 
+    <string name="perception">PER</string>
+
     <string name="hit_dice">Hit Dice</string>
     <string name="speed">Speed</string>
     <string name="hp">HP</string>
