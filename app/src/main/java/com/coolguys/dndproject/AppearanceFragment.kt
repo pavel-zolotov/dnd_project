@@ -33,16 +33,9 @@ class AppearanceFragment : Fragment() {
         eyeColorGreen.setOnClickListener({changeEyeTickVisibility(3)
             eye_color = Character.EYE_COLOR_GREEN
             changeImg()})
-        /*eyeColorWhite.setOnClickListener({changeEyeTickVisibility(4)
-            eye_color = Character.EYE_COLOR_WHITE})
-
-        skinColorLight.setOnClickListener({changeSkinTickVisibility(0)
-            skin_color = Character.SKIN_COLOR_LIGHT})
-        skinColorDark.setOnClickListener({changeSkinTickVisibility(1)
-            skin_color = Character.SKIN_COLOR_DARK})*/
     }
 
-    private fun changeImg (){
+    fun changeImg (){
         val character = Character(arguments!!.getInt(ARG_CHARACTER_RACE))
         character.character_class = activity!!.spinner.selectedItemPosition
         character.eyeColor = eye_color

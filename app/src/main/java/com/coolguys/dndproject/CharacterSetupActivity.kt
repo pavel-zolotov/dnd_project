@@ -182,7 +182,8 @@ class CharacterSetupActivity : AppCompatActivity() {
                 skillList.adapter = adapterSkills
 
                 //set character image
-                characterImg.setImageDrawable(character.getDrawableForClass(applicationContext))
+                val fragment1 = supportFragmentManager.findFragmentByTag("android:switcher:" + container.getId() + ":0") as AppearanceFragment
+                fragment1.changeImg()
             }
 
             override fun onNothingSelected(arg0: AdapterView<*>) {}
