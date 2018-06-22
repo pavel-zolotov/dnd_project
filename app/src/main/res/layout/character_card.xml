@@ -20,11 +20,12 @@
             android:layout_width="60dp"
             android:layout_height="70dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_person_grey_200_36dp"/>
+            android:paddingBottom="10dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_person_grey_200_36dp" />
 
         <TextView
             android:id="@+id/txtName"
