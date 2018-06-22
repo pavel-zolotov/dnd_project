@@ -807,4 +807,260 @@ data class Character (
 
         return context.resources.getDrawable(R.drawable.warrior)
     }
+
+    fun getDrawableIconForClass (context: Context) : Drawable
+    {
+        when (character_class){
+            Character.WIZARD -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wiz_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wiz_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wiz_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.wiz_g)
+                    }
+                }
+                //context.resources.getDrawable(R.drawable.wizard)
+            }
+            Character.WARLOCK -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warl_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warl_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warl_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warl_g)
+                    }
+                }            }
+            Character.SORCERER -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.so_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.so_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.so_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.so_g)
+                    }
+                }              }
+            Character.WARRIOR -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warr_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warr_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warr_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.warr_g)
+                    }
+                }
+            }
+            Character.MONK -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.mo_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.mo_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.mo_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.mo_g)
+                    }
+                }            }
+            Character.RANGER -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ra_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ra_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ra_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.ra_g)
+                    }
+                }            }
+            Character.THIEF -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.th_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.th_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.th_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.th_g)
+                    }
+                }            }
+            Character.CLERIC -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cl_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cl_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cl_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.cl_g)
+                    }
+                }
+            }
+            Character.PALADIN -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.pa_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.pa_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.pa_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.pa_g)
+                    }
+                }            }
+            Character.BARBARIAN -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_g)
+                    }
+                }
+            }
+            Character.DRUID -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.dr_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.dr_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.dr_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.dr_g)
+                    }
+                }
+            }
+            Character.BARD -> {
+                when (eyeColor)
+                {
+                    EYE_COLOR_BLUE ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_b)
+                    }
+                    EYE_COLOR_AMBER ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_y)
+                    }
+                    EYE_COLOR_RED ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_r)
+                    }
+                    EYE_COLOR_GREEN ->
+                    {
+                        return context.resources.getDrawable(R.drawable.bar_g)
+                    }
+                }
+            }
+        }
+
+        return context.resources.getDrawable(R.drawable.warrior)
+    }
+
 }

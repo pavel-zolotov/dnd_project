@@ -19,6 +19,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import com.coolguys.dndproject.QRViewFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.view.*
 
 
 class CharacterAdapter(private var list: ArrayList<Character>, val activity: AppCompatActivity) : RecyclerView.Adapter<CharacterAdapter.ViewHolder>(), ItemTouchHelperAdapter {
@@ -133,6 +134,8 @@ class CharacterAdapter(private var list: ArrayList<Character>, val activity: App
 
         holder.perception.text = if (wisdomMod > 0) "+${wisdomMod}" else wisdomMod.toString()
         holder.perceptionLabel.text = activity.resources.getString(R.string.perception)
+
+        holder.image.setImageDrawable(character.getDrawableIconForClass(activity))
 
 
 
